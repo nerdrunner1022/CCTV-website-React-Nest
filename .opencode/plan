@@ -264,3 +264,50 @@ and shown on the admin dashboard.
 - Currency + indicative package price ranges.
 - Email provider default: Resend (unless changed).
 - Vercel function region (aligned with Neon region to cut latency).
+
+---
+
+## Phase 0 status (scaffolded)
+
+Monorepo is in place and verified: `pnpm install`, `pnpm build`, `pnpm lint`,
+`pnpm typecheck`, and `pnpm test` all pass on Node 26 / pnpm 12.
+
+```
+apps/web          React 19 + Vite 6 + Tailwind v4 (marketing, portal, admin routes)
+apps/api          NestJS 10 + Prisma 6 (health, leads, calculator, catalog, content, auth)
+packages/shared   Zod schemas/enums (CJS build; TS source for bundlers)
+packages/config   shared tsconfig / eslint / tailwind theme
+bruno/            API collection (public, auth, admin)
+.github/          CI workflow
+```
+
+Endpoints already working: `GET /api/health`, `POST /api/leads` (survey booking),
+`POST /api/calculator/estimate`, `GET /api/solutions|packages|products|projects|blog|faqs`,
+`POST /api/auth/register|login`, `GET /api/auth/me`, `GET /api/admin/leads`.
+
+### Deviations / decisions made during scaffold
+
+1. **Task runner fallback.** Turborepo 2.11's native task spawner fails on this
+   machine (`Exec format error (os error 8)`) even though its binary runs. Root
+   scripts therefore use `pnpm -r run <task>`, which topo-sorts the workspace.
+   `turbo.json` and the `turbo` devDependency are kept so it can be re-enabled
+   once the environment supports it.
+2. **Prisma without the Neon driver adapter (for now).** `PrismaService` uses a
+   plain `PrismaClient` bound to the pooled `DATABASE_URL`. The
+   `@prisma/adapter-neon` upgrade path is noted in the service. Revisit before
+   load testing.
+3. **Placeholder module stubs.** `users`, `customers`, `surveys`, `quotes`,
+   `tickets`, `amc`, `billing`, `analytics` are empty modules wired into
+   `AppModule`; their logic lands in later phases.
+4. **"Add to quote" posts to `/leads`.** The quote basket serializes items into
+   the lead note until the `quotes` module ships in Phase 3, so the flow is
+   functional today without a half-built endpoint.
+5. **Refresh tokens not issued yet.** Login returns an access token only; cookie
+   refresh/rotation is a Phase 3 TODO in `AuthService`.
+6. **Rate limiting is in-memory.** `ThrottlerModule` guards locally; must move to
+   Upstash Ratelimit on Vercel (noted in `app.module.ts`).
+7. **Vercel configs are best-effort.** `apps/api/vercel.json` uses the legacy
+   `builds`/`routes` shape for the Nest serverless handler; confirm on first
+   preview deploy.
+8. **Shared package is CJS with conditional exports** (`import` -> TS source for
+   Vite, `require` -> compiled JS for Nest) so both consumers work from one build.
