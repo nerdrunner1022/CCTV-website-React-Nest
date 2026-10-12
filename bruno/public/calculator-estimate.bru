@@ -1,0 +1,25 @@
+meta {
+  name: Calculator Estimate
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/calculator/estimate
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "propertyType": "SHOP",
+    "entrances": 3,
+    "coverage": "MIXED",
+    "budget": "MID",
+    "existingCameras": false
+  }
+}
+
+assert {
+  res.status: eq 201
+}

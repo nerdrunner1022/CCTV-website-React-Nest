@@ -1,0 +1,27 @@
+meta {
+  name: Create Lead
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/leads
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Test Customer",
+    "phone": "15551234567",
+    "email": "test@example.com",
+    "area": "Test Area",
+    "propertyType": "HOME",
+    "preferredSlot": "MORNING",
+    "source": "DIRECT"
+  }
+}
+
+assert {
+  res.status: eq 201
+}

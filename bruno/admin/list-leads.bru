@@ -1,0 +1,19 @@
+meta {
+  name: List Leads
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/leads
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{authToken}}
+}
+
+assert {
+  res.status: eq 200
+}

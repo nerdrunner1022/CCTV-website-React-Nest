@@ -1,0 +1,266 @@
+# CCTV Shop Website — Build Plan
+
+Target location: `~/Projects/Internship/cctv-platform/`
+Status: planning complete; awaiting switch to a build agent to scaffold.
+
+The website's job is to turn a worried visitor into a booked site survey. It is a
+trust/lead engine first and an online store second.
+
+---
+
+## Locked decisions
+
+| Concern | Decision |
+|---|---|
+| Payments | None in MVP. Quotes accepted via a button; invoices are records only; deposit handled offline. Payment model stays in schema, unused, for later. |
+| CRM / admin | Custom admin built into the same React app at /admin. |
+| Messaging | WhatsApp click-to-chat deep links only (prefilled per page/category). Email via Resend for confirmations/reminders. |
+| E-commerce | Deferred to Phase 5. |
+| Customer portal auth | Email + password (argon2, JWT access + rotating refresh, email verification, password reset). |
+| Hosting | Vercel (web + NestJS) + Neon Postgres. |
+| API testing | Bruno (collections committed to the repo). |
+
+---
+
+## Tech stack
+
+- Frontend: React 19 + TypeScript + Vite + Tailwind CSS v4
+- Routing/data: React Router v7 + TanStack Query; Zustand for the quote basket + calculator
+- Forms: React Hook Form + Zod (schemas shared with the API via packages/shared)
+- Backend: NestJS (REST) + Prisma ORM
+- Database: PostgreSQL on Neon
+- Jobs/cron: Upstash QStash (delayed jobs) + Vercel Cron (daily sweeps)
+- Files: Cloudflare R2 presigned uploads (browser -> R2 direct)
+- Email: Resend
+- Scheduling: Cal.com embed + Google Calendar sync
+- Analytics: GA4 + GTM; server-side lead/source events
+- Monorepo: pnpm workspaces + Turborepo
+- CI/CD: GitHub Actions; migrations run in CI with DIRECT_URL
+
+---
+
+## Vercel constraint (NestJS as a serverless function)
+
+1. No long-lived queue/worker -> use Upstash QStash for delayed jobs
+   (3-/14-day lost-lead follow-ups, AMC reminders 30 days out) and Vercel Cron
+   for daily sweeps (overdue-lead SLA, AMC expiry scan).
+2. Prisma + Neon -> app uses the pooled DATABASE_URL with the
+   @prisma/adapter-neon serverless driver; migrations run in CI with DIRECT_URL,
+   never from Vercel.
+3. Function limits -> presigned uploads go browser -> R2 directly; quote PDFs via
+   pdf-lib (no headless Chrome); rate limiting via Upstash Ratelimit (not in-memory).
+
+---
+
+## Monorepo layout
+
+```
+cctv-platform/
+├─ apps/
+│  ├─ web/                 # React marketing site + customer portal + admin
+│  │  ├─ src/
+│  │  │  ├─ routes/        # marketing, portal, admin
+│  │  │  ├─ components/    # LeadForm, WhatsAppButton, Calculator, etc.
+│  │  │  ├─ features/      # bookings, quotes, tickets, portal
+│  │  │  ├─ lib/           # api client, query client, analytics
+│  │  │  └─ styles/
+│  │  └─ vercel.json
+│  └─ api/                 # NestJS
+│     ├─ api/index.ts      # Nest bootstrap, cached per instance, exported handler
+│     ├─ src/modules/      # see module list
+│     ├─ prisma/schema.prisma
+│     └─ vercel.json       # rewrite /(.*) -> /api/index
+├─ packages/
+│  ├─ shared/              # Zod schemas, DTO types, enums (LeadStatus, TicketStatus)
+│  └─ config/              # eslint / ts / tailwind presets
+├─ bruno/                  # Bruno API collections (.bru files)
+│  ├─ public/
+│  ├─ auth/
+│  ├─ admin/
+│  └─ environments/        # local.bru, staging.bru, prod.bru
+├─ turbo.json
+└─ pnpm-workspace.yaml
+```
+
+---
+
+## Data model (Prisma, grouped)
+
+Catalog / content
+- Product (category, price, specs JSON, stock, images, isQuoteOnly)
+- ProductCategory
+- Package (Basic / Recommended / Premium — inclusions, price range, items[])
+- Solution (Home / Shops / Offices / Warehouses — slug, content, typical camera count, starting price)
+- Project (before/after images, clientType, location, testimonial link)
+- Testimonial
+- BlogPost, Faq
+- SeoMeta (per-route title/description/OG)
+
+Leads & sales
+- Lead (name, phone, email, area/address, propertyType, source, status, note)
+- LeadStatus enum: NEW, CONTACTED, SURVEY_BOOKED, QUOTED, WON, LOST, INSTALLED
+- LeadActivity (audit trail + follow-up scheduling)
+- SurveyBooking (leadId, preferredDate/Time, technicianId, status)
+- Technician (user + availability)
+- Quote + QuoteItem (template-driven, PDF url, accept status)
+- Customer (converted lead, portal identity)
+
+Post-sale
+- AmcContract (start, expiry, reminders, renewal link)
+- Invoice, Payment (Payment unused in MVP)
+- Ticket + TicketMessage (issue category, photo refs, ticket number, status)
+- Notification (channel, template, payload, sent/read status)
+- User (staff/customer) + Role (ADMIN, SALES, TECHNICIAN, CUSTOMER)
+
+E-commerce (Phase 5)
+- Order + OrderItem, Cart, Address
+
+Neon usage: pooled DATABASE_URL for the app, direct DIRECT_URL for migrations.
+
+---
+
+## API surface (NestJS modules)
+
+Modules: Auth, Users, Customers, Catalog, Content, Leads, Surveys,
+Quotes, Tickets, Amc, Billing, Notifications, Scheduler,
+Calculator, Analytics, Files, Prisma.
+
+Public
+```
+GET  /solutions, /solutions/:slug
+GET  /packages
+GET  /products            ?category&sort
+GET  /projects
+GET  /blog, /blog/:slug
+GET  /faqs
+POST /leads               # survey booking form
+POST /calculator/estimate
+POST /quotes/request      # "Add to quote" basket -> lead + quote draft
+POST /support/contact
+```
+
+Customer (auth)
+```
+GET/POST /me/tickets, /me/invoices, /me/quotes, /me/amc
+```
+
+Admin / staff (auth + roles)
+```
+CRUD  /admin/products|packages|projects|blog|faqs|testimonials|solutions
+GET   /admin/leads   PATCH /admin/leads/:id/status   POST /admin/leads/:id/assign
+POST  /admin/quotes  /admin/quotes/:id/send  /admin/quotes/:id/accept
+POST  /admin/surveys  (schedule + assign technician)
+GET   /admin/tickets  PATCH /admin/tickets/:id
+GET   /admin/dashboard/metrics
+```
+
+Webhooks / jobs
+```
+POST /jobs/qstash/follow-up        # QStash callback (verified signature)
+GET  /cron/daily                   # Vercel Cron -> SLA + AMC scan
+POST /webhooks/calendar
+```
+
+---
+
+## Frontend routes
+
+| Route | Purpose |
+|---|---|
+| / | Promise, "Book a Free Survey" CTA, reviews, WhatsApp float |
+| /solutions/{home,shops,offices,warehouses} | Typical camera counts + starting prices |
+| /packages | 3 tiers with inclusions + ranges |
+| /products /products/:slug | Catalog, "Add to quote" |
+| /how-it-works | 5-step process |
+| /projects | Gallery + testimonials |
+| /amc | Plans + support form |
+| /blog /blog/:slug | SEO guides (DVR vs NVR, etc.) |
+| /faq | FAQ accordion + short videos |
+| /contact | Map, hours, phone, WhatsApp, quote form |
+| /calculator | 4–5 question camera estimator |
+| /book-survey | Fast form (<60s) + thank-you screen |
+| /quote | Quote basket + request submission |
+| /login /portal/* | Customer portal (invoices, warranty, AMC, tickets) |
+| /admin/* | Protected dashboard (CRM-lite, scheduling, content) |
+
+Cross-cutting UI: global floating WhatsApp button (prefilled per page/category),
+sticky mobile CTA bar, shared LeadForm with auto-captured source (UTM / referrer / QR).
+
+---
+
+## Business flow -> feature mapping
+
+| Workflow step | Implementation |
+|---|---|
+| Arrival / attribution | source auto-filled from UTM, referrer, QR param |
+| Orientation | Solution landing pages + packages |
+| Camera calculator | Deterministic rule engine in CalculatorModule |
+| Conversion | POST /leads, <60s form, honeypot + Upstash ratelimit |
+| Instant confirmation | Thank-you screen + queued email confirmation |
+| Lead capture | Lead row tagged with source |
+| Staff alert | Email to staff (Resend) |
+| Qualification SLA | responseTime metric + overdue alert (>2h business hours) |
+| Scheduling | SurveyBooking + technician assignment + Cal.com sync |
+| Quote | Template-driven, PDF (pdf-lib), accept button (offline deposit) |
+| Order tracking | LeadStatus pipeline board in admin |
+| Lost follow-up | QStash delayed jobs at day 3 and day 14 |
+| Portal | /portal — invoices, warranty, AMC expiry, service history |
+| Support tickets | Ticket number, R2 photo upload, FAQ deflection |
+| Renewal automation | Cron scans AmcContract.expiry - 30d; renew link |
+| Review request | Post-INSTALLED trigger -> Google review link |
+| E-commerce | Phase 5: real checkout for non-quote-only items |
+
+---
+
+## Cross-cutting concerns
+
+- AuthZ: role guards; customers use email+password.
+- Security: helmet, CORS allowlist, Upstash rate limiting, Zod validation, presigned
+  uploads only, secrets in env, never publish camera views or addresses.
+- SEO: per-route SeoMeta, sitemap.xml, robots, JSON-LD (LocalBusiness + FAQ + Product).
+- Performance: mobile-first, image optimization, route-level code splitting, Lighthouse budget.
+- Privacy: privacy policy, form consent, PII handling.
+- Observability: Sentry (web + api), structured logs, uptime check on the lead endpoint.
+- CI/CD: GitHub Actions — lint, typecheck, unit, e2e, prisma migrate deploy (with DIRECT_URL), preview deploys.
+
+---
+
+## Phased roadmap
+
+| Phase | Scope | Weeks |
+|---|---|---|
+| 0 — Foundation | Monorepo, Tailwind tokens, Neon + Prisma wired, Nest serverless deploy on Vercel, CI (migrate in Actions), WhatsApp float, base layout | 1 |
+| 1 — Lead engine | Home, Solutions, Packages, Products (Add-to-quote), How It Works, Projects, Blog/FAQ, Contact; survey form + thank-you + email confirmation; staff auth + leads list + pipeline; GA4 | 2–4 |
+| 2 — Sales ops | Admin CMS, pipeline board, staff alert emails, scheduling + technician assignment, QStash follow-ups (3/14 day), dashboard metrics | 5–7 |
+| 3 — Quote + portal | Quote builder from templates + PDF, accept button, customer portal (invoices/warranty/AMC/service history) | 8–10 |
+| 4 — Post-sale | Support tickets + R2 photo upload, FAQ/video deflection, AMC renewal reminders, review request | 11–12 |
+| 5 — E-commerce + optimization | Checkout for non-quote-only items, A/B tests, SEO ramp, cost-per-lead reporting | 13+ |
+
+---
+
+## Testing strategy
+
+- Unit: Vitest (web), Jest (api) — calculator rules, quote math, status transitions.
+- API e2e: Bruno collections under /bruno, run in CI (bru run) against a
+  Neon branch database. Covers public lead capture, auth, admin pipeline, tickets.
+- Frontend components: React Testing Library for forms + calculator.
+- Full e2e: Playwright — book survey, add to quote, ticket submit, portal login.
+
+Bruno environment files: local.bru, staging.bru, prod.bru (secrets kept out of VCS).
+
+---
+
+## Metrics (built in)
+
+Visitors -> survey conversion (target 3–5%), lead response time, survey -> order
+conversion, cost per lead by channel, AMC renewal rate — computed in AnalyticsModule
+and shown on the admin dashboard.
+
+---
+
+## Open items (non-blocking for Phase 0/1)
+
+- Business name, logo, brand colors, WhatsApp number.
+- Currency + indicative package price ranges.
+- Email provider default: Resend (unless changed).
+- Vercel function region (aligned with Neon region to cut latency).

@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: postgresql://user:pass@localhost:5432/db
+      DIRECT_URL: postgresql://user:pass@localhost:5432/db
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build shared package
+        run: pnpm --filter @cctv/shared build
+
+      - name: Generate Prisma client
+        run: pnpm --filter @cctv/api prisma:generate
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Test
+        run: pnpm test
+
+      - name: Build
+        run: pnpm build
+
+  # Deploy migrations to Neon. Enable once DATABASE_URL/DIRECT_URL secrets exist.
+  # migrate:
+  #   needs: ci
+  #   if: github.ref == 'refs/heads/main'
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: pnpm/action-setup@v4
+  #       with: { version: 12 }
+  #     - uses: actions/setup-node@v4
+  #       with: { node-version: 22, cache: pnpm }
+  #     - run: pnpm install --frozen-lockfile
+  #     - run: pnpm --filter @cctv/api prisma:deploy
+  #       env:
+  #         DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  #         DIRECT_URL: ${{ secrets.DIRECT_URL }}

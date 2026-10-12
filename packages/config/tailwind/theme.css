@@ -1,0 +1,24 @@
+/*
+ * Shared design tokens (Tailwind CSS v4, CSS-first config).
+ * Import this from an app's entry stylesheet AFTER `@import "tailwindcss";`.
+ * Values are placeholders — replace with the real brand palette.
+ */
+@theme {
+  --color-brand-50: #eef6ff;
+  --color-brand-100: #d9ecff;
+  --color-brand-200: #bcdcff;
+  --color-brand-300: #8ec5ff;
+  --color-brand-400: #59a4ff;
+  --color-brand-500: #2f82f6;
+  --color-brand-600: #1a63d8;
+  --color-brand-700: #164eb0;
+  --color-brand-800: #16418b;
+  --color-brand-900: #17396f;
+  --color-brand-950: #102348;
+
+  --color-accent-500: #16a34a;
+  --color-accent-600: #15803d;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+}

@@ -1,0 +1,26 @@
+meta {
+  name: Login
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/auth/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "{{staffEmail}}",
+    "password": "{{staffPassword}}"
+  }
+}
+
+script:post-response {
+  bru.setVar("authToken", res.body.accessToken);
+}
+
+assert {
+  res.status: eq 201
+}
