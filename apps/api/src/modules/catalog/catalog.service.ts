@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 
 @Injectable()
@@ -12,8 +12,10 @@ export class CatalogService {
     });
   }
 
-  getSolution(slug: string) {
-    return this.prisma.solution.findUnique({ where: { slug } });
+  async getSolution(slug: string) {
+    const solution = await this.prisma.solution.findUnique({ where: { slug } });
+    if (!solution) throw new NotFoundException(`Solution "${slug}" not found`);
+    return solution;
   }
 
   listPackages() {
@@ -34,10 +36,12 @@ export class CatalogService {
     });
   }
 
-  getProduct(slug: string) {
-    return this.prisma.product.findUnique({
+  async getProduct(slug: string) {
+    const product = await this.prisma.product.findUnique({
       where: { slug },
       include: { category: true },
     });
+    if (!product) throw new NotFoundException(`Product "${slug}" not found`);
+    return product;
   }
 }

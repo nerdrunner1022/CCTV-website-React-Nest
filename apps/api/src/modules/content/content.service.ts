@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 
 @Injectable()
@@ -27,8 +27,10 @@ export class ContentService {
     });
   }
 
-  getBlogPost(slug: string) {
-    return this.prisma.blogPost.findUnique({ where: { slug } });
+  async getBlogPost(slug: string) {
+    const post = await this.prisma.blogPost.findUnique({ where: { slug } });
+    if (!post) throw new NotFoundException(`Blog post "${slug}" not found`);
+    return post;
   }
 
   listFaqs() {
