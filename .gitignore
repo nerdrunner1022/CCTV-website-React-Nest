@@ -31,3 +31,7 @@ apps/api/prisma/generated/
 
 # bruno secrets
 bruno/environments/*.local.bru
+.neon
+
+# local dev database (embedded postgres data dir)
+.local/
