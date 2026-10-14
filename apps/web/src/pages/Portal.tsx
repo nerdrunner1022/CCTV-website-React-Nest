@@ -19,7 +19,7 @@ export function Portal(): React.ReactNode {
   if (!token) {
     return (
       <Section>
-        <p className="text-slate-600">
+        <p className="text-muted">
           Please{' '}
           <Link to="/login" className="font-semibold text-brand-700 hover:underline">
             log in
@@ -40,9 +40,9 @@ export function Portal(): React.ReactNode {
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {CARDS.map((card) => (
           <Card key={card.title}>
-            <h3 className="font-semibold text-slate-900">{card.title}</h3>
-            <p className="mt-2 text-sm text-slate-600">{card.text}</p>
-            <p className="mt-4 text-xs text-slate-400">Coming in Phase 3</p>
+            <h3 className="font-semibold text-fg">{card.title}</h3>
+            <p className="mt-2 text-sm text-muted">{card.text}</p>
+            <p className="mt-4 text-xs text-subtle">Coming in Phase 3</p>
           </Card>
         ))}
       </div>

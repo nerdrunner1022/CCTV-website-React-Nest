@@ -4,10 +4,15 @@ import {
   Get,
   Param,
   Patch,
+  Post,
   Query,
   UseGuards,
 } from '@nestjs/common';
-import { leadListQuerySchema, updateLeadStatusSchema } from '@cctv/shared';
+import {
+  assignLeadSchema,
+  leadListQuerySchema,
+  updateLeadStatusSchema,
+} from '@cctv/shared';
 import { Roles } from '../auth/decorators/roles.decorator';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { RolesGuard } from '../auth/guards/roles.guard';
@@ -25,8 +30,18 @@ export class AdminLeadsController {
     return this.leadsService.list(leadListQuerySchema.parse(query));
   }
 
+  @Get(':id')
+  get(@Param('id') id: string) {
+    return this.leadsService.get(id);
+  }
+
   @Patch(':id/status')
   updateStatus(@Param('id') id: string, @Body() body: unknown) {
     return this.leadsService.updateStatus(id, updateLeadStatusSchema.parse(body));
+  }
+
+  @Post(':id/assign')
+  assign(@Param('id') id: string, @Body() body: unknown) {
+    return this.leadsService.assign(id, assignLeadSchema.parse(body));
   }
 }

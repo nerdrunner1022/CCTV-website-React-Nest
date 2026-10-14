@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { Link, useParams } from 'react-router-dom';
 import { LeadForm } from '../components/LeadForm';
+import { ImageSlot } from '../components/ui/ImageSlot';
 import { Section, SectionHeading } from '../components/ui/Layout';
 import { apiFetch } from '../lib/api';
 
@@ -10,6 +11,7 @@ interface Solution {
   title: string;
   summary: string | null;
   body: string | null;
+  image: string | null;
   typicalCameras: string | null;
   startingPrice: string | null;
 }
@@ -32,15 +34,22 @@ export function SolutionsIndex(): React.ReactNode {
           <Link
             key={solution.id}
             to={`/solutions/${solution.slug}`}
-            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-brand-300"
+            className="flex flex-col overflow-hidden rounded-2xl border border-line bg-surface transition hover:border-brand-300"
           >
-            <h3 className="text-lg font-semibold text-slate-900">
-              {solution.title}
-            </h3>
-            <p className="mt-2 text-sm text-slate-600">{solution.summary}</p>
-            <p className="mt-3 text-sm font-medium text-slate-700">
-              {solution.typicalCameras}
-            </p>
+            <ImageSlot
+              src={solution.image}
+              alt={solution.title}
+              className="aspect-[16/9] w-full"
+            />
+            <div className="p-6">
+              <h3 className="text-lg font-semibold text-fg">
+                {solution.title}
+              </h3>
+              <p className="mt-2 text-sm text-muted">{solution.summary}</p>
+              <p className="mt-3 text-sm font-medium text-fg-soft">
+                {solution.typicalCameras}
+              </p>
+            </div>
           </Link>
         ))}
       </div>
@@ -66,14 +75,14 @@ export function SolutionDetail(): React.ReactNode {
           <p className="text-sm font-semibold uppercase tracking-wide text-brand-600">
             Solution
           </p>
-          <h1 className="mt-2 text-3xl font-extrabold text-slate-900 sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-semibold text-fg sm:text-4xl">
             {data?.title ?? 'CCTV solution'}
           </h1>
-          <p className="mt-3 max-w-2xl text-slate-600">
+          <p className="mt-3 max-w-2xl text-muted">
             {data?.summary ??
               'A tailored system, confirmed by a free survey before you commit.'}
           </p>
-          <div className="mt-4 flex gap-6 text-sm text-slate-700">
+          <div className="mt-4 flex gap-6 text-sm text-fg-soft">
             {data?.typicalCameras ? <span>{data.typicalCameras}</span> : null}
             {data?.startingPrice ? (
               <span className="font-semibold text-brand-700">
@@ -86,19 +95,27 @@ export function SolutionDetail(): React.ReactNode {
 
       <Section>
         <div className="grid gap-10 lg:grid-cols-2">
-          <div className="prose max-w-none text-slate-600">
-            {data?.body ? (
-              <div dangerouslySetInnerHTML={{ __html: data.body }} />
-            ) : (
-              <p>
-                We cover entrances, key walkways, and storage areas, then set up
-                remote viewing on your phone. The free survey confirms camera
-                counts and cable routes so the final quote is accurate.
-              </p>
-            )}
+          <div>
+            <ImageSlot
+              src={data?.image}
+              alt={data?.title ?? 'CCTV solution'}
+              hint={`/images/solutions/${slug}.jpg`}
+              className="mb-6 aspect-[16/9] w-full rounded-2xl"
+            />
+            <div className="prose max-w-none text-muted">
+              {data?.body ? (
+                <div dangerouslySetInnerHTML={{ __html: data.body }} />
+              ) : (
+                <p>
+                  We cover entrances, key walkways, and storage areas, then set
+                  up remote viewing on your phone. The free survey confirms
+                  camera counts and cable routes so the final quote is accurate.
+                </p>
+              )}
+            </div>
           </div>
           <div>
-            <h2 className="mb-4 text-xl font-bold text-slate-900">
+            <h2 className="mb-4 text-xl font-bold text-fg">
               Book a free survey
             </h2>
             <LeadForm />

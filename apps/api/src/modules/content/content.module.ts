@@ -1,4 +1,6 @@
 import { Module } from '@nestjs/common';
+import { AdminContentController } from './admin-content.controller';
+import { AdminContentService } from './admin-content.service';
 import {
   BlogController,
   FaqController,
@@ -13,8 +15,9 @@ import { ContentService } from './content.service';
     TestimonialsController,
     BlogController,
     FaqController,
+    AdminContentController,
   ],
-  providers: [ContentService],
-  exports: [ContentService],
+  providers: [ContentService, AdminContentService],
+  exports: [ContentService, AdminContentService],
 })
 export class ContentModule {}

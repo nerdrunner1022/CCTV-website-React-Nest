@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Package" ADD COLUMN     "image" TEXT;

@@ -6,8 +6,8 @@ type Size = 'sm' | 'md' | 'lg';
 
 const VARIANTS: Record<Variant, string> = {
   primary: 'bg-brand-600 text-white hover:bg-brand-700',
-  secondary: 'bg-white text-brand-700 ring-1 ring-brand-200 hover:bg-brand-50',
-  whatsapp: 'bg-accent-500 text-white hover:bg-accent-600',
+  secondary: 'bg-surface text-brand-700 ring-1 ring-brand-200 hover:bg-brand-50',
+  whatsapp: 'bg-accent-600 text-white hover:bg-accent-700',
   ghost: 'text-brand-700 hover:bg-brand-50',
 };
 
@@ -23,7 +23,7 @@ export function buttonClasses(
   className = '',
 ): string {
   return [
-    'inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition',
+    'inline-flex items-center justify-center gap-2 rounded-lg font-sans font-semibold transition',
     'focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 disabled:opacity-50',
     VARIANTS[variant],
     SIZES[size],

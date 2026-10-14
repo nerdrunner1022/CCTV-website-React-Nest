@@ -25,10 +25,10 @@ export function Quote(): React.ReactNode {
 
       <div className="grid gap-10 lg:grid-cols-2">
         <div>
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-            <h3 className="font-semibold text-slate-900">Your items</h3>
+          <div className="rounded-2xl border border-line bg-surface p-6">
+            <h3 className="font-semibold text-fg">Your items</h3>
             {items.length === 0 ? (
-              <p className="mt-3 text-sm text-slate-500">
+              <p className="mt-3 text-sm text-subtle">
                 Nothing added yet.{' '}
                 <Link
                   to="/products"
@@ -39,20 +39,20 @@ export function Quote(): React.ReactNode {
                 .
               </p>
             ) : (
-              <ul className="mt-4 divide-y divide-slate-100">
+              <ul className="mt-4 divide-y divide-line">
                 {items.map((item) => (
                   <li
                     key={item.productId}
                     className="flex items-center justify-between py-3 text-sm"
                   >
-                    <span className="text-slate-700">
+                    <span className="text-fg-soft">
                       {item.name}{' '}
-                      <span className="text-slate-400">× {item.quantity}</span>
+                      <span className="text-subtle">× {item.quantity}</span>
                     </span>
                     <button
                       type="button"
                       onClick={() => remove(item.productId)}
-                      className="text-red-600 hover:underline"
+                      className="text-red-400 hover:underline"
                     >
                       Remove
                     </button>
@@ -69,7 +69,7 @@ export function Quote(): React.ReactNode {
         </div>
 
         <div>
-          <h3 className="mb-4 text-lg font-semibold text-slate-900">
+          <h3 className="mb-4 text-lg font-semibold text-fg">
             Your details
           </h3>
           <LeadForm defaultNote={note} />

@@ -8,7 +8,7 @@ export function WhatsAppButton(): React.ReactNode {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-20 right-4 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent-500 text-2xl text-white shadow-lg transition hover:bg-accent-600 md:bottom-6"
+      className="fixed bottom-20 right-4 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent-600 text-2xl text-white shadow-lg transition hover:bg-accent-700 md:bottom-6"
     >
       <span aria-hidden>💬</span>
     </a>

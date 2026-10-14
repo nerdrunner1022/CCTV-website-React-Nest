@@ -10,7 +10,10 @@ export function Section({
   id?: string;
 }): ReactNode {
   return (
-    <section id={id} className={`mx-auto w-full max-w-6xl px-4 py-16 ${className}`}>
+    <section
+      id={id}
+      className={`mx-auto w-full max-w-6xl px-4 py-20 sm:py-24 ${className}`}
+    >
       {children}
     </section>
   );
@@ -32,9 +35,11 @@ export function SectionHeading({
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">{title}</h2>
+      <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
+        {title}
+      </h2>
       {description ? (
-        <p className="mt-3 text-slate-600">{description}</p>
+        <p className="mt-4 text-lg text-muted">{description}</p>
       ) : null}
     </div>
   );
@@ -43,13 +48,16 @@ export function SectionHeading({
 export function Card({
   children,
   className = '',
+  flush = false,
 }: {
   children: ReactNode;
   className?: string;
+  /** Remove the default padding — useful when a card leads with a full-bleed image. */
+  flush?: boolean;
 }): ReactNode {
   return (
     <div
-      className={`rounded-2xl border border-slate-200 bg-white p-6 shadow-sm ${className}`}
+      className={`rounded-2xl border border-line bg-surface ${flush ? '' : 'p-6'} ${className}`}
     >
       {children}
     </div>

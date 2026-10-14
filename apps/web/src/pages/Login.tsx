@@ -38,17 +38,17 @@ export function Login(): React.ReactNode {
   return (
     <Section>
       <div className="mx-auto max-w-md">
-        <h1 className="text-2xl font-extrabold text-slate-900">
+        <h1 className="text-2xl font-semibold text-fg">
           Log in to your account
         </h1>
-        <p className="mt-2 text-sm text-slate-600">
+        <p className="mt-2 text-sm text-muted">
           Customers can view invoices, warranty, and AMC details. Staff can
           manage leads.
         </p>
 
         <form onSubmit={onSubmit} className="mt-6 space-y-4">
           <label className="block">
-            <span className="mb-1 block text-sm font-medium text-slate-700">
+            <span className="mb-1 block text-sm font-medium text-fg-soft">
               Email
             </span>
             <input
@@ -62,7 +62,7 @@ export function Login(): React.ReactNode {
           </label>
 
           <label className="block">
-            <span className="mb-1 block text-sm font-medium text-slate-700">
+            <span className="mb-1 block text-sm font-medium text-fg-soft">
               Password
             </span>
             <input
@@ -76,7 +76,7 @@ export function Login(): React.ReactNode {
           </label>
 
           {error ? (
-            <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">
+            <p className="rounded-lg bg-red-500/10 px-3 py-2 text-sm text-red-300">
               {error}
             </p>
           ) : null}
@@ -91,4 +91,4 @@ export function Login(): React.ReactNode {
 }
 
 const inputClass =
-  'w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500';
+  'w-full rounded-lg border border-line-strong bg-navy/60 px-3 py-2 text-sm text-fg placeholder:text-subtle outline-none transition focus:border-brand-500 focus:ring-1 focus:ring-brand-500 [color-scheme:dark]';

@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { Link, useParams } from 'react-router-dom';
+import { ImageSlot } from '../components/ui/ImageSlot';
 import { Section, SectionHeading } from '../components/ui/Layout';
 import { apiFetch } from '../lib/api';
 
@@ -8,6 +9,7 @@ interface BlogPostSummary {
   title: string;
   slug: string;
   excerpt: string | null;
+  coverImage: string | null;
   publishedAt: string | null;
 }
 
@@ -29,26 +31,33 @@ export function Blog(): React.ReactNode {
         {(posts.data ?? []).map((post) => (
           <article
             key={post.id}
-            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+            className="flex flex-col overflow-hidden rounded-2xl border border-line bg-surface"
           >
-            <h2 className="text-lg font-semibold text-slate-900">
-              <Link to={`/blog/${post.slug}`} className="hover:text-brand-700">
-                {post.title}
+            <ImageSlot
+              src={post.coverImage}
+              alt={post.title}
+              className="aspect-[16/9] w-full"
+            />
+            <div className="flex flex-1 flex-col p-6">
+              <h2 className="text-lg font-semibold text-fg">
+                <Link to={`/blog/${post.slug}`} className="hover:text-brand-700">
+                  {post.title}
+                </Link>
+              </h2>
+              {post.excerpt ? (
+                <p className="mt-2 flex-1 text-sm text-muted">{post.excerpt}</p>
+              ) : null}
+              <Link
+                to={`/blog/${post.slug}`}
+                className="mt-4 inline-block text-sm font-semibold text-brand-700 hover:underline"
+              >
+                Read more →
               </Link>
-            </h2>
-            {post.excerpt ? (
-              <p className="mt-2 text-sm text-slate-600">{post.excerpt}</p>
-            ) : null}
-            <Link
-              to={`/blog/${post.slug}`}
-              className="mt-4 inline-block text-sm font-semibold text-brand-700 hover:underline"
-            >
-              Read more →
-            </Link>
+            </div>
           </article>
         ))}
         {(posts.data ?? []).length === 0 ? (
-          <p className="text-slate-500">No posts published yet.</p>
+          <p className="text-subtle">No posts published yet.</p>
         ) : null}
       </div>
     </Section>
@@ -74,10 +83,15 @@ export function BlogPost(): React.ReactNode {
   return (
     <Section>
       <article className="mx-auto max-w-3xl">
-        <h1 className="text-3xl font-extrabold text-slate-900">
+        <ImageSlot
+          src={post.data.coverImage}
+          alt={post.data.title}
+          className="mb-8 aspect-[16/9] w-full rounded-2xl"
+        />
+        <h1 className="text-3xl font-semibold text-fg">
           {post.data.title}
         </h1>
-        <div className="prose mt-6 max-w-none text-slate-600">
+        <div className="prose mt-6 max-w-none text-muted">
           <div dangerouslySetInnerHTML={{ __html: post.data.body }} />
         </div>
       </article>

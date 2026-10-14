@@ -344,6 +344,7 @@ model Package {
   slug        String   @unique
   tier        String   @default("RECOMMENDED")
   summary     String?
+  image       String?
   features    String[]
   cameraCount Int?
   priceMin    Decimal? @db.Decimal(12, 2)

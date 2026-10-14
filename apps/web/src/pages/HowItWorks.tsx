@@ -37,12 +37,12 @@ export function HowItWorks(): React.ReactNode {
         {STEPS.map((step) => (
           <li
             key={step.title}
-            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+            className="rounded-2xl border border-line bg-surface p-6"
           >
             <h3 className="text-lg font-semibold text-brand-700">
               {step.title}
             </h3>
-            <p className="mt-2 text-slate-600">{step.text}</p>
+            <p className="mt-2 text-muted">{step.text}</p>
           </li>
         ))}
       </ol>

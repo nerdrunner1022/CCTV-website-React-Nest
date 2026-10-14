@@ -33,11 +33,11 @@ export function Amc(): React.ReactNode {
         <div className="grid gap-6 lg:grid-cols-2">
           {PLANS.map((plan) => (
             <Card key={plan.name}>
-              <h3 className="text-lg font-semibold text-slate-900">
+              <h3 className="text-lg font-semibold text-fg">
                 {plan.name}
               </h3>
-              <p className="mt-1 text-sm text-slate-500">{plan.price}</p>
-              <ul className="mt-4 space-y-2 text-sm text-slate-600">
+              <p className="mt-1 text-sm text-subtle">{plan.price}</p>
+              <ul className="mt-4 space-y-2 text-sm text-muted">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex gap-2">
                     <span aria-hidden className="text-accent-500">
@@ -51,9 +51,9 @@ export function Amc(): React.ReactNode {
           ))}
         </div>
 
-        <div className="mt-8 rounded-2xl bg-slate-50 p-6">
-          <h3 className="font-semibold text-slate-900">Need help now?</h3>
-          <p className="mt-1 text-sm text-slate-600">
+        <div className="mt-8 rounded-2xl bg-surface-2 p-6">
+          <h3 className="font-semibold text-fg">Need help now?</h3>
+          <p className="mt-1 text-sm text-muted">
             Existing customers can raise a support ticket from the portal, or
             message us directly. Ticket numbers are tracked end to end.
           </p>
@@ -68,7 +68,7 @@ export function Amc(): React.ReactNode {
         </div>
       </Section>
 
-      <Section className="bg-slate-50">
+      <Section className="bg-surface-2">
         <SectionHeading
           eyebrow="Talk to us"
           title="Request support or an AMC quote"

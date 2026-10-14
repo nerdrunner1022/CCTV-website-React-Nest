@@ -44,9 +44,17 @@ export const updateLeadStatusSchema = z.object({
 });
 export type UpdateLeadStatusInput = z.infer<typeof updateLeadStatusSchema>;
 
+export const assignLeadSchema = z.object({
+  /** `null` unassigns the lead. */
+  assignedToId: z.string().trim().min(1).nullable(),
+  note: z.string().trim().max(500).optional(),
+});
+export type AssignLeadInput = z.infer<typeof assignLeadSchema>;
+
 export const leadListQuerySchema = z.object({
   status: z.string().optional(),
   source: z.string().optional(),
+  assignedToId: z.string().optional(),
   q: z.string().trim().optional(),
   page: z.coerce.number().int().min(1).default(1),
   pageSize: z.coerce.number().int().min(1).max(100).default(20),

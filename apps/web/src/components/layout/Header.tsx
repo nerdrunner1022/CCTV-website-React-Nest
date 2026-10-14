@@ -17,9 +17,9 @@ export function Header(): React.ReactNode {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-line bg-navy/90 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3">
-        <Link to="/" className="flex items-center gap-2 font-bold text-slate-900">
+        <Link to="/" className="flex items-center gap-2 font-bold text-fg">
           <span aria-hidden className="text-2xl">
             📹
           </span>
@@ -32,7 +32,7 @@ export function Header(): React.ReactNode {
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `text-sm font-medium ${isActive ? 'text-brand-700' : 'text-slate-600 hover:text-slate-900'}`
+                `text-sm font-medium ${isActive ? 'text-brand-700' : 'text-muted hover:text-fg'}`
               }
             >
               {link.label}
@@ -48,7 +48,7 @@ export function Header(): React.ReactNode {
 
         <button
           type="button"
-          className="rounded-md p-2 text-slate-700 lg:hidden"
+          className="rounded-md p-2 text-fg-soft lg:hidden"
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
@@ -58,14 +58,14 @@ export function Header(): React.ReactNode {
       </div>
 
       {open ? (
-        <div className="border-t border-slate-200 bg-white lg:hidden">
+        <div className="border-t border-line bg-surface lg:hidden">
           <nav className="mx-auto flex w-full max-w-6xl flex-col px-4 py-2">
             {NAV_LINKS.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
                 onClick={() => setOpen(false)}
-                className="border-b border-slate-100 py-3 text-sm font-medium text-slate-700 last:border-none"
+                className="border-b border-line py-3 text-sm font-medium text-fg-soft last:border-none"
               >
                 {link.label}
               </NavLink>

@@ -4,10 +4,10 @@ import { whatsAppLink } from '../lib/whatsapp';
 /** Sticky mobile call-to-action bar. */
 export function MobileCta(): React.ReactNode {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 border-t border-slate-200 bg-white text-xs font-semibold md:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 border-t border-line bg-surface text-xs font-semibold md:hidden">
       <a
         href="tel:+10000000000"
-        className="flex flex-col items-center gap-1 py-3 text-slate-700"
+        className="flex flex-col items-center gap-1 py-3 text-fg-soft"
       >
         <span aria-hidden>📞</span>
         Call

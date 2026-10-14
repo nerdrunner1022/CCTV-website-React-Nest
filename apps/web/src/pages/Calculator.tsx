@@ -55,7 +55,7 @@ export function Calculator(): React.ReactNode {
         <Card>
           <div className="space-y-5">
             <label className="block">
-              <span className="mb-1 block text-sm font-medium text-slate-700">
+              <span className="mb-1 block text-sm font-medium text-fg-soft">
                 Property type
               </span>
               <select
@@ -78,7 +78,7 @@ export function Calculator(): React.ReactNode {
             </label>
 
             <label className="block">
-              <span className="mb-1 block text-sm font-medium text-slate-700">
+              <span className="mb-1 block text-sm font-medium text-fg-soft">
                 Number of entrances / key areas ({form.entrances})
               </span>
               <input
@@ -97,7 +97,7 @@ export function Calculator(): React.ReactNode {
             </label>
 
             <label className="block">
-              <span className="mb-1 block text-sm font-medium text-slate-700">
+              <span className="mb-1 block text-sm font-medium text-fg-soft">
                 Coverage
               </span>
               <select
@@ -117,7 +117,7 @@ export function Calculator(): React.ReactNode {
             </label>
 
             <label className="block">
-              <span className="mb-1 block text-sm font-medium text-slate-700">
+              <span className="mb-1 block text-sm font-medium text-fg-soft">
                 Budget
               </span>
               <select
@@ -137,7 +137,7 @@ export function Calculator(): React.ReactNode {
               </select>
             </label>
 
-            <label className="flex items-center gap-2 text-sm text-slate-700">
+            <label className="flex items-center gap-2 text-sm text-fg-soft">
               <input
                 type="checkbox"
                 checked={form.existingCameras}
@@ -164,14 +164,14 @@ export function Calculator(): React.ReactNode {
 
         <div>
           {estimate.data ? (
-            <Card className="bg-brand-50">
+            <Card className="ring-1 ring-brand-600/50">
               <p className="text-sm font-semibold uppercase tracking-wide text-brand-600">
                 Suggested
               </p>
-              <h3 className="mt-1 text-2xl font-bold text-slate-900">
+              <h3 className="mt-1 text-2xl font-bold text-fg">
                 {estimate.data.suggestedPackage}
               </h3>
-              <p className="mt-3 text-slate-700">
+              <p className="mt-3 text-fg-soft">
                 About{' '}
                 <strong>{estimate.data.cameraCount} cameras</strong> · indicative
                 price{' '}
@@ -180,7 +180,7 @@ export function Calculator(): React.ReactNode {
                   {estimate.data.priceMax.toLocaleString()}
                 </strong>
               </p>
-              <ul className="mt-4 space-y-2 text-sm text-slate-600">
+              <ul className="mt-4 space-y-2 text-sm text-muted">
                 {estimate.data.rationale.map((line) => (
                   <li key={line}>• {line}</li>
                 ))}
@@ -190,7 +190,7 @@ export function Calculator(): React.ReactNode {
               </LinkButton>
             </Card>
           ) : (
-            <div className="flex h-full items-center justify-center rounded-2xl border border-dashed border-slate-300 p-8 text-center text-slate-500">
+            <div className="flex h-full items-center justify-center rounded-2xl border border-dashed border-line-strong p-8 text-center text-subtle">
               Your estimate will appear here.
             </div>
           )}
@@ -201,4 +201,4 @@ export function Calculator(): React.ReactNode {
 }
 
 const inputClass =
-  'w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500';
+  'w-full rounded-lg border border-line-strong bg-navy/60 px-3 py-2 text-sm text-fg placeholder:text-subtle outline-none transition focus:border-brand-500 focus:ring-1 focus:ring-brand-500 [color-scheme:dark]';

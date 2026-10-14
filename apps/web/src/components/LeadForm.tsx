@@ -73,10 +73,10 @@ export function LeadForm({
         <p className="text-3xl" aria-hidden>
           ✅
         </p>
-        <h3 className="mt-3 text-xl font-bold text-slate-900">
+        <h3 className="mt-3 text-xl font-bold text-fg">
           Request received
         </h3>
-        <p className="mt-2 text-slate-600">
+        <p className="mt-2 text-muted">
           We&apos;ve received your request — a technician will confirm within 2
           hours during business hours.
         </p>
@@ -96,7 +96,7 @@ export function LeadForm({
     <form
       onSubmit={onSubmit}
       noValidate
-      className="grid gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:grid-cols-2"
+      className="grid gap-4 rounded-2xl border border-line bg-surface p-6 sm:grid-cols-2"
     >
       <Field label="Name" error={errors.name?.message}>
         <input
@@ -181,7 +181,7 @@ export function LeadForm({
       />
 
       {serverError ? (
-        <p className="sm:col-span-2 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">
+        <p className="sm:col-span-2 rounded-lg bg-red-500/10 px-3 py-2 text-sm text-red-300">
           {serverError}
         </p>
       ) : null}
@@ -190,7 +190,7 @@ export function LeadForm({
         <Button type="submit" size="lg" disabled={isSubmitting} className="w-full">
           {isSubmitting ? 'Sending…' : 'Book my free survey'}
         </Button>
-        <p className="mt-2 text-center text-xs text-slate-500">
+        <p className="mt-2 text-center text-xs text-subtle">
           Takes under a minute. No obligation, no pushy sales.
         </p>
       </div>
@@ -199,7 +199,7 @@ export function LeadForm({
 }
 
 const inputClass =
-  'w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500';
+  'w-full rounded-lg border border-line-strong bg-navy/60 px-3 py-2 text-sm text-fg placeholder:text-subtle outline-none transition focus:border-brand-500 focus:ring-1 focus:ring-brand-500 [color-scheme:dark]';
 
 function Field({
   label,
@@ -214,12 +214,12 @@ function Field({
 }): React.ReactNode {
   return (
     <label className={`block ${className}`}>
-      <span className="mb-1 block text-sm font-medium text-slate-700">
+      <span className="mb-1 block text-sm font-medium text-fg-soft">
         {label}
       </span>
       {children}
       {error ? (
-        <span className="mt-1 block text-xs text-red-600">{error}</span>
+        <span className="mt-1 block text-xs text-red-400">{error}</span>
       ) : null}
     </label>
   );

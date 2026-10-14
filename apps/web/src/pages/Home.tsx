@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 import { LeadForm } from '../components/LeadForm';
 import { LinkButton } from '../components/ui/Button';
+import { ImageSlot } from '../components/ui/ImageSlot';
 import { Badge, Card, Section, SectionHeading } from '../components/ui/Layout';
 import { apiFetch } from '../lib/api';
 import { whatsAppLink } from '../lib/whatsapp';
@@ -11,6 +12,7 @@ interface Solution {
   slug: string;
   title: string;
   summary: string | null;
+  image: string | null;
   typicalCameras: string | null;
   startingPrice: string | null;
 }
@@ -45,37 +47,45 @@ export function Home(): React.ReactNode {
   return (
     <>
       {/* Hero */}
-      <div className="bg-gradient-to-b from-brand-50 to-white">
-        <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-4 py-16 lg:grid-cols-2 lg:py-20">
+      <div className="relative overflow-hidden border-b border-line bg-navy">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-40 -right-24 h-96 w-96 rounded-full bg-brand-600/20 blur-[120px]"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-brand-700/10 blur-[120px]"
+        />
+        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-4 py-20 lg:grid-cols-2 lg:py-28">
           <div>
-            <Badge>Free site survey · Local team</Badge>
-            <h1 className="mt-4 text-3xl font-extrabold leading-tight text-slate-900 sm:text-5xl">
-              Free site survey, professional installation, local support.
+            <Badge>Cameras · Kits · Professional installation</Badge>
+            <h1 className="mt-4 text-4xl leading-tight text-fg sm:text-5xl lg:text-6xl">
+              CCTV cameras and kits, installed by local experts.
             </h1>
-            <p className="mt-4 max-w-xl text-slate-600">
-              Tell us about your home, shop, or office. We survey for free and
-              give you a clear fixed-price quote before any work starts.
+            <p className="mt-4 max-w-xl text-muted">
+              Browse cameras, recorders and ready-to-go kits, book a free site
+              survey, and get a clear fixed-price quote before any work starts.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <LinkButton to="/book-survey" size="lg">
                 Book a Free Survey
               </LinkButton>
-              <a
-                href={whatsAppLink('Hi, I would like to book a free CCTV survey.')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg bg-accent-500 px-6 py-4 font-semibold text-white hover:bg-accent-600"
-              >
-                <span aria-hidden>💬</span> Chat on WhatsApp
-              </a>
+              <LinkButton to="/products" variant="secondary" size="lg">
+                Browse the shop
+              </LinkButton>
             </div>
-            <p className="mt-4 text-sm text-slate-500">
-              Confirmation within 2 hours in business hours.
+            <p className="mt-4 text-sm text-subtle">
+              Free survey · Confirmation within 2 hours in business hours.
             </p>
           </div>
 
           <div>
-            <LeadForm />
+            <ImageSlot
+              src="/images/hero.jpg"
+              alt="CCTV cameras and installation"
+              hint="Hero image — /images/hero.jpg"
+              className="aspect-[4/3] w-full rounded-3xl"
+            />
           </div>
         </div>
       </div>
@@ -89,32 +99,45 @@ export function Home(): React.ReactNode {
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {(solutions.data ?? []).map((solution) => (
-            <Card key={solution.id}>
-              <h3 className="text-lg font-semibold text-slate-900">
-                {solution.title}
-              </h3>
-              <p className="mt-2 text-sm text-slate-600">{solution.summary}</p>
-              <p className="mt-4 text-sm font-medium text-slate-700">
-                {solution.typicalCameras}
-              </p>
-              {solution.startingPrice ? (
-                <p className="mt-1 text-brand-700">
-                  from ${Number(solution.startingPrice).toLocaleString()}
+            <Card
+              key={solution.id}
+              flush
+              className="flex flex-col overflow-hidden"
+            >
+              <ImageSlot
+                src={solution.image}
+                alt={solution.title}
+                className="aspect-[4/3] w-full"
+              />
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="text-lg font-semibold text-fg">
+                  {solution.title}
+                </h3>
+                <p className="mt-2 flex-1 text-sm text-muted">
+                  {solution.summary}
                 </p>
-              ) : null}
-              <Link
-                to={`/solutions/${solution.slug}`}
-                className="mt-4 inline-block text-sm font-semibold text-brand-700 hover:underline"
-              >
-                View solution →
-              </Link>
+                <p className="mt-4 text-sm font-medium text-fg-soft">
+                  {solution.typicalCameras}
+                </p>
+                {solution.startingPrice ? (
+                  <p className="mt-1 text-brand-700">
+                    from ${Number(solution.startingPrice).toLocaleString()}
+                  </p>
+                ) : null}
+                <Link
+                  to={`/solutions/${solution.slug}`}
+                  className="mt-4 inline-block text-sm font-semibold text-brand-700 hover:underline"
+                >
+                  View solution →
+                </Link>
+              </div>
             </Card>
           ))}
         </div>
       </Section>
 
       {/* How it works */}
-      <Section className="bg-slate-50">
+      <Section className="bg-surface-2">
         <SectionHeading
           eyebrow="Simple process"
           title="How it works"
@@ -122,12 +145,12 @@ export function Home(): React.ReactNode {
         />
         <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {STEPS.map((step, index) => (
-            <li key={step.title} className="rounded-2xl bg-white p-5 shadow-sm">
+            <li key={step.title} className="rounded-2xl border border-line bg-surface p-5">
               <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand-600 font-bold text-white">
                 {index + 1}
               </span>
-              <h3 className="mt-3 font-semibold text-slate-900">{step.title}</h3>
-              <p className="mt-1 text-sm text-slate-600">{step.text}</p>
+              <h3 className="mt-3 font-semibold text-fg">{step.title}</h3>
+              <p className="mt-1 text-sm text-muted">{step.text}</p>
             </li>
           ))}
         </ol>
@@ -135,12 +158,12 @@ export function Home(): React.ReactNode {
 
       {/* Calculator teaser */}
       <Section>
-        <div className="grid items-center gap-8 rounded-3xl bg-brand-700 p-8 text-white sm:p-12 lg:grid-cols-2">
+        <div className="grid items-center gap-8 overflow-hidden rounded-3xl bg-gradient-to-br from-brand-600 to-brand-500 p-8 text-fg-strong sm:p-12 lg:grid-cols-2">
           <div>
-            <h2 className="text-2xl font-bold sm:text-3xl">
+            <h2 className="text-2xl font-semibold sm:text-3xl">
               Not sure how many cameras you need?
             </h2>
-            <p className="mt-3 text-brand-100">
+            <p className="mt-3 text-fg-strong/85">
               Answer 4 quick questions and get an instant suggested package and
               rough price.
             </p>
@@ -155,7 +178,7 @@ export function Home(): React.ReactNode {
 
       {/* Testimonials */}
       {(testimonials.data ?? []).length > 0 ? (
-        <Section className="bg-slate-50">
+        <Section className="bg-surface-2">
           <SectionHeading eyebrow="Reviews" title="What customers say" />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {(testimonials.data ?? []).map((testimonial) => (
@@ -163,11 +186,11 @@ export function Home(): React.ReactNode {
                 <p className="text-amber-500" aria-hidden>
                   {'★'.repeat(testimonial.rating ?? 5)}
                 </p>
-                <p className="mt-3 text-slate-700">“{testimonial.quote}”</p>
-                <p className="mt-4 text-sm font-semibold text-slate-900">
+                <p className="mt-3 text-fg-soft">“{testimonial.quote}”</p>
+                <p className="mt-4 text-sm font-semibold text-fg">
                   {testimonial.author}
                   {testimonial.role ? (
-                    <span className="font-normal text-slate-500">
+                    <span className="font-normal text-subtle">
                       {' '}
                       · {testimonial.role}
                     </span>
@@ -179,21 +202,48 @@ export function Home(): React.ReactNode {
         </Section>
       ) : null}
 
-      {/* Final CTA */}
-      <Section>
-        <div className="rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm sm:p-12">
-          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
-            Ready for peace of mind?
-          </h2>
-          <p className="mx-auto mt-3 max-w-xl text-slate-600">
-            Book your free survey today — a technician will confirm within 2
-            hours in business hours.
-          </p>
-          <div className="mt-6 flex justify-center">
-            <LinkButton to="/book-survey" size="lg">
-              Book a Free Survey
-            </LinkButton>
+      {/* Book my free survey */}
+      <Section id="book-survey" className="bg-surface-2">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+          <div>
+            <SectionHeading
+              eyebrow="Free · No obligation"
+              title="Book my free survey"
+              description="Tell us where you are and what you'd like covered. A technician visits, checks the angles and cable routes, and sends a clear fixed-price quote — usually within 1 working day."
+            />
+            <ul className="space-y-3 text-sm text-muted">
+              <li className="flex gap-2">
+                <span aria-hidden className="text-accent-500">✓</span>
+                A written fixed-price quote — no surprises
+              </li>
+              <li className="flex gap-2">
+                <span aria-hidden className="text-accent-500">✓</span>
+                Tidy, professional installation at a time that suits you
+              </li>
+              <li className="flex gap-2">
+                <span aria-hidden className="text-accent-500">✓</span>
+                Phone viewing set up and explained before we leave
+              </li>
+              <li className="flex gap-2">
+                <span aria-hidden className="text-accent-500">✓</span>
+                Local support and an optional maintenance plan
+              </li>
+            </ul>
+            <p className="mt-6 text-sm text-subtle">
+              Prefer to chat first?{' '}
+              <a
+                href={whatsAppLink('Hi, I would like to book a free CCTV survey.')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-accent-600 hover:underline"
+              >
+                Message us on WhatsApp
+              </a>
+              .
+            </p>
           </div>
+
+          <LeadForm />
         </div>
       </Section>
     </>

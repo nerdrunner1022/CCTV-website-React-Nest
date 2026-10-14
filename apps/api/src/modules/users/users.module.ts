@@ -1,8 +1,10 @@
 import { Module } from '@nestjs/common';
+import { AdminUsersController } from './admin-users.controller';
+import { UsersService } from './users.service';
 
-/**
- * Scaffolded in Phase 0. Business logic lands in a later phase
- * (see .opencode/plan for the roadmap).
- */
-@Module({})
+@Module({
+  controllers: [AdminUsersController],
+  providers: [UsersService],
+  exports: [UsersService],
+})
 export class UsersModule {}

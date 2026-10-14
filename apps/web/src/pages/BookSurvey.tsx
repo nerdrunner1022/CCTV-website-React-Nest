@@ -8,10 +8,10 @@ export function BookSurvey(): React.ReactNode {
         <p className="text-sm font-semibold uppercase tracking-wide text-brand-600">
           Free site survey
         </p>
-        <h1 className="mt-2 text-3xl font-extrabold text-slate-900">
+        <h1 className="mt-2 text-3xl font-semibold text-fg">
           Book your free survey
         </h1>
-        <p className="mt-3 text-slate-600">
+        <p className="mt-3 text-muted">
           Fill this in and a technician will confirm within 2 hours during
           business hours. It takes under a minute.
         </p>

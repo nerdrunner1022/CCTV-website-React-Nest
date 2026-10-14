@@ -35,7 +35,7 @@ export function Admin(): React.ReactNode {
   if (!token) {
     return (
       <Section>
-        <p className="text-slate-600">
+        <p className="text-muted">
           Staff only.{' '}
           <Link to="/login" className="font-semibold text-brand-700 hover:underline">
             Log in
@@ -51,15 +51,15 @@ export function Admin(): React.ReactNode {
       <SectionHeading eyebrow="Admin" title="Leads" />
       <Card>
         {leads.isLoading ? (
-          <p className="text-slate-500">Loading leads…</p>
+          <p className="text-subtle">Loading leads…</p>
         ) : leads.isError ? (
-          <p className="text-red-600">
+          <p className="text-red-400">
             Could not load leads (check your session or staff role).
           </p>
         ) : (
           <table className="w-full text-left text-sm">
             <thead>
-              <tr className="border-b border-slate-200 text-slate-500">
+              <tr className="border-b border-line text-subtle">
                 <th className="py-2">Name</th>
                 <th className="py-2">Phone</th>
                 <th className="py-2">Area</th>
@@ -68,11 +68,11 @@ export function Admin(): React.ReactNode {
             </thead>
             <tbody>
               {(leads.data?.items ?? []).map((lead) => (
-                <tr key={lead.id} className="border-b border-slate-100">
-                  <td className="py-2 font-medium text-slate-800">{lead.name}</td>
-                  <td className="py-2 text-slate-600">{lead.phone}</td>
-                  <td className="py-2 text-slate-600">{lead.area}</td>
-                  <td className="py-2 text-slate-600">{lead.status}</td>
+                <tr key={lead.id} className="border-b border-line">
+                  <td className="py-2 font-medium text-fg">{lead.name}</td>
+                  <td className="py-2 text-muted">{lead.phone}</td>
+                  <td className="py-2 text-muted">{lead.area}</td>
+                  <td className="py-2 text-muted">{lead.status}</td>
                 </tr>
               ))}
             </tbody>
