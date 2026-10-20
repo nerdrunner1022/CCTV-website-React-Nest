@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface": "#dfe2ee", "on-tertiary-fixed": "#002113", "on-primary": "#003640", "secondary-container": "#0566d9", "surface-dim": "#0f131c", "on-error-container": "#ffdad6", "on-secondary-container": "#e6ecff", "secondary-fixed": "#d8e2ff", "surface-container-lowest": "#0a0e16", "error-container": "#93000a", "surface-container": "#1c2028", "primary": "#4cd7f6", "primary-fixed-dim": "#4cd7f6", "on-tertiary-container": "#00452e", "on-surface-variant": "#bcc9cd", "tertiary": "#4edea3", "surface-variant": "#31353e", "surface-tint": "#4cd7f6", "primary-fixed": "#acedff", "surface": "#0f131c", "surface-container-highest": "#31353e", "surface-container-high": "#262a33", "on-secondary": "#002e6a", "inverse-surface": "#dfe2ee", "on-primary-fixed-variant": "#004e5c", "secondary-fixed-dim": "#adc6ff", "surface-container-low": "#181c24", "surface-bright": "#353942", "background": "#0f131c", "on-primary-container": "#00424f", "tertiary-fixed": "#6ffbbe", "secondary": "#adc6ff", "inverse-on-surface": "#2c3039", "on-background": "#dfe2ee", "inverse-primary": "#00687a", "on-primary-fixed": "#001f26", "on-tertiary-fixed-variant": "#005236", "on-secondary-fixed": "#001a42", "on-secondary-fixed-variant": "#004395", "outline": "#869397", "outline-variant": "#3d494c", "tertiary-container": "#1bbd85", "on-error": "#690005", "error": "#ffb4ab", "on-tertiary": "#003824", "tertiary-fixed-dim": "#4edea3", "primary-container": "#06b6d4" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-mobile": "1rem", "space-lg": "1.5rem", "margin": "3rem", "space-md": "1rem", "gutter-mobile": "0.75rem", "gutter": "1.5rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "space-xs": "0.25rem" }, "fontFamily": { "headline-lg": [ "Plus Jakarta Sans" ], "display-hero-mobile": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Plus Jakarta Sans" ], "display-hero": [ "Plus Jakarta Sans" ], "body-lg": [ "Plus Jakarta Sans" ], "label-mono-lg": [ "JetBrains Mono" ], "label-mono-md": [ "JetBrains Mono" ], "headline-sm": [ "Plus Jakarta Sans" ], "label-mono-sm": [ "JetBrains Mono" ], "body-sm": [ "Plus Jakarta Sans" ] }, "fontSize": { "headline-lg": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "display-hero-mobile": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800" } ], "body-md": [ "15px", { "lineHeight": "24px", "fontWeight": "400" } ], "headline-md": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "headline-lg-mobile": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "display-hero": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "label-mono-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "600" } ], "label-mono-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "500" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "label-mono-sm": [ "10px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" } ], "body-sm": [ "13px", { "lineHeight": "20px", "fontWeight": "400" } ] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between py-6"><div class="flex flex-col gap-6"><div class="px-6 flex items-center justify-between"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded bg-surface-container flex items-center justify-center text-primary shadow-[0_0_12px_rgba(6,182,212,0.18)]"><span class="material-symbols-outlined text-[20px]">videocam</span></div><div><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface block leading-tight">AegisVision</span><span class="font-label-mono-sm text-label-mono-sm text-primary tracking-widest uppercase block">CCTV Platform Admin</span></div></div></div><nav class="flex flex-col gap-1 px-4" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a aria-current="page" class="flex items-center gap-3 px-3 py-2.5 rounded transition-all bg-primary-container text-on-primary-container font-semibold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="leads-pipeline" href="#"><span class="material-symbols-outlined text-[20px]">filter_alt</span><span>Leads Pipeline</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="content-cms" href="#"><span class="material-symbols-outlined text-[20px]">article</span><span>Content CMS</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="quotes-and-surveys" href="#"><span class="material-symbols-outlined text-[20px]">request_quote</span><span>Quotes &amp; Surveys</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="amc-and-contracts" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>AMC &amp; Contracts</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-sm text-body-sm" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div><div class="px-4 flex flex-col gap-3"><div class="bg-surface-container-lowest px-4 py-3 rounded flex flex-col gap-2"><div class="flex items-center justify-between"><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase tracking-wider">System Health</span><span class="font-label-mono-sm text-label-mono-sm text-tertiary uppercase">Operational</span></div><div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden"><div class="bg-tertiary h-full w-[98%]"></div></div></div><div class="flex items-center justify-between px-2 pt-2"><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">v2.4.12-PROD</span><span class="font-label-mono-sm text-label-mono-sm text-outline">NODE_01_SEC</span></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-8"><div class="flex items-center gap-4 flex-1 max-w-md"><div class="flex items-center gap-2 w-full bg-surface-container-low px-3 py-2 rounded focus-within:ring-1 focus-within:ring-primary"><span class="material-symbols-outlined text-on-surface-variant text-[18px]">search</span><input class="bg-transparent border-0 outline-none font-body-sm text-body-sm text-on-surface placeholder:text-outline w-full" placeholder="Search telemetry, cameras, clients..." type="text"/></div></div><div class="flex items-center gap-6"><div class="hidden xl:flex items-center gap-4"><div class="flex items-center gap-2 px-2.5 py-1 rounded bg-surface-container-lowest"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase">API Connected</span></div><div class="flex items-center gap-2 px-2.5 py-1 rounded bg-surface-container-lowest"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase">PostgreSQL Synced</span></div></div><div class="flex items-center gap-3 pl-4"><div class="text-right hidden sm:block"><div class="flex items-center justify-end gap-1.5"><span class="font-body-sm text-body-sm font-semibold text-on-surface leading-none">Admin User</span><span class="bg-secondary-container text-on-secondary-container font-label-mono-sm text-label-mono-sm px-1.5 py-0.5 rounded leading-none">ADMIN</span></div><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant block mt-0.5">admin@example.com</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><a class="flex items-center gap-1 ml-2 text-on-surface-variant hover:text-error hover:bg-surface-container px-2 py-1.5 rounded transition-colors" data-path="login" href="#"><span class="material-symbols-outlined text-[18px]">logout</span><span class="font-body-sm text-body-sm font-medium hidden md:inline">Logout</span></a></div></div></header><main class="w-full pt-16 bg-surface flex-1 px-8 py-6"><div class="flex flex-col w-full">
+<!-- Top Telemetry & Control Bar -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-6 border-b border-surface-container-highest/40">
+<div class="flex flex-col sm:flex-row sm:items-center gap-4">
+<div class="flex items-center gap-2 bg-surface-container-low p-1 rounded-lg">
+<button class="px-3.5 py-1.5 rounded font-label-mono-md text-label-mono-md uppercase tracking-wider bg-primary-container text-on-primary-container font-semibold transition-all shadow-[0_0_12px_rgba(6,182,212,0.25)] flex items-center gap-2" id="viewToggleOverview">
+<span class="material-symbols-outlined text-[16px]">monitoring</span>
+          Metrics &amp; Overview
+        </button>
+<button class="px-3.5 py-1.5 rounded font-label-mono-md text-label-mono-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-2" id="viewTogglePipeline">
+<span class="material-symbols-outlined text-[16px]">view_kanban</span>
+          Leads Pipeline
+        </button>
+</div>
+<div class="hidden sm:flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container text-tertiary font-label-mono-sm text-label-mono-sm uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+          JWT: ACTIVE (8h REMAINING)
+        </span>
+<span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-primary">sync_alt</span>
+          NESTJS 10 // WS SYNCED
+        </span>
+</div>
+</div>
+<!-- Quick Action Triggers -->
+<div class="flex items-center gap-2.5">
+<button class="px-3 py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium transition-all flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[16px]">download</span>
+        Export CSV
+      </button>
+<button class="px-3 py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium transition-all flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface" id="refreshDataBtn">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+        Telemetry Refresh
+      </button>
+<button class="px-3.5 py-1.5 rounded bg-primary-container text-on-primary-container font-headline-sm text-body-sm font-semibold hover:shadow-[0_0_16px_rgba(6,182,212,0.45)] transition-all flex items-center gap-1.5" onclick="document.getElementById('newLeadModal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+        + New Lead
+      </button>
+</div>
+</div>
+<!-- Primary Metric HUD (6 Tactical Nodes) -->
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3 pt-6 pb-6">
+<!-- Node 1 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col justify-between group hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="font-label-mono-sm text-label-mono-sm uppercase tracking-wider text-outline">TOTAL LEADS</span>
+<span class="material-symbols-outlined text-[18px] text-primary">groups</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight leading-none">1,428</div>
+<div class="flex items-center gap-1 mt-2 text-tertiary font-label-mono-sm text-label-mono-sm">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+12.4% MoM</span>
+</div>
+</div>
+</div>
+<!-- Node 2 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col justify-between group hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="font-label-mono-sm text-label-mono-sm uppercase tracking-wider text-outline">NEW (LAST 7D)</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">flare</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-secondary tracking-tight leading-none">84</div>
+<div class="flex items-center gap-1 mt-2 text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span class="text-primary font-semibold">18/day</span>
+<span>rolling velocity</span>
+</div>
+</div>
+</div>
+<!-- Node 3 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col justify-between group hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="font-label-mono-sm text-label-mono-sm uppercase tracking-wider text-outline">WON / INSTALLED</span>
+<span class="material-symbols-outlined text-[18px] text-tertiary">task_alt</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-tertiary tracking-tight leading-none">342</div>
+<div class="flex items-center gap-1 mt-2 text-tertiary font-label-mono-sm text-label-mono-sm">
+<span class="px-1.5 py-0.2 rounded bg-tertiary/10">24% Conv. Rate</span>
+</div>
+</div>
+</div>
+<!-- Node 4 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col justify-between group hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="font-label-mono-sm text-label-mono-sm uppercase tracking-wider text-outline">SURVEYS BOOKED</span>
+<span class="material-symbols-outlined text-[18px] text-primary">calendar_month</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-primary tracking-tight leading-none">67</div>
+<div class="flex items-center gap-1 mt-2 text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+<span>Next: Today 14:00</span>
+</div>
+</div>
+</div>
+<!-- Node 5 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col justify-between group hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="font-label-mono-sm text-label-mono-sm uppercase tracking-wider text-outline">ACTIVE QUOTES</span>
+<span class="material-symbols-outlined text-[18px] text-primary-fixed">receipt_long</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight leading-none">118</div>
+<div class="flex items-center gap-1 mt-2 text-primary-fixed font-label-mono-sm text-label-mono-sm">
+<span>$428,500 Total Pipeline</span>
+</div>
+</div>
+</div>
+<!-- Node 6 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col justify-between group hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="font-label-mono-sm text-label-mono-sm uppercase tracking-wider text-outline">LOST / DROPPED</span>
+<span class="material-symbols-outlined text-[18px] text-error">cancel</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-error tracking-tight leading-none">45</div>
+<div class="flex items-center gap-1 mt-2 text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span>3.1% Abandonment</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Mid Row: Visual Status Distribution Bar & Operational Capacity -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-4 pb-6">
+<!-- Funnel / Pipeline Distribution Bar -->
+<div class="lg:col-span-8 bg-surface-container-low p-5 rounded-lg flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 gap-2">
+<div>
+<span class="font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-widest block">PIPELINE DISTRIBUTION ARCHITECTURE</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Lifecycle Conversion Funnel</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant uppercase">SLA COMPLIANCE:</span>
+<span class="px-2 py-0.5 rounded bg-tertiary/10 text-tertiary font-label-mono-sm text-label-mono-sm font-semibold">94.8%</span>
+</div>
+</div>
+<!-- Segmented Multi-Bar -->
+<div class="w-full my-3">
+<div class="h-3 w-full bg-surface-container-highest rounded-full flex overflow-hidden p-0.5 gap-0.5">
+<div class="bg-secondary h-full rounded-l-full relative group cursor-pointer" style="width: 32%" title="NEW: 32%"></div>
+<div class="bg-outline h-full relative group cursor-pointer" style="width: 25%" title="CONTACTED: 25%"></div>
+<div class="bg-primary h-full relative group cursor-pointer" style="width: 18%" title="SURVEY_SCHEDULED: 18%"></div>
+<div class="bg-secondary-container h-full relative group cursor-pointer" style="width: 15%" title="QUOTED: 15%"></div>
+<div class="bg-tertiary h-full relative group cursor-pointer" style="width: 8%" title="WON: 8%"></div>
+<div class="bg-error-container h-full rounded-r-full relative group cursor-pointer" style="width: 2%" title="LOST: 2%"></div>
+</div>
+</div>
+<!-- Funnel Breakdown Keys -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 pt-2">
+<div class="flex flex-col bg-surface-container px-2.5 py-1.5 rounded">
+<span class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm text-secondary uppercase">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> NEW
+          </span>
+<span class="font-headline-sm text-body-md font-bold text-on-surface mt-0.5">32% <span class="text-on-surface-variant text-body-sm font-normal">(457)</span></span>
+</div>
+<div class="flex flex-col bg-surface-container px-2.5 py-1.5 rounded">
+<span class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm text-outline uppercase">
+<span class="w-2 h-2 rounded-full bg-outline"></span> CONTACTED
+          </span>
+<span class="font-headline-sm text-body-md font-bold text-on-surface mt-0.5">25% <span class="text-on-surface-variant text-body-sm font-normal">(357)</span></span>
+</div>
+<div class="flex flex-col bg-surface-container px-2.5 py-1.5 rounded">
+<span class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm text-primary uppercase">
+<span class="w-2 h-2 rounded-full bg-primary"></span> SURVEY
+          </span>
+<span class="font-headline-sm text-body-md font-bold text-on-surface mt-0.5">18% <span class="text-on-surface-variant text-body-sm font-normal">(257)</span></span>
+</div>
+<div class="flex flex-col bg-surface-container px-2.5 py-1.5 rounded">
+<span class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm text-secondary-fixed uppercase">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span> QUOTED
+          </span>
+<span class="font-headline-sm text-body-md font-bold text-on-surface mt-0.5">15% <span class="text-on-surface-variant text-body-sm font-normal">(214)</span></span>
+</div>
+<div class="flex flex-col bg-surface-container px-2.5 py-1.5 rounded">
+<span class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm text-tertiary uppercase">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> WON
+          </span>
+<span class="font-headline-sm text-body-md font-bold text-on-surface mt-0.5">8% <span class="text-on-surface-variant text-body-sm font-normal">(114)</span></span>
+</div>
+<div class="flex flex-col bg-surface-container px-2.5 py-1.5 rounded">
+<span class="flex items-center gap-1.5 font-label-mono-sm text-label-mono-sm text-error uppercase">
+<span class="w-2 h-2 rounded-full bg-error"></span> LOST
+          </span>
+<span class="font-headline-sm text-body-md font-bold text-on-surface mt-0.5">2% <span class="text-on-surface-variant text-body-sm font-normal">(29)</span></span>
+</div>
+</div>
+</div>
+<!-- Staff Capacity & Dispatch Matrix -->
+<div class="lg:col-span-4 bg-surface-container-low p-5 rounded-lg flex flex-col justify-between">
+<div class="flex items-center justify-between pb-2">
+<div>
+<span class="font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-widest block">TELEMETRY DISPATCH</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Staff Workload</h2>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">ACTIVE POOL: 18</span>
+</div>
+<div class="flex flex-col gap-3 py-1">
+<!-- Admin Pool -->
+<div>
+<div class="flex justify-between items-center text-body-sm font-body-sm mb-1">
+<span class="font-medium text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+              Admin / Reviewers
+            </span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">4/4 Active (100%)</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[100%]"></div>
+</div>
+</div>
+<!-- Sales Reps -->
+<div>
+<div class="flex justify-between items-center text-body-sm font-body-sm mb-1">
+<span class="font-medium text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+              Sales &amp; Estimators
+            </span>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary">7/8 Engaged (87%)</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[87%]"></div>
+</div>
+</div>
+<!-- Technicians -->
+<div>
+<div class="flex justify-between items-center text-body-sm font-body-sm mb-1">
+<span class="font-medium text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+              Survey Technicians
+            </span>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary-fixed">5/6 Deployed (83%)</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full w-[83%]"></div>
+</div>
+</div>
+</div>
+<div class="pt-2 text-right">
+<a class="font-label-mono-sm text-label-mono-sm text-primary hover:underline uppercase inline-flex items-center gap-1" href="#">
+          Adjust Rosters &amp; Shifts <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Operational Core: Filter Toolbar & Leads Table + Side Deep Dive -->
+<div class="grid grid-cols-1 2xl:grid-cols-12 gap-6 items-start">
+<!-- Main Table Container (8 Cols on 2XL, 12 on smaller) -->
+<div class="2xl:col-span-8 flex flex-col gap-4">
+<!-- Advanced Search and Dynamic Multi-Filter Bar -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between">
+<div class="flex items-center gap-2 bg-surface-container-highest/50 px-3 py-2 rounded flex-1">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">filter_list</span>
+<input class="bg-transparent border-0 outline-none font-body-sm text-body-sm text-on-surface placeholder:text-outline w-full" id="searchInput" placeholder="Search Facility, Name, Contact, or Borough..." type="text"/>
+</div>
+<div class="flex flex-wrap items-center gap-2.5">
+<!-- Status Dropdown Filter -->
+<div class="relative">
+<select class="bg-surface-container text-on-surface font-body-sm text-body-sm px-3 py-2 rounded outline-none appearance-none pr-8 cursor-pointer hover:bg-surface-container-high transition-colors" id="statusFilter">
+<option value="ALL">Status: All Statuses</option>
+<option value="NEW">NEW</option>
+<option value="CONTACTED">CONTACTED</option>
+<option value="SURVEY_BOOKED">SURVEY BOOKED</option>
+<option value="QUOTED">QUOTED</option>
+<option value="WON">WON / INSTALLED</option>
+<option value="LOST">LOST</option>
+</select>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+</div>
+<!-- Source Filter -->
+<div class="relative">
+<select class="bg-surface-container text-on-surface font-body-sm text-body-sm px-3 py-2 rounded outline-none appearance-none pr-8 cursor-pointer hover:bg-surface-container-high transition-colors" id="sourceFilter">
+<option value="ALL">Source: All Origins</option>
+<option value="WEB">Website Survey Form</option>
+<option value="PHONE">Inbound Call</option>
+<option value="PARTNER">Partner Referral</option>
+<option value="CATALOG">Catalog Add-to-Quote</option>
+</select>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+</div>
+<button class="px-2.5 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded transition-colors text-body-sm" id="resetFilters" title="Clear Filters">
+<span class="material-symbols-outlined text-[18px]">filter_alt_off</span>
+</button>
+</div>
+</div>
+<!-- High-Density Operations Table -->
+<div class="bg-surface-container-low rounded-lg overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high/60 text-outline font-label-mono-sm text-label-mono-sm uppercase tracking-wider">
+<th class="py-3 px-4">Lead / Contact Entity</th>
+<th class="py-3 px-4">Target Facility &amp; Region</th>
+<th class="py-3 px-4">Status</th>
+<th class="py-3 px-4">Origin / Channel</th>
+<th class="py-3 px-4">Assigned Personnel</th>
+<th class="py-3 px-4">SLA / Age</th>
+<th class="py-3 px-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm divide-y divide-surface-container-highest/20" id="leadsTableBody">
+<!-- Lead 1: Apex Retail Plaza -->
+<tr class="hover:bg-surface-container transition-colors group cursor-pointer bg-surface-container-highest/10" onclick="selectLead('Apex Retail Plaza', 'Paramus, NJ', '32 Channels, 4K AI Domes + NVR', '$48,200', 'QUOTED', 'Robert Sterling', '+1 (201) 555-0192', 'r.sterling@apexretail.com', 'Catalog Add-to-Quote', 'Marcus Vance (Sales)')">
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface leading-snug">Robert Sterling</div>
+<div class="text-on-surface-variant font-label-mono-sm text-label-mono-sm flex items-center gap-1 mt-0.5">
+<span>+1 (201) 555-0192</span>
+<span class="text-outline">•</span>
+<span class="truncate max-w-[120px]">r.sterling@apex.com</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-on-surface font-medium leading-snug">Apex Retail Plaza</div>
+<div class="text-on-surface-variant text-body-sm flex items-center gap-1 text-[12px]">
+<span class="material-symbols-outlined text-[13px] text-primary">location_on</span>
+                    Paramus, NJ (2 Levels)
+                  </div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded font-label-mono-sm text-label-mono-sm uppercase bg-secondary-container/20 text-secondary font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    QUOTED
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-label-mono-sm text-label-mono-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">
+                    Catalog Add-to-Quote
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-primary/20 text-primary flex items-center justify-center font-label-mono-sm text-[10px] font-bold">MV</div>
+<span class="text-on-surface">Marcus Vance</span>
+<span class="text-on-surface-variant text-[11px] font-label-mono-sm">(Sales)</span>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="text-on-surface font-label-mono-sm text-label-mono-sm">4h ago</div>
+<div class="text-tertiary font-label-mono-sm text-[10px]">SLA OK</div>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors" onclick="openAssignModal('Robert Sterling', 'Marcus Vance (Sales)')" title="Reassign Staff">
+<span class="material-symbols-outlined text-[17px]">person_add</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors" onclick="openScheduleModal('Apex Retail Plaza - Paramus, NJ')" title="Schedule Survey">
+<span class="material-symbols-outlined text-[17px]">event_available</span>
+</button>
+<button class="p-1 rounded bg-primary-container text-on-primary-container hover:shadow-[0_0_8px_rgba(6,182,212,0.4)] transition-all font-label-mono-sm text-label-mono-sm font-semibold px-2 flex items-center gap-1" onclick="launchQuoteBuilder('Apex Retail Plaza', 48200)">
+<span class="material-symbols-outlined text-[14px]">request_quote</span>
+                      Quote
+                    </button>
+</div>
+</td>
+</tr>
+<!-- Lead 2: Metropolitan Logistics Hub -->
+<tr class="hover:bg-surface-container transition-colors group cursor-pointer" onclick="selectLead('Metropolitan Logistics Hub', 'Queens, NY', '64 Optical PTZs + Perimeter Radar', '$112,000', 'SURVEY_SCHEDULED', 'Elena Rostova', '+1 (718) 555-8812', 'e.rostova@metrologistics.com', 'Home #book-survey', 'David K. Chen (Technician)')">
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface leading-snug">Elena Rostova</div>
+<div class="text-on-surface-variant font-label-mono-sm text-label-mono-sm flex items-center gap-1 mt-0.5">
+<span>+1 (718) 555-8812</span>
+<span class="text-outline">•</span>
+<span class="truncate max-w-[120px]">e.rostova@metro.com</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-on-surface font-medium leading-snug">Metropolitan Logistics Hub</div>
+<div class="text-on-surface-variant text-body-sm flex items-center gap-1 text-[12px]">
+<span class="material-symbols-outlined text-[13px] text-primary">location_on</span>
+                    Queens, NY (Yard + Gate)
+                  </div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded font-label-mono-sm text-label-mono-sm uppercase bg-primary/10 text-primary font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                    SURVEY BOOKED
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-label-mono-sm text-label-mono-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">
+                    Home #book-survey
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-tertiary/20 text-tertiary flex items-center justify-center font-label-mono-sm text-[10px] font-bold">DC</div>
+<span class="text-on-surface">David K. Chen</span>
+<span class="text-on-surface-variant text-[11px] font-label-mono-sm">(Tech)</span>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="text-on-surface font-label-mono-sm text-label-mono-sm">18h ago</div>
+<div class="text-tertiary font-label-mono-sm text-[10px]">Slot Confirmed</div>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors" onclick="openAssignModal('Elena Rostova', 'David K. Chen (Technician)')" title="Reassign Staff">
+<span class="material-symbols-outlined text-[17px]">person_add</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors" onclick="openScheduleModal('Metropolitan Logistics Hub - Queens, NY')" title="Schedule Survey">
+<span class="material-symbols-outlined text-[17px]">event_available</span>
+</button>
+<button class="p-1 rounded bg-primary-container text-on-primary-container hover:shadow-[0_0_8px_rgba(6,182,212,0.4)] transition-all font-label-mono-sm text-label-mono-sm font-semibold px-2 flex items-center gap-1" onclick="launchQuoteBuilder('Metropolitan Logistics Hub', 112000)">
+<span class="material-symbols-outlined text-[14px]">request_quote</span>
+                      Quote
+                    </button>
+</div>
+</td>
+</tr>
+<!-- Lead 3: St. Jude Medical Facility -->
+<tr class="hover:bg-surface-container transition-colors group cursor-pointer" onclick="selectLead('St. Jude Medical Facility', 'Brooklyn, NY', '48 NDAA Compliant Thermal + Access Control', '$84,000', 'WON', 'Dr. Aris Thorne', '+1 (917) 555-4039', 'thorne.a@stjude-health.org', 'Partner Referral', 'Sarah Lindqvist (Admin)')">
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface leading-snug">Dr. Aris Thorne</div>
+<div class="text-on-surface-variant font-label-mono-sm text-label-mono-sm flex items-center gap-1 mt-0.5">
+<span>+1 (917) 555-4039</span>
+<span class="text-outline">•</span>
+<span class="truncate max-w-[120px]">thorne.a@stjude.org</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-on-surface font-medium leading-snug">St. Jude Medical Facility</div>
+<div class="text-on-surface-variant text-body-sm flex items-center gap-1 text-[12px]">
+<span class="material-symbols-outlined text-[13px] text-primary">location_on</span>
+                    Brooklyn, NY (North Wing)
+                  </div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded font-label-mono-sm text-label-mono-sm uppercase bg-tertiary/10 text-tertiary font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                    WON / INSTALLED
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-label-mono-sm text-label-mono-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">
+                    Partner Referral
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-secondary-fixed/20 text-secondary-fixed flex items-center justify-center font-label-mono-sm text-[10px] font-bold">SL</div>
+<span class="text-on-surface">Sarah Lindqvist</span>
+<span class="text-on-surface-variant text-[11px] font-label-mono-sm">(Admin)</span>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="text-on-surface font-label-mono-sm text-label-mono-sm">2d ago</div>
+<div class="text-tertiary font-label-mono-sm text-[10px]">AMC Signed</div>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors" onclick="openAssignModal('Dr. Aris Thorne', 'Sarah Lindqvist (Admin)')" title="Reassign Staff">
+<span class="material-symbols-outlined text-[17px]">person_add</span>
+</button>
+<button class="p-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors font-label-mono-sm text-label-mono-sm px-2 flex items-center gap-1" title="View Handover Docs">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                      AMC
+                    </button>
+</div>
+</td>
+</tr>
+<!-- Lead 4: Harborview Warehouse -->
+<tr class="hover:bg-surface-container transition-colors group cursor-pointer" onclick="selectLead('Harborview Warehouse', 'Newark, NJ', '16 Outdoor Bullet Cameras + AI Tripwire', '$19,500', 'NEW', 'Captain James H.', '+1 (973) 555-7320', 'logistics@harborview.net', 'Inbound Call', 'Unassigned')">
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface leading-snug">Captain James H.</div>
+<div class="text-on-surface-variant font-label-mono-sm text-label-mono-sm flex items-center gap-1 mt-0.5">
+<span>+1 (973) 555-7320</span>
+<span class="text-outline">•</span>
+<span class="truncate max-w-[120px]">logistics@harbor.net</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-on-surface font-medium leading-snug">Harborview Warehouse</div>
+<div class="text-on-surface-variant text-body-sm flex items-center gap-1 text-[12px]">
+<span class="material-symbols-outlined text-[13px] text-primary">location_on</span>
+                    Newark, NJ (Pier 4)
+                  </div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded font-label-mono-sm text-label-mono-sm uppercase bg-secondary/15 text-secondary font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+                    NEW
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-label-mono-sm text-label-mono-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">
+                    Inbound Call
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-error/10 text-error font-label-mono-sm text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+                    Unassigned
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="text-on-surface font-label-mono-sm text-label-mono-sm">34m ago</div>
+<div class="text-error font-label-mono-sm text-[10px]">Action Needed</div>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded bg-primary-container text-on-primary-container font-label-mono-sm text-label-mono-sm font-semibold flex items-center gap-1" onclick="openAssignModal('Captain James H.', 'Unassigned')" title="Assign Staff Now">
+<span class="material-symbols-outlined text-[15px]">assignment_ind</span>
+                      Assign
+                    </button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors" onclick="openScheduleModal('Harborview Warehouse - Newark, NJ')" title="Schedule Survey">
+<span class="material-symbols-outlined text-[17px]">event_available</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Lead 5: Vanguard Bio-Research Lab -->
+<tr class="hover:bg-surface-container transition-colors group cursor-pointer" onclick="selectLead('Vanguard Bio-Research Lab', 'White Plains, NY', '40 Cleanroom IP Cameras with Audio Analytics', '$65,000', 'CONTACTED', 'Alicia Gomez', '+1 (914) 555-9011', 'agomez@vanguardbio.com', 'Website Survey Form', 'Marcus Vance (Sales)')">
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface leading-snug">Alicia Gomez</div>
+<div class="text-on-surface-variant font-label-mono-sm text-label-mono-sm flex items-center gap-1 mt-0.5">
+<span>+1 (914) 555-9011</span>
+<span class="text-outline">•</span>
+<span class="truncate max-w-[120px]">agomez@vanguard.com</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="text-on-surface font-medium leading-snug">Vanguard Bio-Research Lab</div>
+<div class="text-on-surface-variant text-body-sm flex items-center gap-1 text-[12px]">
+<span class="material-symbols-outlined text-[13px] text-primary">location_on</span>
+                    White Plains, NY
+                  </div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded font-label-mono-sm text-label-mono-sm uppercase bg-outline/20 text-on-surface-variant font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                    CONTACTED
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-label-mono-sm text-label-mono-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">
+                    Website Survey Form
+                  </span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-primary/20 text-primary flex items-center justify-center font-label-mono-sm text-[10px] font-bold">MV</div>
+<span class="text-on-surface">Marcus Vance</span>
+<span class="text-on-surface-variant text-[11px] font-label-mono-sm">(Sales)</span>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="text-on-surface font-label-mono-sm text-label-mono-sm">1d ago</div>
+<div class="text-on-surface-variant font-label-mono-sm text-[10px]">Follow-up sent</div>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors" onclick="openAssignModal('Alicia Gomez', 'Marcus Vance (Sales)')" title="Reassign Staff">
+<span class="material-symbols-outlined text-[17px]">person_add</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors" onclick="openScheduleModal('Vanguard Bio-Research Lab - White Plains, NY')" title="Schedule Survey">
+<span class="material-symbols-outlined text-[17px]">event_available</span>
+</button>
+<button class="p-1 rounded bg-primary-container text-on-primary-container hover:shadow-[0_0_8px_rgba(6,182,212,0.4)] transition-all font-label-mono-sm text-label-mono-sm font-semibold px-2 flex items-center gap-1" onclick="launchQuoteBuilder('Vanguard Bio-Research Lab', 65000)">
+<span class="material-symbols-outlined text-[14px]">request_quote</span>
+                      Quote
+                    </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination & Operational Counter -->
+<div class="bg-surface-container-highest/20 px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-body-sm">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+            SHOWING <strong class="text-on-surface">5</strong> OF <strong class="text-on-surface">1,428</strong> PIPELINE ENTITIES • PAGE 1 OF 286
+          </span>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface font-label-mono-sm text-label-mono-sm disabled:opacity-40" disabled="">PREV</button>
+<button class="px-2.5 py-1 rounded bg-primary-container text-on-primary-container font-label-mono-sm text-label-mono-sm font-semibold">1</button>
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface font-label-mono-sm text-label-mono-sm">2</button>
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface font-label-mono-sm text-label-mono-sm">3</button>
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface font-label-mono-sm text-label-mono-sm">NEXT</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side Deep-Dive Reticle / Inspector Panel (4 Cols on 2XL) -->
+<div class="2xl:col-span-4 bg-surface-container-low rounded-lg p-5 flex flex-col gap-5 sticky top-20 shadow-[0_4px_24px_rgba(0,0,0,0.3)]" id="inspectorPanel">
+<!-- Reticle Header -->
+<div class="flex items-center justify-between border-b border-surface-container-highest/40 pb-3">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></div>
+<div>
+<span class="font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-widest block">TELEMETRIC DEEP DIVE</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface" id="panelFacilityName">Apex Retail Plaza</h3>
+</div>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-mono-sm text-label-mono-sm uppercase bg-secondary-container/20 text-secondary font-semibold" id="panelStatusBadge">
+          QUOTED
+        </span>
+</div>
+<!-- Facility Specs & Camera Payload -->
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container p-3 rounded">
+<span class="font-label-mono-sm text-label-mono-sm text-outline uppercase block">PAYLOAD SPEC</span>
+<span class="font-headline-sm text-body-md font-bold text-on-surface block mt-0.5 leading-snug" id="panelCameraCount">32 Channels, 4K AI Domes + NVR</span>
+</div>
+<div class="bg-surface-container p-3 rounded">
+<span class="font-label-mono-sm text-label-mono-sm text-outline uppercase block">ESTIMATED VALUATION</span>
+<span class="font-headline-sm text-headline-sm font-bold text-tertiary block mt-0.5" id="panelQuoteVal">$48,200</span>
+</div>
+</div>
+<!-- Facility Location & Visual Snapshot Frame -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant font-label-mono-sm text-label-mono-sm uppercase">FACILITY VISUAL RECON</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary" id="panelAreaText">Paramus, NJ</span>
+</div>
+<!-- Simulated Hardware / Site Viewport -->
+<div class="relative w-full h-36 bg-surface-container rounded overflow-hidden group">
+<div class="bg-cover bg-center w-full h-full opacity-80 group-hover:scale-105 transition-transform duration-500" data-alt="High tech commercial facility exterior surveillance view at dusk with visible dome cameras, high definition crisp architectural details, cyan operational reticle overlay" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDmLaSX43QeNOit9PE36i6hvoOvMT9_G5j9WMTP-yRnSssVvlpAwxzClp7w3IsLrp9vq-ZxYvbZf-MZVkR124AVJ_Y0WM4OHumY54gZlsE1wUZtgNFpXb7vt0KaGfdF5jXrArNsqqcHsv4xLSwxGkd4WUj78QHjcl701r-zDiHS3fYAXBT2x2yMu7Us-RfjDP8Q7oKa3qhxR4IUUxA4n4dZCtpn9ZRhFw_8eTguh27hR-6OfF1t-wXmFA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="absolute top-2 left-2 flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md font-label-mono-sm text-[10px] text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+            SITE SURVEY: 14 OCT 2024 (COMPLETED)
+          </div>
+<div class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md font-label-mono-sm text-[10px] text-outline">
+            CH-32 // CODEC H.265
+          </div>
+</div>
+</div>
+<!-- Contact Vector Details -->
+<div class="bg-surface-container p-3 rounded flex flex-col gap-2">
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant font-medium">Primary Stakeholder</span>
+<span class="font-semibold text-on-surface" id="panelContactName">Robert Sterling</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant font-medium">Phone Vector</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary" id="panelContactPhone">+1 (201) 555-0192</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant font-medium">Assigned Lead</span>
+<span class="text-on-surface font-label-mono-sm text-label-mono-sm" id="panelAssignedStaff">Marcus Vance (Sales)</span>
+</div>
+</div>
+<!-- Activity Audit Timeline -->
+<div class="flex flex-col gap-2">
+<span class="font-label-mono-sm text-label-mono-sm text-outline uppercase tracking-wider">EVENT AUDIT LOG</span>
+<div class="flex flex-col gap-2.5 pl-2 border-l-2 border-surface-container-highest/60">
+<div class="flex flex-col text-body-sm">
+<div class="flex items-center justify-between">
+<span class="font-medium text-on-surface text-body-sm">Quote Draft QTE-8924 Issued</span>
+<span class="font-label-mono-sm text-[10px] text-on-surface-variant">Today, 10:14</span>
+</div>
+<span class="text-on-surface-variant text-[12px]">Sent with 10% commercial municipal tax included</span>
+</div>
+<div class="flex flex-col text-body-sm">
+<div class="flex items-center justify-between">
+<span class="font-medium text-on-surface text-body-sm">Physical Survey Completed</span>
+<span class="font-label-mono-sm text-[10px] text-on-surface-variant">Yesterday, 16:30</span>
+</div>
+<span class="text-on-surface-variant text-[12px]">Field Tech verified line-of-sight for 32 optical zones</span>
+</div>
+<div class="flex flex-col text-body-sm">
+<div class="flex items-center justify-between">
+<span class="font-medium text-on-surface text-body-sm">Lead Ingested from Catalog</span>
+<span class="font-label-mono-sm text-[10px] text-on-surface-variant">3 days ago</span>
+</div>
+<span class="text-on-surface-variant text-[12px]">Added 32x 4K Domes + 64TB NVR package</span>
+</div>
+</div>
+</div>
+<!-- Primary Action Buttons inside Deep Dive -->
+<div class="flex flex-col gap-2 pt-2">
+<button class="w-full py-2.5 rounded bg-primary-container text-on-primary-container font-headline-sm text-body-md font-bold hover:shadow-[0_0_20px_rgba(6,182,212,0.45)] transition-all flex items-center justify-center gap-2" id="deepDiveQuoteBtn" onclick="launchQuoteBuilder('Apex Retail Plaza', 48200)">
+<span class="material-symbols-outlined text-[18px]">request_quote</span>
+          Launch Full Quote Builder (QTE-8924)
+        </button>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium transition-colors flex items-center justify-center gap-1.5" onclick="openScheduleModal('Apex Retail Plaza - Paramus, NJ')">
+<span class="material-symbols-outlined text-[16px] text-primary">edit_calendar</span>
+            Survey Slot
+          </button>
+<button class="py-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium transition-colors flex items-center justify-center gap-1.5" onclick="openAssignModal('Robert Sterling', 'Marcus Vance (Sales)')">
+<span class="material-symbols-outlined text-[16px] text-secondary">assignment_ind</span>
+            Reassign
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL: Staff Assignment Modal -->
+<div class="fixed inset-0 bg-surface-container-lowest/80 backdrop-blur-md z-50 flex items-center justify-center hidden p-4" id="assignModal">
+<div class="bg-surface-container-low max-w-md w-full rounded-lg p-6 shadow-[0_8px_32px_rgba(0,0,0,0.5)] flex flex-col gap-5">
+<div class="flex items-center justify-between border-b border-surface-container-highest/40 pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">assignment_ind</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Assign Personnel</h3>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant" id="assignLeadName">Lead: Robert Sterling</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="closeModal('assignModal')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-3">
+<label class="font-label-mono-sm text-label-mono-sm text-outline uppercase">SELECT ASSIGNED SPECIALIST</label>
+<div class="space-y-2">
+<!-- Option 1 -->
+<label class="flex items-center justify-between p-3 rounded bg-surface-container hover:bg-surface-container-high cursor-pointer transition-all">
+<div class="flex items-center gap-3">
+<input checked="" class="accent-primary w-4 h-4" name="staffSelect" type="radio" value="Marcus Vance"/>
+<div>
+<div class="font-medium text-on-surface text-body-sm">Marcus Vance</div>
+<div class="text-on-surface-variant text-[11px] font-label-mono-sm">Senior Sales Consultant • 8 Active Leads</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary font-label-mono-sm text-[10px] font-bold">SALES</span>
+</label>
+<!-- Option 2 -->
+<label class="flex items-center justify-between p-3 rounded bg-surface-container hover:bg-surface-container-high cursor-pointer transition-all">
+<div class="flex items-center gap-3">
+<input class="accent-primary w-4 h-4" name="staffSelect" type="radio" value="David K. Chen"/>
+<div>
+<div class="font-medium text-on-surface text-body-sm">David K. Chen</div>
+<div class="text-on-surface-variant text-[11px] font-label-mono-sm">Field Systems Engineer • 3 Active Surveys</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary/10 text-tertiary font-label-mono-sm text-[10px] font-bold">TECH</span>
+</label>
+<!-- Option 3 -->
+<label class="flex items-center justify-between p-3 rounded bg-surface-container hover:bg-surface-container-high cursor-pointer transition-all">
+<div class="flex items-center gap-3">
+<input class="accent-primary w-4 h-4" name="staffSelect" type="radio" value="Sarah Lindqvist"/>
+<div>
+<div class="font-medium text-on-surface text-body-sm">Sarah Lindqvist</div>
+<div class="text-on-surface-variant text-[11px] font-label-mono-sm">Platform Admin • Operations Oversight</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary/15 text-secondary font-label-mono-sm text-[10px] font-bold">ADMIN</span>
+</label>
+</div>
+</div>
+<div class="flex items-center justify-end gap-2 pt-2 border-t border-surface-container-highest/40">
+<button class="px-3.5 py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm" onclick="closeModal('assignModal')">Cancel</button>
+<button class="px-4 py-1.5 rounded bg-primary-container text-on-primary-container font-headline-sm text-body-sm font-semibold hover:shadow-[0_0_12px_rgba(6,182,212,0.4)] transition-all" onclick="confirmAssignment()">Confirm Assignment</button>
+</div>
+</div>
+</div>
+<!-- MODAL: Schedule Survey Booking -->
+<div class="fixed inset-0 bg-surface-container-lowest/80 backdrop-blur-md z-50 flex items-center justify-center hidden p-4" id="surveyModal">
+<div class="bg-surface-container-low max-w-lg w-full rounded-lg p-6 shadow-[0_8px_32px_rgba(0,0,0,0.5)] flex flex-col gap-5">
+<div class="flex items-center justify-between border-b border-surface-container-highest/40 pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">calendar_month</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Schedule On-Site Survey</h3>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant" id="surveyFacilityTitle">Apex Retail Plaza</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="closeModal('surveyModal')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-mono-sm text-label-mono-sm text-outline uppercase">PREFERRED DATE</label>
+<input class="bg-surface-container text-on-surface px-3 py-2 rounded font-body-sm text-body-sm outline-none focus:ring-1 focus:ring-primary" type="date" value="2024-10-24"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-mono-sm text-label-mono-sm text-outline uppercase">TIME WINDOW</label>
+<select class="bg-surface-container text-on-surface px-3 py-2 rounded font-body-sm text-body-sm outline-none focus:ring-1 focus:ring-primary cursor-pointer">
+<option>09:00 - 11:00 AM (Morning Slot)</option>
+<option selected="">13:00 - 15:00 PM (Afternoon Slot)</option>
+<option>16:00 - 18:00 PM (Twilight / Low-Light Test)</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-mono-sm text-label-mono-sm text-outline uppercase">ASSIGNED FIELD TECHNICIAN</label>
+<select class="bg-surface-container text-on-surface px-3 py-2 rounded font-body-sm text-body-sm outline-none focus:ring-1 focus:ring-primary cursor-pointer">
+<option>David K. Chen (Licensed Security Architect)</option>
+<option>Frank Miller (Senior Cabling &amp; Optical Lead)</option>
+<option>Elena Rostova (Perimeter Sensor Tech)</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-mono-sm text-label-mono-sm text-outline uppercase">PRE-SURVEY NOTES / GATE CODE</label>
+<textarea class="bg-surface-container text-on-surface px-3 py-2 rounded font-body-sm text-body-sm outline-none focus:ring-1 focus:ring-primary placeholder:text-outline resize-none" placeholder="e.g. Loading dock access code #4092, check roof penetrations for PTZ camera..." rows="2"></textarea>
+</div>
+<div class="flex items-center justify-end gap-2 pt-2 border-t border-surface-container-highest/40">
+<button class="px-3.5 py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm" onclick="closeModal('surveyModal')">Cancel</button>
+<button class="px-4 py-1.5 rounded bg-primary-container text-on-primary-container font-headline-sm text-body-sm font-semibold hover:shadow-[0_0_12px_rgba(6,182,212,0.4)] transition-all" onclick="confirmSurveyBooking()">Book &amp; Dispatch Tech</button>
+</div>
+</div>
+</div>
+<!-- MODAL: Quote Builder Quick Modal -->
+<div class="fixed inset-0 bg-surface-container-lowest/80 backdrop-blur-md z-50 flex items-center justify-center hidden p-4" id="quoteModal">
+<div class="bg-surface-container-low max-w-lg w-full rounded-lg p-6 shadow-[0_8px_32px_rgba(0,0,0,0.5)] flex flex-col gap-5">
+<div class="flex items-center justify-between border-b border-surface-container-highest/40 pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">calculate</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Generate Formal Quote</h3>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant" id="quoteFacilityRef">Apex Retail Plaza // REF: QTE-9041</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="closeModal('quoteModal')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center bg-surface-container p-3 rounded">
+<span class="text-body-sm text-on-surface-variant">Hardware Subtotal (32 Cameras + NVR)</span>
+<span class="font-label-mono-md text-label-mono-md text-on-surface font-bold" id="quoteSubtotal">$43,818.18</span>
+</div>
+<div class="flex justify-between items-center bg-surface-container p-3 rounded">
+<span class="text-body-sm text-on-surface-variant">Commercial Sales &amp; Municipal Tax (10%)</span>
+<span class="font-label-mono-md text-label-mono-md text-primary font-bold" id="quoteTax">$4,381.82</span>
+</div>
+<div class="flex justify-between items-center bg-surface-container-highest/40 p-3.5 rounded border border-primary/20">
+<span class="font-semibold text-body-md text-on-surface">Grand Total Payable</span>
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold" id="quoteTotal">$48,200.00</span>
+</div>
+</div>
+<div class="flex items-center gap-2 p-3 bg-surface-container-highest/30 rounded text-[12px] text-on-surface-variant font-label-mono-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+        Auto-generates PDF contract, valid for 30 calendar days. Synced to billing microservice.
+      </div>
+<div class="flex items-center justify-end gap-2 pt-2 border-t border-surface-container-highest/40">
+<button class="px-3.5 py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm" onclick="closeModal('quoteModal')">Dismiss</button>
+<button class="px-4 py-1.5 rounded bg-primary-container text-on-primary-container font-headline-sm text-body-sm font-semibold hover:shadow-[0_0_12px_rgba(6,182,212,0.4)] transition-all flex items-center gap-1.5" onclick="issueQuotePDF()">
+<span class="material-symbols-outlined text-[16px]">send</span>
+          Issue &amp; Send to Client
+        </button>
+</div>
+</div>
+</div>
+<!-- MODAL: + New Lead Ingestion -->
+<div class="fixed inset-0 bg-surface-container-lowest/80 backdrop-blur-md z-50 flex items-center justify-center hidden p-4" id="newLeadModal">
+<div class="bg-surface-container-low max-w-lg w-full rounded-lg p-6 shadow-[0_8px_32px_rgba(0,0,0,0.5)] flex flex-col gap-5">
+<div class="flex items-center justify-between border-b border-surface-container-highest/40 pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">add_business</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Ingest New Surveillance Lead</h3>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Manual Dispatch Entry Vector</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="closeModal('newLeadModal')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="space-y-3" id="newLeadForm" onsubmit="handleCreateLead(event)">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div class="flex flex-col gap-1">
+<label class="font-label-mono-sm text-label-mono-sm text-outline uppercase">CONTACT FULL NAME</label>
+<input class="bg-surface-container text-on-surface px-3 py-2 rounded font-body-sm text-body-sm outline-none focus:ring-1 focus:ring-primary" id="inputLeadName" placeholder="e.g. Jonathan Briggs" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-mono-sm text-label-mono-sm text-outline uppercase">PHONE NUMBER</label>
+<input class="bg-surface-container text-on-surface px-3 py-2 rounded font-body-sm text-body-sm outline-none focus:ring-1 focus:ring-primary" id="inputLeadPhone" placeholder="+1 (555) 012-3456" required="" type="tel"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-mono-sm text-label-mono-sm text-outline uppercase">FACILITY NAME &amp; LOCATION</label>
+<input class="bg-surface-container text-on-surface px-3 py-2 rounded font-body-sm text-body-sm outline-none focus:ring-1 focus:ring-primary" id="inputLeadFacility" placeholder="e.g. Hudson Yards Storage Terminal - Manhattan, NY" required="" type="text"/>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div class="flex flex-col gap-1">
+<label class="font-label-mono-sm text-label-mono-sm text-outline uppercase">INTAKE SOURCE</label>
+<select class="bg-surface-container text-on-surface px-3 py-2 rounded font-body-sm text-body-sm outline-none focus:ring-1 focus:ring-primary cursor-pointer" id="inputLeadSource">
+<option value="Website Survey Form">Website Survey Form</option>
+<option value="Inbound Call">Inbound Call</option>
+<option value="Partner Referral">Partner Referral</option>
+<option value="Direct Walk-in">Direct Walk-in</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-mono-sm text-label-mono-sm text-outline uppercase">CAMERA ESTIMATE</label>
+<input class="bg-surface-container text-on-surface px-3 py-2 rounded font-body-sm text-body-sm outline-none focus:ring-1 focus:ring-primary" id="inputLeadCamera" placeholder="e.g. 16 Channels, 4K Domes" type="text"/>
+</div>
+</div>
+<div class="flex items-center justify-end gap-2 pt-3 border-t border-surface-container-highest/40">
+<button class="px-3.5 py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm" onclick="closeModal('newLeadModal')" type="button">Cancel</button>
+<button class="px-4 py-1.5 rounded bg-primary-container text-on-primary-container font-headline-sm text-body-sm font-semibold hover:shadow-[0_0_12px_rgba(6,182,212,0.4)] transition-all" type="submit">Save &amp; Ingest</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Inline Script for Client-Side Micro-Interactions -->
+<script>
+    // Tab Toggling
+    const btnOverview = document.getElementById('viewToggleOverview');
+    const btnPipeline = document.getElementById('viewTogglePipeline');
+
+    btnOverview.addEventListener('click', () => {
+      btnOverview.className = 'px-3.5 py-1.5 rounded font-label-mono-md text-label-mono-md uppercase tracking-wider bg-primary-container text-on-primary-container font-semibold transition-all shadow-[0_0_12px_rgba(6,182,212,0.25)] flex items-center gap-2';
+      btnPipeline.className = 'px-3.5 py-1.5 rounded font-label-mono-md text-label-mono-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-2';
+    });
+
+    btnPipeline.addEventListener('click', () => {
+      btnPipeline.className = 'px-3.5 py-1.5 rounded font-label-mono-md text-label-mono-md uppercase tracking-wider bg-primary-container text-on-primary-container font-semibold transition-all shadow-[0_0_12px_rgba(6,182,212,0.25)] flex items-center gap-2';
+      btnOverview.className = 'px-3.5 py-1.5 rounded font-label-mono-md text-label-mono-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-2';
+    });
+
+    // Lead Deep Dive Selection
+    function selectLead(facility, area, cameraCount, quoteVal, status, contact, phone, email, source, staff) {
+      document.getElementById('panelFacilityName').innerText = facility;
+      document.getElementById('panelAreaText').innerText = area;
+      document.getElementById('panelCameraCount').innerText = cameraCount;
+      document.getElementById('panelQuoteVal').innerText = quoteVal;
+      document.getElementById('panelContactName').innerText = contact;
+      document.getElementById('panelContactPhone').innerText = phone;
+      document.getElementById('panelAssignedStaff').innerText = staff;
+      
+      const badge = document.getElementById('panelStatusBadge');
+      badge.innerText = status;
+      if (status === 'WON') {
+        badge.className = 'inline-flex items-center px-2 py-0.5 rounded font-label-mono-sm text-label-mono-sm uppercase bg-tertiary/10 text-tertiary font-semibold';
+      } else if (status === 'SURVEY_SCHEDULED') {
+        badge.className = 'inline-flex items-center px-2 py-0.5 rounded font-label-mono-sm text-label-mono-sm uppercase bg-primary/10 text-primary font-semibold';
+      } else if (status === 'NEW') {
+        badge.className = 'inline-flex items-center px-2 py-0.5 rounded font-label-mono-sm text-label-mono-sm uppercase bg-secondary/15 text-secondary font-semibold';
+      } else {
+        badge.className = 'inline-flex items-center px-2 py-0.5 rounded font-label-mono-sm text-label-mono-sm uppercase bg-secondary-container/20 text-secondary font-semibold';
+      }
+
+      const quoteBtn = document.getElementById('deepDiveQuoteBtn');
+      const numericVal = parseInt(quoteVal.replace(/[^0-9]/g, '')) || 25000;
+      quoteBtn.setAttribute('onclick', `launchQuoteBuilder('${facility}', ${numericVal})`);
+    }
+
+    // Modal helpers
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+
+    function openAssignModal(leadName, currentStaff) {
+      document.getElementById('assignLeadName').innerText = 'Lead: ' + leadName + ' (Current: ' + currentStaff + ')';
+      document.getElementById('assignModal').classList.remove('hidden');
+    }
+
+    function confirmAssignment() {
+      const selected = document.querySelector('input[name="staffSelect"]:checked').value;
+      alert('Assigned to: ' + selected + '. Telemetry record updated.');
+      closeModal('assignModal');
+    }
+
+    function openScheduleModal(facility) {
+      document.getElementById('surveyFacilityTitle').innerText = facility;
+      document.getElementById('surveyModal').classList.remove('hidden');
+    }
+
+    function confirmSurveyBooking() {
+      alert('Site survey confirmed. Automated SMS & dispatch itinerary emitted.');
+      closeModal('surveyModal');
+    }
+
+    function launchQuoteBuilder(facility, totalAmount) {
+      const qteNum = 'QTE-' + Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('quoteFacilityRef').innerText = facility + ' // REF: ' + qteNum;
+      
+      const subtotal = totalAmount / 1.10;
+      const tax = totalAmount - subtotal;
+      
+      document.getElementById('quoteSubtotal').innerText = '$' + subtotal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+      document.getElementById('quoteTax').innerText = '$' + tax.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+      document.getElementById('quoteTotal').innerText = '$' + totalAmount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+      
+      document.getElementById('quoteModal').classList.remove('hidden');
+    }
+
+    function issueQuotePDF() {
+      alert('PDF Contract compiled & dispatched via encrypted link.');
+      closeModal('quoteModal');
+    }
+
+    function handleCreateLead(e) {
+      e.preventDefault();
+      const name = document.getElementById('inputLeadName').value;
+      const facility = document.getElementById('inputLeadFacility').value;
+      alert('New CCTV Lead created for: ' + facility + ' (' + name + ')');
+      closeModal('newLeadModal');
+    }
+
+    // Real-time table filter logic
+    const searchInput = document.getElementById('searchInput');
+    const statusFilter = document.getElementById('statusFilter');
+    const sourceFilter = document.getElementById('sourceFilter');
+    const tableBody = document.getElementById('leadsTableBody');
+
+    function filterTable() {
+      const query = searchInput.value.toLowerCase();
+      const status = statusFilter.value;
+      const rows = tableBody.getElementsByTagName('tr');
+
+      for (let row of rows) {
+        const text = row.innerText.toLowerCase();
+        const matchesQuery = text.includes(query);
+        let matchesStatus = true;
+        if (status !== 'ALL') {
+          matchesStatus = text.includes(status.toLowerCase().replace('_', ' '));
+        }
+
+        if (matchesQuery && matchesStatus) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      }
+    }
+
+    searchInput.addEventListener('input', filterTable);
+    statusFilter.addEventListener('change', filterTable);
+    sourceFilter.addEventListener('change', filterTable);
+
+    document.getElementById('resetFilters').addEventListener('click', () => {
+      searchInput.value = '';
+      statusFilter.value = 'ALL';
+      sourceFilter.value = 'ALL';
+      filterTable();
+    });
+
+    document.getElementById('refreshDataBtn').addEventListener('click', function() {
+      this.classList.add('animate-spin');
+      setTimeout(() => {
+        this.classList.remove('animate-spin');
+      }, 700);
+    });
+  </script>
+</div></main></div></body></html>

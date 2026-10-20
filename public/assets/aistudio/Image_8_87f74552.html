@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-fixed-dim":"#4edea3","inverse-surface":"#dfe2ee","on-primary-fixed-variant":"#004e5c","secondary":"#adc6ff","outline-variant":"#3d494c","primary-fixed":"#acedff","on-surface-variant":"#bcc9cd","surface-container-high":"#262a33","on-error-container":"#ffdad6","on-primary-fixed":"#001f26","inverse-on-surface":"#2c3039","surface-container-highest":"#31353e","background":"#0f131c","surface-container":"#1c2028","tertiary-container":"#1bbd85","on-background":"#dfe2ee","surface":"#0f131c","tertiary-fixed":"#6ffbbe","on-tertiary-fixed":"#002113","on-secondary-container":"#e6ecff","on-tertiary-fixed-variant":"#005236","secondary-fixed":"#d8e2ff","surface-container-low":"#181c24","on-secondary":"#002e6a","on-secondary-fixed-variant":"#004395","secondary-container":"#0566d9","secondary-fixed-dim":"#adc6ff","on-tertiary":"#003824","inverse-primary":"#00687a","on-tertiary-container":"#00452e","tertiary":"#4edea3","surface-container-lowest":"#0a0e16","surface-tint":"#4cd7f6","primary-container":"#06b6d4","surface-bright":"#353942","primary-fixed-dim":"#4cd7f6","on-secondary-fixed":"#001a42","error-container":"#93000a","error":"#ffb4ab","surface-dim":"#0f131c","surface-variant":"#31353e","on-primary":"#003640","outline":"#869397","on-primary-container":"#00424f","on-error":"#690005","primary":"#4cd7f6","on-surface":"#dfe2ee"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-xl":"2.5rem","space-xs":"0.25rem","margin-mobile":"1rem","space-md":"1rem","space-lg":"1.5rem","space-sm":"0.5rem","margin":"3rem","gutter-mobile":"0.75rem","gutter":"1.5rem"},fontFamily:{"body-lg":["Plus Jakarta Sans"],"label-mono-lg":["JetBrains Mono"],"headline-sm":["Plus Jakarta Sans"],"label-mono-md":["JetBrains Mono"],"label-mono-sm":["JetBrains Mono"],"body-md":["Plus Jakarta Sans"],"display-hero-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"]},fontSize:{"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"label-mono-lg":["14px",{lineHeight:"20px",letterSpacing:"0.04em",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-mono-md":["12px",{lineHeight:"16px",letterSpacing:"0.06em",fontWeight:"500"}],"label-mono-sm":["10px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"500"}],"body-md":["15px",{lineHeight:"24px",fontWeight:"400"}],"display-hero-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"800"}],"headline-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"700"}],"headline-md":["28px",{lineHeight:"36px",letterSpacing:"-0.015em",fontWeight:"600"}],"display-hero":["56px",{lineHeight:"64px",letterSpacing:"-0.03em",fontWeight:"800"}],"body-sm":["13px",{lineHeight:"20px",fontWeight:"400"}],"headline-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"700"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="bg-surface-container-lowest px-6 lg:px-12 py-1.5 flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm"><div class="flex items-center gap-6"><div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span><span>NETWORK: <span class="text-tertiary">SECURE</span></span></div><div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span><span>24/7 MONITORING: <span class="text-tertiary">ACTIVE</span></span></div><div class="hidden md:flex items-center gap-1.5"><span class="text-outline">ENCRYPTION:</span><span class="text-on-surface">AES-256 GCM</span></div></div><div class="flex items-center gap-4"><a class="flex items-center gap-1.5 text-primary hover:text-primary-fixed transition-colors" href="tel:18002344773"><span class="material-symbols-outlined text-sm">support_agent</span><span>EMERGENCY SOC: 1-800-AEGIS-SEC</span></a><span class="text-outline">|</span><span class="text-on-surface-variant">LATENCY: 12ms</span></div></div><div class="h-20 max-w-[1440px] mx-auto px-6 lg:px-12 flex items-center justify-between gap-6"><div class="flex items-center gap-3 shrink-0"><img alt="AegisVision CCTV Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XWnhzJ4E_o9oOcNW1TyZmlw2IuH_MGsXe2TFUIHNZ_sOGLlyeRh3zk3L4aqYmvTgsaklsy8Li9aqD1AiYYBi3oyyt2uER9RNET-KA1-Bje2qyx2ebP3BdJYEXY163OUTvfVn5OujZSaoPgD7BnttOa68KTP8el1C-9MqL3dqppmxupVYF0-iWCJTt9eO5_1NeRLyk0nqfxIP_yfqt62U_GUdKeUpWG8jTANk-CqgwzYAxUF8MZZu6FI2g"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-wider uppercase font-bold leading-tight">AEGIS<span class="text-primary">VISION</span></span><span class="font-label-mono-sm text-label-mono-sm text-outline tracking-widest uppercase">Perimeter Telemetry</span></div></div><nav class="hidden xl:flex items-center gap-1 font-body-sm text-body-sm" data-active-classes="bg-surface-container-high text-primary font-bold rounded"><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="overview-and-3d-showcase" href="#">Overview &amp; 3D Showcase</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="hardware-catalog" href="#">Hardware Catalog</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="installation-and-engineering-services" href="#">Installation &amp; Engineering Services</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="system-configurator-and-estimator" href="#">System Configurator &amp; Estimator</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="contact-and-site-survey" href="#">Contact &amp; Site Survey</a></nav><div class="flex items-center gap-4 shrink-0"><div class="hidden md:flex items-center bg-surface-container-low px-3 py-1.5 rounded focus-within:ring-1 focus-within:ring-primary"><span class="material-symbols-outlined text-outline text-lg mr-2">search</span><input class="bg-transparent text-on-surface placeholder:text-outline font-label-mono-sm text-label-mono-sm focus:outline-none w-44 lg:w-56" placeholder="Search hardware, specs, SKUs..." type="text"/></div><a class="hidden sm:inline-flex items-center justify-center bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-headline-sm text-label-mono-sm uppercase tracking-wider px-4 py-2 rounded shadow-[0_0_16px_rgba(6,182,212,0.25)] hover:shadow-[0_0_20px_rgba(6,182,212,0.45)] transition-all" data-path="contact-and-site-survey" href="#">Request Survey</a><button aria-label="Cart and Specs Counter" class="relative p-2 text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-2xl">view_in_ar</span><span class="absolute top-1 right-1 bg-secondary-container text-on-secondary-container font-label-mono-sm text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">4</span></button><div class="flex items-center gap-2 pl-2 cursor-pointer group"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-primary/40 group-hover:ring-primary transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS9zvhp3Aceh6mv6a7U5g76W484Y9ZCdVl99lqFRULeFTcrOir9KgWE57F6BMojvLKPftBC0UXwe_1Wzr-jx5ctRDGElQyY_AOTEC9dz1ZIssAtvc1rWJnrAurjR3zydXc1NPltkp1eJLLoWJN5aHV7qHNWUhf7H5yqhycJjAfZCkIrJLUTcA60X_xo-RyfPcIgZY3ISPHr7CM8MkfRuprw6Cn055qDJJsy3BVAYgbeC9uZwU8xsCdFQ"/><span class="material-symbols-outlined text-outline group-hover:text-on-surface text-sm transition-colors">arrow_drop_down</span></div></div></div></header><main class="w-full pt-28 bg-background"><div class="flex flex-col w-full">
+<!-- System Architecture Breadcrumb & Live Caliper Header -->
+<div class="w-full bg-surface-container-lowest px-6 lg:px-12 py-4">
+<div class="max-w-[1440px] mx-auto flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-mono-sm text-label-mono-sm uppercase tracking-widest font-bold">CFG-ENGINE v4.8</span>
+<div class="flex items-center gap-2 font-label-mono-sm text-label-mono-sm text-outline">
+<span>SPEC_BUILDER</span>
+<span class="text-on-surface-variant">/</span>
+<span class="text-primary font-semibold">ENTERPRISE_BOM_CALCULATOR</span>
+</div>
+</div>
+<div class="flex items-center gap-6 font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span>AUTOSAVE: <span class="text-on-surface">SYNCHRONIZED</span></span>
+</div>
+<div class="hidden sm:flex items-center gap-1.5">
+<span class="text-outline">CURRENCY:</span>
+<span class="text-primary font-bold">USD ($)</span>
+</div>
+<div class="hidden md:flex items-center gap-1.5">
+<span class="text-outline">COMPLIANCE:</span>
+<span class="text-tertiary">NDAA 889 / UL294</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary Configurator Workspace Grid -->
+<div class="max-w-[1440px] mx-auto w-full px-6 lg:px-12 py-8">
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
+<!-- LEFT COLUMN: Multi-Step Configuration Controls (7 cols on xl) -->
+<div class="xl:col-span-7 flex flex-col gap-6">
+<!-- Section Intro Banner -->
+<div class="bg-surface-container-low p-6 rounded-xl relative overflow-hidden shadow-sm">
+<div class="absolute -right-12 -top-12 w-48 h-48 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-widest">TACTICAL ESTIMATION ENGINE</span>
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">Perimeter Telemetry Architect</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Configure enterprise sensors, automated storage arrays, and deployment SLAs. Real-time pricing reflects current enterprise contract rates.</p>
+</div>
+<span class="material-symbols-outlined text-primary text-3xl opacity-80">tune</span>
+</div>
+</div>
+<!-- STEP 1: Property Type & Size -->
+<div class="bg-surface-container p-6 rounded-xl flex flex-col gap-5 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded bg-primary/10 text-primary font-label-mono-sm text-label-mono-sm flex items-center justify-center font-bold">01</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Site Profile &amp; Enclosure Footprint</h2>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">SELECT OPERATIONAL ENVIRONMENT</span>
+</div>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">STEP 1 / 4</span>
+</div>
+<!-- Property Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="property-selector">
+<button class="prop-card active text-left p-3.5 rounded-lg bg-surface-container-high transition-all flex flex-col justify-between gap-3 group shadow-sm" data-mult="1.2" data-sqft-default="85000" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="material-symbols-outlined text-primary text-2xl group-hover:scale-110 transition-transform">warehouse</span>
+<span class="prop-check w-4 h-4 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-surface text-xs font-bold">check</span>
+</span>
+</div>
+<div>
+<span class="font-label-mono-md text-label-mono-md text-on-surface block font-bold leading-tight">Warehouse</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">High-Bay / Port</span>
+</div>
+</button>
+<button class="prop-card text-left p-3.5 rounded-lg bg-surface-container-low transition-all flex flex-col justify-between gap-3 group" data-mult="1.0" data-sqft-default="22000" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-2xl group-hover:scale-110 transition-transform">storefront</span>
+<span class="prop-check w-4 h-4 rounded-full bg-surface-container-highest flex items-center justify-center"></span>
+</div>
+<div>
+<span class="font-label-mono-md text-label-mono-md text-on-surface block font-bold leading-tight">Retail Strip</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">High Footfall</span>
+</div>
+</button>
+<button class="prop-card text-left p-3.5 rounded-lg bg-surface-container-low transition-all flex flex-col justify-between gap-3 group" data-mult="1.35" data-sqft-default="140000" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-2xl group-hover:scale-110 transition-transform">corporate_fare</span>
+<span class="prop-check w-4 h-4 rounded-full bg-surface-container-highest flex items-center justify-center"></span>
+</div>
+<div>
+<span class="font-label-mono-md text-label-mono-md text-on-surface block font-bold leading-tight">Corporate HQ</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Multi-Floor Campus</span>
+</div>
+</button>
+<button class="prop-card text-left p-3.5 rounded-lg bg-surface-container-low transition-all flex flex-col justify-between gap-3 group" data-mult="0.95" data-sqft-default="18000" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-2xl group-hover:scale-110 transition-transform">chalet</span>
+<span class="prop-check w-4 h-4 rounded-full bg-surface-container-highest flex items-center justify-center"></span>
+</div>
+<div>
+<span class="font-label-mono-md text-label-mono-md text-on-surface block font-bold leading-tight">Mansion / Estate</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Private Perimeter</span>
+</div>
+</button>
+</div>
+<!-- SQFT Slider -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<label class="font-label-mono-sm text-label-mono-sm text-outline uppercase tracking-wider flex items-center gap-1.5" for="sqft-range">
+<span class="material-symbols-outlined text-sm">straighten</span>
+                Total Monitored Coverage Footprint
+              </label>
+<div class="flex items-baseline gap-1 bg-surface-container px-3 py-1 rounded">
+<span class="font-label-mono-lg text-label-mono-lg text-primary font-bold" id="sqft-display">85,000</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">SQ FT</span>
+</div>
+</div>
+<input class="w-full accent-primary h-1.5 bg-surface-container-highest rounded-lg cursor-pointer" id="sqft-range" max="300000" min="5000" step="5000" type="range" value="85000"/>
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm text-outline">
+<span>5,000 sq ft (Compact)</span>
+<span>150,000 sq ft</span>
+<span>300,000+ sq ft (Mega-Site)</span>
+</div>
+</div>
+</div>
+<!-- STEP 2: Camera Quantities & Quality -->
+<div class="bg-surface-container p-6 rounded-xl flex flex-col gap-5 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded bg-primary/10 text-primary font-label-mono-sm text-label-mono-sm flex items-center justify-center font-bold">02</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Optical &amp; Thermal Sensor Quantities</h2>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">HIGH-ASSURANCE PERIMETER TELEMETRY</span>
+</div>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">STEP 2 / 4</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Sensor Unit 1 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col justify-between gap-4">
+<div class="space-y-2">
+<div class="h-28 rounded bg-surface-container-lowest overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="High-resolution industrial 4K security dome camera with black matte casing, infrared LED array, and crystalline optical dome lens mounted on a minimalist dark architectural background with subtle cyan reflection" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCodP2oWDuoYQSbkMt7-dqLUSPnUXT3ZYg6T9hF1YRRd59A8Gah29C8AFqlEgm1S1t_HxmvUTSziaCftu7wBRCaG1ORvi7fDRCErs8ArZRg6zIxcc8hUBFVxdWxQzndMpzVcmSu7xUnfMkHqRQX6Ua12Th3RgL1HjSc1GVE1JKBRiUsQ1MVNZQZc-YByhDICs8nZ0Tfg9DFYaJ-xGEnSwcC90izi1fdltWG54uxK-i12_jjUAlxzWXI7w"/>
+<span class="absolute top-2 left-2 bg-surface/85 backdrop-blur px-2 py-0.5 rounded font-label-mono-sm text-label-mono-sm text-primary font-bold">4K AI DOME</span>
+</div>
+<div>
+<span class="font-label-mono-md text-label-mono-md text-on-surface font-bold block">AEGIS D-900 Ultra</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Sony Starvis 2 sensor, built-in neural classification, IP67 vandal-proof.</p>
+</div>
+<div class="font-label-mono-sm text-label-mono-sm text-outline flex items-center justify-between">
+<span>Unit Rate</span>
+<span class="text-on-surface font-semibold">$540 / unit</span>
+</div>
+</div>
+<div class="flex items-center justify-between bg-surface-container p-2 rounded">
+<button class="counter-btn w-8 h-8 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface flex items-center justify-center transition-colors" data-delta="-1" data-target="cam-dome" type="button">
+<span class="material-symbols-outlined text-lg">remove</span>
+</button>
+<div class="flex items-baseline gap-1">
+<span class="font-label-mono-lg text-label-mono-lg text-primary font-bold" id="cam-dome-val">12</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">UNITS</span>
+</div>
+<button class="counter-btn w-8 h-8 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface flex items-center justify-center transition-colors" data-delta="1" data-target="cam-dome" type="button">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+<!-- Sensor Unit 2 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col justify-between gap-4">
+<div class="space-y-2">
+<div class="h-28 rounded bg-surface-container-lowest overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Commercial grade PTZ security camera with large 32x optical zoom lens, heavy-duty metallic pantilt motorized chassis, mounted under tactical dark overhang with soft blue status indicator lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIAeZApvo5NvSiXx3z7SA3VBsZxbmrLeEG_t7eYl-wjo-1xKMf-fJ72UCdu0tUAcKaO_eiYfzLRI32BQXbwAEYJH3etbLH55CwJ-nBzatV7drvGcuALUdffxH4c_U65r3sTQGOBDfKLIExM7-EFjvw5mZXBH2196BVRVqNbx-ybprZs42ZYGJatbZvliXhlxzPpIJGS1IVPBQBmgCnI24bCfhy-80v4xbaakron7EgYRD0IGxSwIg5kg"/>
+<span class="absolute top-2 left-2 bg-surface/85 backdrop-blur px-2 py-0.5 rounded font-label-mono-sm text-label-mono-sm text-secondary font-bold">32X PTZ TURRET</span>
+</div>
+<div>
+<span class="font-label-mono-md text-label-mono-md text-on-surface font-bold block">AEGIS P-400 Pan-Tilt</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">32x optical zoom, continuous 360 rotation, laser IR 250m perimeter reach.</p>
+</div>
+<div class="font-label-mono-sm text-label-mono-sm text-outline flex items-center justify-between">
+<span>Unit Rate</span>
+<span class="text-on-surface font-semibold">$1,850 / unit</span>
+</div>
+</div>
+<div class="flex items-center justify-between bg-surface-container p-2 rounded">
+<button class="counter-btn w-8 h-8 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface flex items-center justify-center transition-colors" data-delta="-1" data-target="cam-ptz" type="button">
+<span class="material-symbols-outlined text-lg">remove</span>
+</button>
+<div class="flex items-baseline gap-1">
+<span class="font-label-mono-lg text-label-mono-lg text-secondary font-bold" id="cam-ptz-val">2</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">UNITS</span>
+</div>
+<button class="counter-btn w-8 h-8 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface flex items-center justify-center transition-colors" data-delta="1" data-target="cam-ptz" type="button">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+<!-- Sensor Unit 3 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col justify-between gap-4">
+<div class="space-y-2">
+<div class="h-28 rounded bg-surface-container-lowest overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Rugged thermal imaging security sensor with dual-spectrum germanium lens, tactical matte black anodized aluminum enclosure, red-hot thermal gradient reflections, dark moody control room studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBms8TdZDgLGBIHr5tHsPCAB2adkPpKcZ0DkUdAILQt9VfFy_naj1V74wxGFKRrRNwVwrT_qInGEKjFdcSb69FmMteI-9nCBcQoYhjcEexsR2PPF2lrDTiA_lvopHi1uS4GX32qScVdiCjsNijau3FH9yQlvf9W4-H5ni9zCSQYrpvpF8P_bYqRloJ1QFlCzoIid-j5_L0LTKdNeOIgd6BsjLATbd5-_hb63TV-Z7Rstw8-HfaBUeB9WQ"/>
+<span class="absolute top-2 left-2 bg-surface/85 backdrop-blur px-2 py-0.5 rounded font-label-mono-sm text-label-mono-sm text-tertiary font-bold">THERMAL RADAR</span>
+</div>
+<div>
+<span class="font-label-mono-md text-label-mono-md text-on-surface font-bold block">AEGIS T-100 Dual-Ray</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Uncooled microbolometer sensor, zero-light intrusion trigger, radiometric scan.</p>
+</div>
+<div class="font-label-mono-sm text-label-mono-sm text-outline flex items-center justify-between">
+<span>Unit Rate</span>
+<span class="text-on-surface font-semibold">$3,400 / unit</span>
+</div>
+</div>
+<div class="flex items-center justify-between bg-surface-container p-2 rounded">
+<button class="counter-btn w-8 h-8 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface flex items-center justify-center transition-colors" data-delta="-1" data-target="cam-thermal" type="button">
+<span class="material-symbols-outlined text-lg">remove</span>
+</button>
+<div class="flex items-baseline gap-1">
+<span class="font-label-mono-lg text-label-mono-lg text-tertiary font-bold" id="cam-thermal-val">1</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">UNITS</span>
+</div>
+<button class="counter-btn w-8 h-8 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface flex items-center justify-center transition-colors" data-delta="1" data-target="cam-thermal" type="button">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- STEP 3: Storage & Retention Requirements -->
+<div class="bg-surface-container p-6 rounded-xl flex flex-col gap-5 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded bg-primary/10 text-primary font-label-mono-sm text-label-mono-sm flex items-center justify-center font-bold">03</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Storage Architecture &amp; Retention Window</h2>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">TELEMETRY ARCHIVAL SPECIFICATION</span>
+</div>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">STEP 3 / 4</span>
+</div>
+<!-- Storage Topologies -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="storage-type-selector">
+<button class="storage-card active p-4 rounded-lg bg-surface-container-high text-left flex items-start gap-4 transition-all shadow-sm" data-storage="on-prem" type="button">
+<span class="material-symbols-outlined text-primary text-3xl shrink-0 mt-0.5">dns</span>
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-md text-label-mono-md text-on-surface font-bold">On-Prem NVR Appliance</span>
+<span class="storage-badge w-2.5 h-2.5 rounded-full bg-primary"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Enterprise rackmount SAS RAID-5 chassis, zero recurring egress fees, air-gapped security.</p>
+<span class="font-label-mono-sm text-label-mono-sm text-primary block pt-1">$2,950 base unit</span>
+</div>
+</button>
+<button class="storage-card p-4 rounded-lg bg-surface-container-low text-left flex items-start gap-4 transition-all" data-storage="hybrid-cloud" type="button">
+<span class="material-symbols-outlined text-outline text-3xl shrink-0 mt-0.5">cloud_sync</span>
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-md text-label-mono-md text-on-surface font-bold">Hybrid Cloud Direct</span>
+<span class="storage-badge w-2.5 h-2.5 rounded-full bg-surface-container-highest"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Edge caching with geodistributed encrypted replication. Instant multi-site browser playback.</p>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary block pt-1">$18 / camera / mo</span>
+</div>
+</button>
+</div>
+<!-- Retention Days Selector & Storage Calculations -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col gap-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<span class="font-label-mono-sm text-label-mono-sm text-outline uppercase tracking-wider">Continuous 24/7 Buffer Retention</span>
+<div class="flex items-center gap-2" id="retention-days-selector">
+<button class="retention-btn px-4 py-1.5 rounded font-label-mono-sm text-label-mono-sm bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-all font-bold" data-days="30" type="button">30 DAYS</button>
+<button class="retention-btn active px-4 py-1.5 rounded font-label-mono-sm text-label-mono-sm bg-primary text-on-primary transition-all font-bold" data-days="60" type="button">60 DAYS</button>
+<button class="retention-btn px-4 py-1.5 rounded font-label-mono-sm text-label-mono-sm bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-all font-bold" data-days="90" type="button">90 DAYS</button>
+</div>
+</div>
+<!-- Dynamic Telemetry Readout Box -->
+<div class="bg-surface-container-lowest p-3.5 rounded flex items-center justify-between flex-wrap gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">memory</span>
+<div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline block">COMPUTED PAYLOAD VOLUME</span>
+<span class="font-label-mono-md text-label-mono-md text-tertiary font-bold tracking-wide" id="calculated-storage">48 TB RAID-5 (4x 16TB Enterprise SAS)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>H.265+ Smart Codec (4K @ 20 FPS)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- STEP 4: Installation & Maintenance Tier -->
+<div class="bg-surface-container p-6 rounded-xl flex flex-col gap-5 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded bg-primary/10 text-primary font-label-mono-sm text-label-mono-sm flex items-center justify-center font-bold">04</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Deployment &amp; Service SLA Level</h2>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">PHYSICAL RIGGING &amp; TELEMETRY SOC DISPATCH</span>
+</div>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant">STEP 4 / 4</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3" id="sla-selector">
+<button class="sla-card p-4 rounded-lg bg-surface-container-low text-left flex flex-col justify-between gap-4 transition-all group" data-cost-cabling="0" data-cost-monthly="0" data-sla="self" type="button">
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">handyman</span>
+<span class="sla-radio w-3.5 h-3.5 rounded-full bg-surface-container-highest"></span>
+</div>
+<span class="font-label-mono-md text-label-mono-md text-on-surface font-bold block">Self-Install Kit</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pre-flashed IP configuration, terminated cables, standard warranty. Self-rigged by facility team.</p>
+</div>
+<div class="pt-2">
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary block font-bold">$0 Rigging Fee</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">$0/mo Recurring</span>
+</div>
+</button>
+<button class="sla-card active p-4 rounded-lg bg-surface-container-high text-left flex flex-col justify-between gap-4 transition-all group shadow-sm" data-cost-cabling="2800" data-cost-monthly="0" data-sla="turnkey" type="button">
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary">engineering</span>
+<span class="sla-radio w-3.5 h-3.5 rounded-full bg-primary"></span>
+</div>
+<span class="font-label-mono-md text-label-mono-md text-on-surface font-bold block">Turnkey Rigging</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Certified master low-voltage union riggers, conduit runs, optical tuning, and commissioning.</p>
+</div>
+<div class="pt-2">
+<span class="font-label-mono-sm text-label-mono-sm text-primary block font-bold">Standard Labor Included</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Factory 3-Yr Warranty</span>
+</div>
+</button>
+<button class="sla-card p-4 rounded-lg bg-surface-container-low text-left flex flex-col justify-between gap-4 transition-all group" data-cost-cabling="3600" data-cost-monthly="450" data-sla="soc" type="button">
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">shield</span>
+<span class="sla-radio w-3.5 h-3.5 rounded-full bg-surface-container-highest"></span>
+</div>
+<span class="font-label-mono-md text-label-mono-md text-on-surface font-bold block">24/7 Managed NOC SLA</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Dedicated cyber defense center dispatch, 4-hour on-site lens swap, automatic firmware zero-day patching.</p>
+</div>
+<div class="pt-2">
+<span class="font-label-mono-sm text-label-mono-sm text-secondary block font-bold">Priority Rigging</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-bold">+$450/mo SLA Retainer</span>
+</div>
+</button>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Real-Time Summary & Architecture Blueprint (5 cols on xl) -->
+<div class="xl:col-span-5 flex flex-col gap-6 xl:sticky xl:top-32">
+<!-- Live Architecture Blueprint Card -->
+<div class="bg-surface-container p-6 rounded-xl flex flex-col gap-4 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">schema</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface uppercase tracking-wider font-bold">SYSTEM TOPOLOGY BLUEPRINT</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-ping"></span>
+              REALTIME
+            </span>
+</div>
+<!-- Interactive Topology Diagram Canvas/SVG -->
+<div class="bg-surface-container-lowest p-4 rounded-lg relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-transparent via-primary/5 to-transparent pointer-events-none"></div>
+<svg class="w-full h-44 text-outline-variant" fill="none" viewbox="0 0 460 160" xmlns="http://www.w3.org/2000/svg">
+<!-- Grid background lines -->
+<line stroke="currentColor" stroke-dasharray="4 4" stroke-opacity="0.15" x1="0" x2="460" y1="40" y2="40"></line>
+<line stroke="currentColor" stroke-dasharray="4 4" stroke-opacity="0.15" x1="0" x2="460" y1="80" y2="80"></line>
+<line stroke="currentColor" stroke-dasharray="4 4" stroke-opacity="0.15" x1="0" x2="460" y1="120" y2="120"></line>
+<!-- Connecting Bus Lines -->
+<path d="M 90 40 L 160 40 L 160 80" stroke="currentColor" stroke-opacity="0.4" stroke-width="2"></path>
+<path d="M 90 80 L 160 80" stroke="currentColor" stroke-opacity="0.4" stroke-width="2"></path>
+<path d="M 90 120 L 160 120 L 160 80" stroke="currentColor" stroke-opacity="0.4" stroke-width="2"></path>
+<!-- Core Bus Trunk -->
+<path d="M 230 80 L 290 80" stroke="#06B6D4" stroke-dasharray="6 3" stroke-width="2.5"></path>
+<path d="M 360 80 L 400 80" stroke="#4EDEA3" stroke-width="2"></path>
+<!-- Nodes: Cameras -->
+<g transform="translate(15, 25)">
+<rect fill="#1C2028" height="30" rx="4" width="75"></rect>
+<circle cx="16" cy="15" fill="#4CD7F6" r="4"></circle>
+<text fill="#DFE2EE" font-family="JetBrains Mono" font-size="10" font-weight="600" x="26" y="19">DOMES (<tspan id="topo-dome-cnt">12</tspan>)</text>
+</g>
+<g transform="translate(15, 65)">
+<rect fill="#1C2028" height="30" rx="4" width="75"></rect>
+<circle cx="16" cy="15" fill="#ADC6FF" r="4"></circle>
+<text fill="#DFE2EE" font-family="JetBrains Mono" font-size="10" font-weight="600" x="26" y="19">PTZs (<tspan id="topo-ptz-cnt">2</tspan>)</text>
+</g>
+<g transform="translate(15, 105)">
+<rect fill="#1C2028" height="30" rx="4" width="75"></rect>
+<circle cx="16" cy="15" fill="#4EDEA3" r="4"></circle>
+<text fill="#DFE2EE" font-family="JetBrains Mono" font-size="10" font-weight="600" x="26" y="19">THRM (<tspan id="topo-thermal-cnt">1</tspan>)</text>
+</g>
+<!-- Node: PoE Switch Core -->
+<g transform="translate(160, 60)">
+<rect fill="#262A33" height="40" rx="4" width="70"></rect>
+<text fill="#DFE2EE" font-family="JetBrains Mono" font-size="10" font-weight="700" x="10" y="19">PoE+ SWITCH</text>
+<text fill="#4CD7F6" font-family="JetBrains Mono" font-size="9" x="10" y="32">802.3bt / 1Gbps</text>
+</g>
+<!-- Node: NVR / Edge Storage -->
+<g transform="translate(290, 60)">
+<rect fill="#262A33" height="40" rx="4" width="70"></rect>
+<text fill="#DFE2EE" font-family="JetBrains Mono" font-size="10" font-weight="700" x="8" y="19">CORE NVR</text>
+<text fill="#4EDEA3" font-family="JetBrains Mono" font-size="9" id="topo-storage-label" x="8" y="32">48TB RAID-5</text>
+</g>
+<!-- Node: Secure Gateway Router -->
+<g transform="translate(400, 60)">
+<circle cx="20" cy="20" fill="#1C2028" r="18"></circle>
+<text fill="#ADC6FF" font-family="JetBrains Mono" font-size="11" font-weight="bold" x="11" y="24">SOC</text>
+</g>
+</svg>
+<div class="flex items-center justify-between text-[11px] font-label-mono-sm text-outline pt-2">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                PoE Budget: <span class="text-on-surface" id="topo-poe-budget">320W / 480W</span>
+</span>
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Trunk Bandwidth: <span class="text-on-surface" id="topo-bandwidth">112 Mbps</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Live Bill of Materials & Cost Breakdown -->
+<div class="bg-surface-container p-6 rounded-xl flex flex-col gap-6 shadow-sm">
+<div class="flex items-center justify-between pb-3">
+<div>
+<span class="font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-widest block font-bold">ESTIMATED INVESTMENT</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Bill of Materials (BOM)</h3>
+</div>
+<span class="material-symbols-outlined text-outline">receipt_long</span>
+</div>
+<!-- Dynamic Line Items -->
+<div class="space-y-3 font-label-mono-sm text-label-mono-sm">
+<div class="flex items-center justify-between py-1.5">
+<div class="flex items-center gap-2">
+<span class="text-primary font-bold">01</span>
+<span class="text-on-surface" id="bom-dome-line">12x 4K AI Smart Domes (D-900)</span>
+</div>
+<span class="text-on-surface font-semibold" id="bom-dome-total">$6,480</span>
+</div>
+<div class="flex items-center justify-between py-1.5">
+<div class="flex items-center gap-2">
+<span class="text-secondary font-bold">02</span>
+<span class="text-on-surface" id="bom-ptz-line">2x 32X Optical PTZs (P-400)</span>
+</div>
+<span class="text-on-surface font-semibold" id="bom-ptz-total">$3,700</span>
+</div>
+<div class="flex items-center justify-between py-1.5">
+<div class="flex items-center gap-2">
+<span class="text-tertiary font-bold">03</span>
+<span class="text-on-surface" id="bom-thermal-line">1x Thermal Radar (T-100)</span>
+</div>
+<span class="text-on-surface font-semibold" id="bom-thermal-total">$3,400</span>
+</div>
+<div class="flex items-center justify-between py-1.5">
+<div class="flex items-center gap-2">
+<span class="text-outline font-bold">04</span>
+<span class="text-on-surface" id="bom-storage-line">Storage NVR SAS Appliance (48TB)</span>
+</div>
+<span class="text-on-surface font-semibold" id="bom-storage-total">$2,950</span>
+</div>
+<div class="flex items-center justify-between py-1.5">
+<div class="flex items-center gap-2">
+<span class="text-outline font-bold">05</span>
+<span class="text-on-surface" id="bom-cabling-line">Turnkey Union Rigging &amp; Cat6A Conduits</span>
+</div>
+<span class="text-on-surface font-semibold" id="bom-cabling-total">$2,800</span>
+</div>
+</div>
+<!-- Total Calculation Ledger -->
+<div class="bg-surface-container-low p-4 rounded-lg space-y-3">
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span>Hardware Subtotal:</span>
+<span class="text-on-surface font-bold" id="summary-hardware">$16,530</span>
+</div>
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span>Rigging &amp; Commissioning:</span>
+<span class="text-on-surface font-bold" id="summary-rigging">$2,800</span>
+</div>
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm text-secondary">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">event_repeat</span>
+                Recurring Cloud / SLA Retainer:
+              </span>
+<span class="font-bold" id="summary-monthly">$0 / mo</span>
+</div>
+<!-- Total Hero Display -->
+<div class="pt-3 flex items-end justify-between">
+<div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline uppercase block font-semibold">Total System Investment</span>
+<span class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight leading-none" id="total-investment">$19,330</span>
+</div>
+<div class="text-right">
+<span class="font-label-mono-sm text-label-mono-sm text-outline block">Financing Options</span>
+<span class="font-label-mono-md text-label-mono-md text-on-surface font-bold" id="financing-estimate">$548 / mo</span>
+<span class="text-[10px] text-outline font-label-mono-sm block">36-mo Lease-to-Own</span>
+</div>
+</div>
+</div>
+<!-- Primary Call-to-Actions -->
+<div class="flex flex-col gap-2.5">
+<button class="w-full bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary py-3 rounded font-label-mono-sm text-label-mono-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md" id="btn-export-pdf" type="button">
+<span class="material-symbols-outlined text-lg">picture_as_pdf</span>
+<span>Export PDF Specification Sheet</span>
+</button>
+<div class="grid grid-cols-2 gap-2">
+<button class="w-full bg-surface-container-high hover:bg-surface-bright text-on-surface py-2.5 rounded font-label-mono-sm text-label-mono-sm font-semibold transition-all flex items-center justify-center gap-1.5" id="btn-book-survey" type="button">
+<span class="material-symbols-outlined text-primary text-base">calendar_month</span>
+<span>Book Site Survey</span>
+</button>
+<button class="w-full bg-surface-container-high hover:bg-surface-bright text-on-surface py-2.5 rounded font-label-mono-sm text-label-mono-sm font-semibold transition-all flex items-center justify-center gap-1.5" id="btn-save-procure" type="button">
+<span class="material-symbols-outlined text-secondary text-base">send_and_archive</span>
+<span>Send to Procurement</span>
+</button>
+</div>
+</div>
+<!-- Export Status Feedback Toast -->
+<div class="hidden p-3 rounded bg-tertiary-container text-on-tertiary-container font-label-mono-sm text-label-mono-sm flex items-center gap-2 transition-opacity" id="action-toast">
+<span class="material-symbols-outlined text-base">verified</span>
+<span id="toast-message">Specification payload generated and sent.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Quick Specs Bar / Engineering Metrics -->
+<div class="w-full bg-surface-container-lowest mt-12 py-8 px-6 lg:px-12">
+<div class="max-w-[1440px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 font-label-mono-sm text-label-mono-sm">
+<div class="space-y-1">
+<span class="text-outline uppercase block">Cabling Type</span>
+<span class="text-on-surface font-semibold">Shielded Cat6A STP Solid Bare Copper</span>
+<span class="text-outline block text-[11px]">Plenum-rated CMP certified</span>
+</div>
+<div class="space-y-1">
+<span class="text-outline uppercase block">Encryption Standard</span>
+<span class="text-on-surface font-semibold">TLS 1.3 / AES-256 Frame Stream</span>
+<span class="text-tertiary block text-[11px]">FIPS 140-3 Hardware Enclave</span>
+</div>
+<div class="space-y-1">
+<span class="text-outline uppercase block">Redundancy Architecture</span>
+<span class="text-on-surface font-semibold">Dual Hot-Swap Power Supplies</span>
+<span class="text-outline block text-[11px]">N+1 Failover NVR Standby</span>
+</div>
+<div class="space-y-1">
+<span class="text-outline uppercase block">Estimated Delivery</span>
+<span class="text-on-surface font-semibold">4 - 6 Business Days</span>
+<span class="text-primary block text-[11px]">Immediate Dispatch from Regional Hub</span>
+</div>
+</div>
+</div>
+<!-- Client-side Interactive Dynamic Engine -->
+<script>
+    (function initConfigurator() {
+      // Rates & Costs
+      const RATES = {
+        dome: 540,
+        ptz: 1850,
+        thermal: 3400,
+        nvrBase: 2950,
+        cloudPerCamMo: 18
+      };
+
+      // State Store
+      const state = {
+        propertySqft: 85000,
+        propertyMultiplier: 1.2,
+        domeCount: 12,
+        ptzCount: 2,
+        thermalCount: 1,
+        storageType: 'on-prem',
+        retentionDays: 60,
+        slaType: 'turnkey',
+        slaCabling: 2800,
+        slaMonthly: 0
+      };
+
+      // Element References
+      const sqftRange = document.getElementById('sqft-range');
+      const sqftDisplay = document.getElementById('sqft-display');
+      const camDomeVal = document.getElementById('cam-dome-val');
+      const camPtzVal = document.getElementById('cam-ptz-val');
+      const camThermalVal = document.getElementById('cam-thermal-val');
+      
+      const topoDomeCnt = document.getElementById('topo-dome-cnt');
+      const topoPtzCnt = document.getElementById('topo-ptz-cnt');
+      const topoThermalCnt = document.getElementById('topo-thermal-cnt');
+      const topoStorageLabel = document.getElementById('topo-storage-label');
+      const topoPoeBudget = document.getElementById('topo-poe-budget');
+      const topoBandwidth = document.getElementById('topo-bandwidth');
+      
+      const calculatedStorage = document.getElementById('calculated-storage');
+      
+      const bomDomeLine = document.getElementById('bom-dome-line');
+      const bomDomeTotal = document.getElementById('bom-dome-total');
+      const bomPtzLine = document.getElementById('bom-ptz-line');
+      const bomPtzTotal = document.getElementById('bom-ptz-total');
+      const bomThermalLine = document.getElementById('bom-thermal-line');
+      const bomThermalTotal = document.getElementById('bom-thermal-total');
+      const bomStorageLine = document.getElementById('bom-storage-line');
+      const bomStorageTotal = document.getElementById('bom-storage-total');
+      const bomCablingLine = document.getElementById('bom-cabling-line');
+      const bomCablingTotal = document.getElementById('bom-cabling-total');
+
+      const summaryHardware = document.getElementById('summary-hardware');
+      const summaryRigging = document.getElementById('summary-rigging');
+      const summaryMonthly = document.getElementById('summary-monthly');
+      const totalInvestment = document.getElementById('total-investment');
+      const financingEstimate = document.getElementById('financing-estimate');
+      const toast = document.getElementById('action-toast');
+      const toastMessage = document.getElementById('toast-message');
+
+      function calculateRequiredStorageTB(camerasTotal, days) {
+        // approx 1.6 TB per 4K camera per 30 days continuous H.265+
+        const dailyPerCamTB = 1.6 / 30;
+        const rawTB = camerasTotal * dailyPerCamTB * days;
+        const raidTB = Math.ceil(rawTB * 1.33); // RAID-5 parity overhead
+        return Math.max(16, Math.ceil(raidTB / 16) * 16); // step in 16TB enterprise drives
+      }
+
+      function updateCalculations() {
+        const totalCams = state.domeCount + state.ptzCount + state.thermalCount;
+        
+        // Storage Calculation
+        const computedTB = calculateRequiredStorageTB(totalCams, state.retentionDays);
+        if (state.storageType === 'on-prem') {
+          calculatedStorage.textContent = computedTB + ' TB RAID-5 (' + (computedTB / 16) + 'x 16TB Enterprise SAS)';
+          topoStorageLabel.textContent = computedTB + 'TB RAID-5';
+          bomStorageLine.textContent = 'Storage NVR SAS Appliance (' + computedTB + 'TB)';
+          bomStorageTotal.textContent = '$' + RATES.nvrBase.toLocaleString();
+        } else {
+          calculatedStorage.textContent = 'Hybrid Direct-to-Cloud (' + state.retentionDays + ' Day Cloud Vault)';
+          topoStorageLabel.textContent = 'CLOUD VAULT';
+          bomStorageLine.textContent = 'Cloud Archival Sync Gateway Bridge';
+          bomStorageTotal.textContent = '$650';
+        }
+
+        // Hardware Subtotal
+        const domeCost = state.domeCount * RATES.dome;
+        const ptzCost = state.ptzCount * RATES.ptz;
+        const thermalCost = state.thermalCount * RATES.thermal;
+        const storageHardwareCost = state.storageType === 'on-prem' ? RATES.nvrBase : 650;
+        const hardwareTotal = domeCost + ptzCost + thermalCost + storageHardwareCost;
+
+        // Dynamic Rigging scaling with cameras & square footage
+        let riggingLabor = 0;
+        if (state.slaType !== 'self') {
+          const sqftFactor = Math.floor(state.propertySqft / 25000) * 350;
+          const camFactor = totalCams * 110;
+          riggingLabor = state.slaCabling + sqftFactor + camFactor;
+        }
+
+        // Monthly calculation
+        let recurringMo = state.slaMonthly;
+        if (state.storageType === 'hybrid-cloud') {
+          recurringMo += totalCams * RATES.cloudPerCamMo;
+        }
+
+        const grandTotal = hardwareTotal + riggingLabor;
+        const monthlyFinancing = Math.round((grandTotal * 1.08) / 36);
+
+        // Update Topology
+        topoDomeCnt.textContent = state.domeCount;
+        topoPtzCnt.textContent = state.ptzCount;
+        topoThermalCnt.textContent = state.thermalCount;
+
+        const totalWatts = (state.domeCount * 14) + (state.ptzCount * 45) + (state.thermalCount * 22);
+        topoPoeBudget.textContent = totalWatts + 'W / ' + (Math.ceil(totalWatts / 240) * 240) + 'W';
+        topoBandwidth.textContent = Math.round(totalCams * 7.4) + ' Mbps';
+
+        // Update BOM
+        bomDomeLine.textContent = state.domeCount + 'x 4K AI Smart Domes (D-900)';
+        bomDomeTotal.textContent = '$' + domeCost.toLocaleString();
+        
+        bomPtzLine.textContent = state.ptzCount + 'x 32X Optical PTZs (P-400)';
+        bomPtzTotal.textContent = '$' + ptzCost.toLocaleString();
+
+        bomThermalLine.textContent = state.thermalCount + 'x Thermal Radar (T-100)';
+        bomThermalTotal.textContent = '$' + thermalCost.toLocaleString();
+
+        if (state.slaType === 'self') {
+          bomCablingLine.textContent = 'Self-Install Provisioning Kit';
+          bomCablingTotal.textContent = '$0';
+        } else if (state.slaType === 'turnkey') {
+          bomCablingLine.textContent = 'Turnkey Rigging, Conduits & Optical Tuning';
+          bomCablingTotal.textContent = '$' + riggingLabor.toLocaleString();
+        } else {
+          bomCablingLine.textContent = 'Turnkey Priority Rigging & 24/7 SOC Integration';
+          bomCablingTotal.textContent = '$' + riggingLabor.toLocaleString();
+        }
+
+        // Summary Ledger
+        summaryHardware.textContent = '$' + hardwareTotal.toLocaleString();
+        summaryRigging.textContent = '$' + riggingLabor.toLocaleString();
+        summaryMonthly.textContent = '$' + recurringMo.toLocaleString() + ' / mo';
+        totalInvestment.textContent = '$' + grandTotal.toLocaleString();
+        financingEstimate.textContent = '$' + monthlyFinancing.toLocaleString() + ' / mo';
+      }
+
+      // Property Selection Listeners
+      const propertyCards = document.querySelectorAll('#property-selector .prop-card');
+      propertyCards.forEach(card => {
+        card.addEventListener('click', () => {
+          propertyCards.forEach(c => {
+            c.classList.remove('active', 'bg-surface-container-high', 'shadow-sm');
+            c.classList.add('bg-surface-container-low');
+            const check = c.querySelector('.prop-check');
+            check.className = 'prop-check w-4 h-4 rounded-full bg-surface-container-highest flex items-center justify-center';
+            check.innerHTML = '';
+          });
+          card.classList.add('active', 'bg-surface-container-high', 'shadow-sm');
+          card.classList.remove('bg-surface-container-low');
+          const check = card.querySelector('.prop-check');
+          check.className = 'prop-check w-4 h-4 rounded-full bg-primary flex items-center justify-center';
+          check.innerHTML = '<span class="material-symbols-outlined text-surface text-xs font-bold">check</span>';
+
+          const sqftVal = parseInt(card.getAttribute('data-sqft-default'), 10);
+          state.propertySqft = sqftVal;
+          state.propertyMultiplier = parseFloat(card.getAttribute('data-mult'));
+          sqftRange.value = sqftVal;
+          sqftDisplay.textContent = sqftVal.toLocaleString();
+          updateCalculations();
+        });
+      });
+
+      // SQFT Range Slider
+      sqftRange.addEventListener('input', (e) => {
+        state.propertySqft = parseInt(e.target.value, 10);
+        sqftDisplay.textContent = state.propertySqft.toLocaleString();
+        updateCalculations();
+      });
+
+      // Sensor Quantity Counter Buttons
+      document.querySelectorAll('.counter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const delta = parseInt(btn.getAttribute('data-delta'), 10);
+          const target = btn.getAttribute('data-target');
+
+          if (target === 'cam-dome') {
+            state.domeCount = Math.max(1, Math.min(96, state.domeCount + delta));
+            camDomeVal.textContent = state.domeCount;
+          } else if (target === 'cam-ptz') {
+            state.ptzCount = Math.max(0, Math.min(24, state.ptzCount + delta));
+            camPtzVal.textContent = state.ptzCount;
+          } else if (target === 'cam-thermal') {
+            state.thermalCount = Math.max(0, Math.min(12, state.thermalCount + delta));
+            camThermalVal.textContent = state.thermalCount;
+          }
+          updateCalculations();
+        });
+      });
+
+      // Storage Topology Selector
+      const storageCards = document.querySelectorAll('#storage-type-selector .storage-card');
+      storageCards.forEach(card => {
+        card.addEventListener('click', () => {
+          storageCards.forEach(c => {
+            c.classList.remove('active', 'bg-surface-container-high', 'shadow-sm');
+            c.classList.add('bg-surface-container-low');
+            c.querySelector('.storage-badge').className = 'storage-badge w-2.5 h-2.5 rounded-full bg-surface-container-highest';
+          });
+          card.classList.add('active', 'bg-surface-container-high', 'shadow-sm');
+          card.classList.remove('bg-surface-container-low');
+          card.querySelector('.storage-badge').className = 'storage-badge w-2.5 h-2.5 rounded-full bg-primary';
+
+          state.storageType = card.getAttribute('data-storage');
+          updateCalculations();
+        });
+      });
+
+      // Retention Days Buttons
+      const retentionBtns = document.querySelectorAll('#retention-days-selector .retention-btn');
+      retentionBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          retentionBtns.forEach(b => {
+            b.className = 'retention-btn px-4 py-1.5 rounded font-label-mono-sm text-label-mono-sm bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-all font-bold';
+          });
+          btn.className = 'retention-btn active px-4 py-1.5 rounded font-label-mono-sm text-label-mono-sm bg-primary text-on-primary transition-all font-bold';
+          state.retentionDays = parseInt(btn.getAttribute('data-days'), 10);
+          updateCalculations();
+        });
+      });
+
+      // SLA Tier Selector
+      const slaCards = document.querySelectorAll('#sla-selector .sla-card');
+      slaCards.forEach(card => {
+        card.addEventListener('click', () => {
+          slaCards.forEach(c => {
+            c.classList.remove('active', 'bg-surface-container-high', 'shadow-sm');
+            c.classList.add('bg-surface-container-low');
+            c.querySelector('.sla-radio').className = 'sla-radio w-3.5 h-3.5 rounded-full bg-surface-container-highest';
+          });
+          card.classList.add('active', 'bg-surface-container-high', 'shadow-sm');
+          card.classList.remove('bg-surface-container-low');
+          card.querySelector('.sla-radio').className = 'sla-radio w-3.5 h-3.5 rounded-full bg-primary';
+
+          state.slaType = card.getAttribute('data-sla');
+          state.slaCabling = parseInt(card.getAttribute('data-cost-cabling'), 10);
+          state.slaMonthly = parseInt(card.getAttribute('data-cost-monthly'), 10);
+          updateCalculations();
+        });
+      });
+
+      // Action Handlers & Toast Trigger
+      function showToast(msg) {
+        toastMessage.textContent = msg;
+        toast.classList.remove('hidden');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+        }, 3800);
+      }
+
+      document.getElementById('btn-export-pdf').addEventListener('click', () => {
+        showToast('PDF Spec sheet CFG-' + Math.floor(100000 + Math.random() * 900000) + ' generated with hardware hashes.');
+      });
+
+      document.getElementById('btn-book-survey').addEventListener('click', () => {
+        showToast('On-site optical engineering survey requested. Field tech dispatch alert created.');
+      });
+
+      document.getElementById('btn-save-procure').addEventListener('click', () => {
+        showToast('BOM payload dispatched to enterprise ERP / procurement queue.');
+      });
+
+      // Initial Compute
+      updateCalculations();
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest mt-space-xl"><div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12"><div class="lg:col-span-2 space-y-4"><div class="flex items-center gap-3"><img alt="AegisVision CCTV Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XWnhzJ4E_o9oOcNW1TyZmlw2IuH_MGsXe2TFUIHNZ_sOGLlyeRh3zk3L4aqYmvTgsaklsy8Li9aqD1AiYYBi3oyyt2uER9RNET-KA1-Bje2qyx2ebP3BdJYEXY163OUTvfVn5OujZSaoPgD7BnttOa68KTP8el1C-9MqL3dqppmxupVYF0-iWCJTt9eO5_1NeRLyk0nqfxIP_yfqt62U_GUdKeUpWG8jTANk-CqgwzYAxUF8MZZu6FI2g"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-wider uppercase font-bold">AEGIS<span class="text-primary">VISION</span></span></div><p class="text-on-surface-variant font-body-sm text-body-sm max-w-sm">High-assurance enterprise perimeter telemetry, zero-latency situational awareness, and AI-accelerated surveillance systems engineered for critical infrastructure and commercial facilities.</p><div class="space-y-2 pt-2"><span class="font-label-mono-sm text-label-mono-sm text-outline uppercase tracking-wider block">Operational Architecture</span><div class="flex flex-wrap gap-2"><span class="bg-surface-container px-2.5 py-1 rounded font-label-mono-sm text-label-mono-sm text-secondary">NestJS API Core</span><span class="bg-surface-container px-2.5 py-1 rounded font-label-mono-sm text-label-mono-sm text-secondary">PostgreSQL Audit Trails</span><span class="bg-surface-container px-2.5 py-1 rounded font-label-mono-sm text-label-mono-sm text-secondary">WebGL 3D Telemetry</span></div></div></div><div class="space-y-3"><span class="font-label-mono-md text-label-mono-md text-primary uppercase tracking-wider block">Certified Compliance</span><ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors flex items-center gap-1.5" href="#"><span class="material-symbols-outlined text-tertiary text-sm">verified</span>NDAA Section 889 Compliant</a></li><li><a class="hover:text-on-surface transition-colors flex items-center gap-1.5" href="#"><span class="material-symbols-outlined text-tertiary text-sm">verified</span>UL Listed 294 / 2808</a></li><li><a class="hover:text-on-surface transition-colors flex items-center gap-1.5" href="#"><span class="material-symbols-outlined text-tertiary text-sm">verified</span>ISO/IEC 27001 InfoSec</a></li><li><a class="hover:text-on-surface transition-colors flex items-center gap-1.5" href="#"><span class="material-symbols-outlined text-tertiary text-sm">verified</span>ONVIF Profile S, G &amp; T</a></li></ul></div><div class="space-y-3"><span class="font-label-mono-md text-label-mono-md text-primary uppercase tracking-wider block">Regional Service Depots</span><ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant"><li><span class="text-on-surface font-semibold">North America:</span> NY, TX, CA Hubs</li><li><span class="text-on-surface font-semibold">EMEA:</span> London, Frankfurt, Dubai</li><li><span class="text-on-surface font-semibold">APAC:</span> Singapore, Tokyo Rapid-Dispatch</li><li><span class="text-on-surface font-semibold">SLA:</span> 4-Hour On-Site Critical Response</li></ul></div><div class="space-y-3"><span class="font-label-mono-md text-label-mono-md text-primary uppercase tracking-wider block">Commercial Security Intel</span><p class="font-body-sm text-body-sm text-on-surface-variant">Receive direct alerts on firmware zero-days, NDAA advisories, and technical whitepapers.</p><form class="space-y-2"><div class="flex"><input class="bg-surface-container-low text-on-surface placeholder:text-outline font-label-mono-sm text-label-mono-sm px-3 py-2 rounded-l focus:outline-none focus:ring-1 focus:ring-primary w-full" placeholder="engineer@enterprise.com" type="email"/><button class="bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary px-3 rounded-r font-label-mono-sm transition-colors" type="button"><span class="material-symbols-outlined text-base mt-1">send</span></button></div><span class="text-[11px] text-outline font-label-mono-sm block">Strict zero-marketing telemetric brief.</span></form></div></div><div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-label-mono-sm text-label-mono-sm text-outline"><div class="flex items-center gap-6"><span>© 2025 AEGISVISION SECURITY INFRASTRUCTURE INC.</span><a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a><a class="hover:text-on-surface transition-colors" href="#">Security Whitepapers</a><a class="hover:text-on-surface transition-colors" href="#">System Status</a></div><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-tertiary"></span><span class="text-tertiary">ALL SYSTEMS OPERATIONAL</span></div></div></div></footer></body></html>

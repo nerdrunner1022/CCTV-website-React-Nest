@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-fixed-dim":"#4edea3","inverse-surface":"#dfe2ee","on-primary-fixed-variant":"#004e5c","secondary":"#adc6ff","outline-variant":"#3d494c","primary-fixed":"#acedff","on-surface-variant":"#bcc9cd","surface-container-high":"#262a33","on-error-container":"#ffdad6","on-primary-fixed":"#001f26","inverse-on-surface":"#2c3039","surface-container-highest":"#31353e","background":"#0f131c","surface-container":"#1c2028","tertiary-container":"#1bbd85","on-background":"#dfe2ee","surface":"#0f131c","tertiary-fixed":"#6ffbbe","on-tertiary-fixed":"#002113","on-secondary-container":"#e6ecff","on-tertiary-fixed-variant":"#005236","secondary-fixed":"#d8e2ff","surface-container-low":"#181c24","on-secondary":"#002e6a","on-secondary-fixed-variant":"#004395","secondary-container":"#0566d9","secondary-fixed-dim":"#adc6ff","on-tertiary":"#003824","inverse-primary":"#00687a","on-tertiary-container":"#00452e","tertiary":"#4edea3","surface-container-lowest":"#0a0e16","surface-tint":"#4cd7f6","primary-container":"#06b6d4","surface-bright":"#353942","primary-fixed-dim":"#4cd7f6","on-secondary-fixed":"#001a42","error-container":"#93000a","error":"#ffb4ab","surface-dim":"#0f131c","surface-variant":"#31353e","on-primary":"#003640","outline":"#869397","on-primary-container":"#00424f","on-error":"#690005","primary":"#4cd7f6","on-surface":"#dfe2ee"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-xl":"2.5rem","space-xs":"0.25rem","margin-mobile":"1rem","space-md":"1rem","space-lg":"1.5rem","space-sm":"0.5rem","margin":"3rem","gutter-mobile":"0.75rem","gutter":"1.5rem"},fontFamily:{"body-lg":["Plus Jakarta Sans"],"label-mono-lg":["JetBrains Mono"],"headline-sm":["Plus Jakarta Sans"],"label-mono-md":["JetBrains Mono"],"label-mono-sm":["JetBrains Mono"],"body-md":["Plus Jakarta Sans"],"display-hero-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"]},fontSize:{"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"label-mono-lg":["14px",{lineHeight:"20px",letterSpacing:"0.04em",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-mono-md":["12px",{lineHeight:"16px",letterSpacing:"0.06em",fontWeight:"500"}],"label-mono-sm":["10px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"500"}],"body-md":["15px",{lineHeight:"24px",fontWeight:"400"}],"display-hero-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"800"}],"headline-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"700"}],"headline-md":["28px",{lineHeight:"36px",letterSpacing:"-0.015em",fontWeight:"600"}],"display-hero":["56px",{lineHeight:"64px",letterSpacing:"-0.03em",fontWeight:"800"}],"body-sm":["13px",{lineHeight:"20px",fontWeight:"400"}],"headline-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"700"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="bg-surface-container-lowest px-6 lg:px-12 py-1.5 flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm"><div class="flex items-center gap-6"><div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span><span>NETWORK: <span class="text-tertiary">SECURE</span></span></div><div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span><span>24/7 MONITORING: <span class="text-tertiary">ACTIVE</span></span></div><div class="hidden md:flex items-center gap-1.5"><span class="text-outline">ENCRYPTION:</span><span class="text-on-surface">AES-256 GCM</span></div></div><div class="flex items-center gap-4"><a class="flex items-center gap-1.5 text-primary hover:text-primary-fixed transition-colors" href="tel:18002344773"><span class="material-symbols-outlined text-sm">support_agent</span><span>EMERGENCY SOC: 1-800-AEGIS-SEC</span></a><span class="text-outline">|</span><span class="text-on-surface-variant">LATENCY: 12ms</span></div></div><div class="h-20 max-w-[1440px] mx-auto px-6 lg:px-12 flex items-center justify-between gap-6"><div class="flex items-center gap-3 shrink-0"><img alt="AegisVision CCTV Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XWnhzJ4E_o9oOcNW1TyZmlw2IuH_MGsXe2TFUIHNZ_sOGLlyeRh3zk3L4aqYmvTgsaklsy8Li9aqD1AiYYBi3oyyt2uER9RNET-KA1-Bje2qyx2ebP3BdJYEXY163OUTvfVn5OujZSaoPgD7BnttOa68KTP8el1C-9MqL3dqppmxupVYF0-iWCJTt9eO5_1NeRLyk0nqfxIP_yfqt62U_GUdKeUpWG8jTANk-CqgwzYAxUF8MZZu6FI2g"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-wider uppercase font-bold leading-tight">AEGIS<span class="text-primary">VISION</span></span><span class="font-label-mono-sm text-label-mono-sm text-outline tracking-widest uppercase">Perimeter Telemetry</span></div></div><nav class="hidden xl:flex items-center gap-1 font-body-sm text-body-sm" data-active-classes="bg-surface-container-high text-primary font-bold rounded"><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="overview-and-3d-showcase" href="#">Overview &amp; 3D Showcase</a><a aria-current="page" class="px-3 py-2 transition-all bg-surface-container-high text-primary font-bold rounded" data-path="hardware-catalog" href="#">Hardware Catalog</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="installation-and-engineering-services" href="#">Installation &amp; Engineering Services</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="system-configurator-and-estimator" href="#">System Configurator &amp; Estimator</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="contact-and-site-survey" href="#">Contact &amp; Site Survey</a></nav><div class="flex items-center gap-4 shrink-0"><div class="hidden md:flex items-center bg-surface-container-low px-3 py-1.5 rounded focus-within:ring-1 focus-within:ring-primary"><span class="material-symbols-outlined text-outline text-lg mr-2">search</span><input class="bg-transparent text-on-surface placeholder:text-outline font-label-mono-sm text-label-mono-sm focus:outline-none w-44 lg:w-56" placeholder="Search hardware, specs, SKUs..." type="text"/></div><a class="hidden sm:inline-flex items-center justify-center bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-headline-sm text-label-mono-sm uppercase tracking-wider px-4 py-2 rounded shadow-[0_0_16px_rgba(6,182,212,0.25)] hover:shadow-[0_0_20px_rgba(6,182,212,0.45)] transition-all" data-path="contact-and-site-survey" href="#">Request Survey</a><button aria-label="Cart and Specs Counter" class="relative p-2 text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-2xl">view_in_ar</span><span class="absolute top-1 right-1 bg-secondary-container text-on-secondary-container font-label-mono-sm text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">4</span></button><div class="flex items-center gap-2 pl-2 cursor-pointer group"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-primary/40 group-hover:ring-primary transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS9zvhp3Aceh6mv6a7U5g76W484Y9ZCdVl99lqFRULeFTcrOir9KgWE57F6BMojvLKPftBC0UXwe_1Wzr-jx5ctRDGElQyY_AOTEC9dz1ZIssAtvc1rWJnrAurjR3zydXc1NPltkp1eJLLoWJN5aHV7qHNWUhf7H5yqhycJjAfZCkIrJLUTcA60X_xo-RyfPcIgZY3ISPHr7CM8MkfRuprw6Cn055qDJJsy3BVAYgbeC9uZwU8xsCdFQ"/><span class="material-symbols-outlined text-outline group-hover:text-on-surface text-sm transition-colors">arrow_drop_down</span></div></div></div></header><main class="w-full pt-28 bg-background"><div class="flex flex-col w-full">
+<!-- Command Strip / Telemetry Sub-Header -->
+<section class="w-full bg-surface-container-lowest px-6 lg:px-12 py-6">
+<div class="max-w-[1440px] mx-auto flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+<div class="flex flex-col space-y-2">
+<div class="flex items-center gap-2">
+<span class="font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-widest flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">hub</span>
+            SEC-CATALOG // ENTERPRISE-REV-25.4
+          </span>
+<span class="text-outline text-xs">•</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-tertiary font-label-mono-sm text-label-mono-sm font-semibold">NDAA COMPLIANT STACK</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-extrabold uppercase">
+          Tactical Hardware <span class="text-primary">Catalog</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          High-performance IP optical nodes, dual-spectrum microbolometers, and multi-bay edge neural processing servers calibrated for sub-second threat classification.
+        </p>
+</div>
+<!-- Quick Metrics Strip -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-surface-container-low p-3 rounded-lg">
+<div class="flex flex-col px-3 py-1">
+<span class="font-label-mono-sm text-label-mono-sm text-outline uppercase">Certified SKUs</span>
+<span class="font-label-mono-lg text-label-mono-lg text-on-surface font-bold">148 Active</span>
+</div>
+<div class="flex flex-col px-3 py-1">
+<span class="font-label-mono-sm text-label-mono-sm text-outline uppercase">Rapid Dispatch</span>
+<span class="font-label-mono-lg text-label-mono-lg text-tertiary font-bold">&lt; 4 Hours</span>
+</div>
+<div class="flex flex-col px-3 py-1">
+<span class="font-label-mono-sm text-label-mono-sm text-outline uppercase">Firmware Hash</span>
+<span class="font-label-mono-lg text-label-mono-lg text-secondary font-bold">SHA-512 Valid</span>
+</div>
+<div class="flex flex-col px-3 py-1">
+<span class="font-label-mono-sm text-label-mono-sm text-outline uppercase">Queue Quote</span>
+<span class="font-label-mono-lg text-label-mono-lg text-primary font-bold" id="quoteCounter">3 Selected</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Filter & Controls Toolbar -->
+<section class="sticky top-20 z-40 w-full bg-surface/95 backdrop-blur-xl shadow-md py-4 px-6 lg:px-12">
+<div class="max-w-[1440px] mx-auto flex flex-col gap-4">
+<!-- Search, Autocomplete & Sort Level -->
+<div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+<!-- Interactive Search Container with Dropdown Autocomplete -->
+<div class="relative flex-1 max-w-2xl">
+<div class="flex items-center bg-surface-container-high rounded px-3 py-2.5 shadow-sm focus-within:ring-2 focus-within:ring-primary focus-within:bg-surface-container-highest transition-all">
+<span class="material-symbols-outlined text-outline text-xl mr-2">manage_search</span>
+<input autocomplete="off" class="w-full bg-transparent font-label-mono-md text-label-mono-md text-on-surface placeholder:text-outline focus:outline-none" id="catalogSearch" placeholder="Search cameras by optics, resolution (4K, 8MP), chipsets, or SKU (e.g. 'PTZ-32X')..." type="text"/>
+<button class="hidden text-outline hover:text-on-surface text-sm p-1" id="clearSearch">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+<div class="flex items-center gap-1.5 ml-2 pl-3 bg-surface-container-low px-2 py-0.5 rounded text-outline font-label-mono-sm text-label-mono-sm">
+<span class="text-[10px]">CMD+K</span>
+</div>
+</div>
+<!-- Autocomplete Dropdown Panel -->
+<div class="hidden absolute top-full left-0 right-0 mt-2 bg-surface-container-high rounded shadow-xl p-3 z-50" id="autocompleteDropdown">
+<div class="font-label-mono-sm text-label-mono-sm text-outline px-2 py-1 uppercase tracking-wider flex justify-between">
+<span>Matching Hardware Archetypes</span>
+<span class="text-primary">Press TAB to complete</span>
+</div>
+<div class="flex flex-col mt-1 space-y-1">
+<button class="flex items-center justify-between p-2 rounded text-left hover:bg-surface-container text-on-surface font-label-mono-md text-label-mono-md transition-colors">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">videocam</span>
+<span>Aegis Sentinel-X 4K PTZ AI Camera</span>
+</span>
+<span class="text-outline text-xs">SKU: AEG-PTZ-4K849</span>
+</button>
+<button class="flex items-center justify-between p-2 rounded text-left hover:bg-surface-container text-on-surface font-label-mono-md text-label-mono-md transition-colors">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-base">thermostat</span>
+<span>Aegis ThermalSight Dual-Spectrum Bullet</span>
+</span>
+<span class="text-outline text-xs">SKU: AEG-THM-DS125</span>
+</button>
+<button class="flex items-center justify-between p-2 rounded text-left hover:bg-surface-container text-on-surface font-label-mono-md text-label-mono-md transition-colors">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base">dns</span>
+<span>Aegis CoreVault 64-Channel NVR Appliance</span>
+</span>
+<span class="text-outline text-xs">SKU: AEG-NVR-64RAID</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Sort Select & Secondary Controls -->
+<div class="flex items-center gap-3 shrink-0">
+<div class="flex items-center gap-2 bg-surface-container-high px-3 py-2 rounded">
+<span class="material-symbols-outlined text-outline text-lg">swap_vert</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline uppercase hidden sm:inline">Sort:</span>
+<select class="bg-transparent font-label-mono-sm text-label-mono-sm text-on-surface focus:outline-none cursor-pointer" id="sortDropdown">
+<option class="bg-surface-container-high" value="recommended">Recommended (Enterprise Standard)</option>
+<option class="bg-surface-container-high" value="res_high">Resolution (High to Low)</option>
+<option class="bg-surface-container-high" value="price_low">Price (Lowest First)</option>
+<option class="bg-surface-container-high" value="price_high">Price (Highest First)</option>
+<option class="bg-surface-container-high" value="popularity">Operational Popularity</option>
+</select>
+</div>
+<button class="flex items-center gap-2 bg-surface-container-high hover:bg-surface-container px-3.5 py-2 rounded text-on-surface font-label-mono-sm text-label-mono-sm uppercase transition-colors" id="compareBtn">
+<span class="material-symbols-outlined text-primary text-base">compare_arrows</span>
+<span class="hidden sm:inline">Compare</span>
+<span class="bg-secondary-container text-on-secondary-container rounded px-1.5 py-0.2 font-bold text-[10px]" id="compareBadge">2</span>
+</button>
+</div>
+</div>
+<!-- Quick Filter Chips Ribbon -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none" id="chipRibbon">
+<button class="chip-btn active shrink-0 px-3.5 py-1.5 rounded font-label-mono-sm text-label-mono-sm uppercase transition-all bg-primary-container text-on-primary-container font-bold shadow-sm">
+          All Hardware (148)
+        </button>
+<button class="chip-btn shrink-0 px-3.5 py-1.5 rounded font-label-mono-sm text-label-mono-sm uppercase transition-all bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-container">
+          4K AI Smart Cameras
+        </button>
+<button class="chip-btn shrink-0 px-3.5 py-1.5 rounded font-label-mono-sm text-label-mono-sm uppercase transition-all bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-container">
+          NVR/DVR Server Appliances
+        </button>
+<button class="chip-btn shrink-0 px-3.5 py-1.5 rounded font-label-mono-sm text-label-mono-sm uppercase transition-all bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-container">
+          Thermal &amp; Night Vision
+        </button>
+<button class="chip-btn shrink-0 px-3.5 py-1.5 rounded font-label-mono-sm text-label-mono-sm uppercase transition-all bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-container">
+          Multi-Sensor Panoramic
+        </button>
+<button class="chip-btn shrink-0 px-3.5 py-1.5 rounded font-label-mono-sm text-label-mono-sm uppercase transition-all bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-container">
+          Access Control &amp; Audio
+        </button>
+<button class="chip-btn shrink-0 px-3.5 py-1.5 rounded font-label-mono-sm text-label-mono-sm uppercase transition-all bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-container">
+          Structured Cabling &amp; Mounts
+        </button>
+</div>
+</div>
+</section>
+<!-- Main Body: Sidebar + Dynamic Product Matrix -->
+<div class="max-w-[1440px] mx-auto w-full px-6 lg:px-12 py-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Tactical Filter Sidebar -->
+<aside class="lg:col-span-3 bg-surface-container-low rounded-xl p-5 shadow-lg space-y-6">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">filter_alt</span>
+<span class="font-headline-sm text-headline-sm text-on-surface uppercase font-bold text-sm tracking-wider">Telemetry Filters</span>
+</div>
+<button class="text-outline hover:text-primary font-label-mono-sm text-label-mono-sm uppercase" id="resetFilters">Reset</button>
+</div>
+<!-- Filter Block 1: Resolution -->
+<div class="space-y-2.5">
+<span class="font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-widest flex items-center justify-between">
+<span>01 // Resolution Matrix</span>
+<span class="material-symbols-outlined text-xs text-outline">expand_more</span>
+</span>
+<div class="space-y-1.5 font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<label class="flex items-center justify-between p-1.5 rounded hover:bg-surface-container cursor-pointer transition-colors">
+<span class="flex items-center gap-2">
+<input checked="" class="accent-primary rounded-sm w-3.5 h-3.5" type="checkbox"/>
+<span>4K Ultra HD (3840×2160)</span>
+</span>
+<span class="text-outline text-xs">42</span>
+</label>
+<label class="flex items-center justify-between p-1.5 rounded hover:bg-surface-container cursor-pointer transition-colors">
+<span class="flex items-center gap-2">
+<input checked="" class="accent-primary rounded-sm w-3.5 h-3.5" type="checkbox"/>
+<span>8MP – 16MP Multi-Sensor</span>
+</span>
+<span class="text-outline text-xs">19</span>
+</label>
+<label class="flex items-center justify-between p-1.5 rounded hover:bg-surface-container cursor-pointer transition-colors">
+<span class="flex items-center gap-2">
+<input class="accent-primary rounded-sm w-3.5 h-3.5" type="checkbox"/>
+<span>5MP Tactical Starlight</span>
+</span>
+<span class="text-outline text-xs">31</span>
+</label>
+<label class="flex items-center justify-between p-1.5 rounded hover:bg-surface-container cursor-pointer transition-colors">
+<span class="flex items-center gap-2">
+<input class="accent-primary rounded-sm w-3.5 h-3.5" type="checkbox"/>
+<span>Dual Spectrum (Thermal + Optical)</span>
+</span>
+<span class="text-outline text-xs">8</span>
+</label>
+</div>
+</div>
+<!-- Filter Block 2: Form Factor -->
+<div class="space-y-2.5 pt-3">
+<span class="font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-widest flex items-center justify-between">
+<span>02 // Form Factor</span>
+<span class="material-symbols-outlined text-xs text-outline">expand_more</span>
+</span>
+<div class="grid grid-cols-2 gap-2 font-label-mono-sm text-label-mono-sm">
+<button class="flex items-center gap-2 p-2 rounded bg-surface-container-high text-on-surface hover:bg-surface-container transition-colors text-left">
+<span class="material-symbols-outlined text-sm text-primary">videocam</span>
+<span>PTZ Speed</span>
+</button>
+<button class="flex items-center gap-2 p-2 rounded bg-surface-container-high text-on-surface hover:bg-surface-container transition-colors text-left">
+<span class="material-symbols-outlined text-sm text-primary">circle</span>
+<span>Dome Vandal</span>
+</button>
+<button class="flex items-center gap-2 p-2 rounded bg-surface-container-high text-on-surface hover:bg-surface-container transition-colors text-left">
+<span class="material-symbols-outlined text-sm text-primary">crop_landscape</span>
+<span>Bullet Long</span>
+</button>
+<button class="flex items-center gap-2 p-2 rounded bg-surface-container-high text-on-surface hover:bg-surface-container transition-colors text-left">
+<span class="material-symbols-outlined text-sm text-primary">panorama</span>
+<span>Panoramic</span>
+</button>
+</div>
+</div>
+<!-- Filter Block 3: Deployment Environment -->
+<div class="space-y-2.5 pt-3">
+<span class="font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-widest flex items-center justify-between">
+<span>03 // Ingress &amp; Deployment</span>
+<span class="material-symbols-outlined text-xs text-outline">expand_more</span>
+</span>
+<div class="space-y-2">
+<div class="flex items-center justify-between bg-surface-container-high p-2 rounded">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-sm">shield</span>
+                IK10 Vandal-Proof
+              </span>
+<input checked="" class="accent-tertiary" type="checkbox"/>
+</div>
+<div class="flex items-center justify-between bg-surface-container-high p-2 rounded">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">water_drop</span>
+                IP67 / IP68 Submersible
+              </span>
+<input checked="" class="accent-primary" type="checkbox"/>
+</div>
+<div class="flex items-center justify-between bg-surface-container-high p-2 rounded">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">ac_unit</span>
+                Heated Enclosure (-40°C)
+              </span>
+<input class="accent-secondary" type="checkbox"/>
+</div>
+</div>
+</div>
+<!-- Filter Block 4: Night Vision Tech -->
+<div class="space-y-2.5 pt-3">
+<span class="font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-widest flex items-center justify-between">
+<span>04 // Night Vision Protocol</span>
+<span class="material-symbols-outlined text-xs text-outline">expand_more</span>
+</span>
+<div class="space-y-1.5 font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<label class="flex items-center gap-2 p-1.5 rounded hover:bg-surface-container cursor-pointer">
+<input checked="" class="accent-primary" name="night_tech" type="radio"/>
+<span>Smart Matrix IR (Up to 200m)</span>
+</label>
+<label class="flex items-center gap-2 p-1.5 rounded hover:bg-surface-container cursor-pointer">
+<input class="accent-primary" name="night_tech" type="radio"/>
+<span>Full Color 24/7 Starlight+</span>
+</label>
+<label class="flex items-center gap-2 p-1.5 rounded hover:bg-surface-container cursor-pointer">
+<input class="accent-primary" name="night_tech" type="radio"/>
+<span>Radiometric Thermal Core</span>
+</label>
+</div>
+</div>
+<!-- Filter Sidebar Diagnostic Mini Panel -->
+<div class="p-3 bg-surface-container-lowest rounded-lg space-y-2">
+<div class="flex items-center justify-between text-xs font-label-mono-sm">
+<span class="text-outline uppercase">Active Feed Link</span>
+<span class="text-tertiary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> LIVE
+            </span>
+</div>
+<div class="h-1 w-full bg-surface-container-high rounded overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-tertiary w-3/4"></div>
+</div>
+<span class="text-[11px] text-outline font-label-mono-sm block leading-tight">
+            NDAA Title 889 Part B compliant microcode verified for federal and enterprise use.
+          </span>
+</div>
+</aside>
+<!-- Enterprise Product Matrix (6 Core Architectural Units) -->
+<main class="lg:col-span-9 space-y-6">
+<!-- Live Status Announcement Bar -->
+<div class="flex flex-col sm:flex-row items-center justify-between bg-surface-container-low px-4 py-3 rounded-xl gap-3">
+<div class="flex items-center gap-3">
+<span class="flex h-2.5 w-2.5 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tertiary"></span>
+</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface font-semibold">
+              SHOWING 6 CERTIFIED HIGH-ASSURANCE SURVEILLANCE UNITS
+            </span>
+</div>
+<div class="flex items-center gap-2 font-label-mono-sm text-label-mono-sm text-outline">
+<span>GRID VIEW: EXPANDED</span>
+<span>•</span>
+<span class="text-primary font-bold">ALL INVENTORY READY</span>
+</div>
+</div>
+<!-- The 6 High-Fidelity Enterprise Hardware Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="productGrid">
+<!-- PRODUCT 1: Sentinel-X 4K PTZ -->
+<article class="bg-surface-container-low rounded-xl p-5 shadow-xl hover:shadow-2xl flex flex-col justify-between group transition-all duration-200">
+<div>
+<!-- Visual Mockup & Telemetry Stamp -->
+<div class="relative w-full h-52 bg-surface-container-lowest rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Futuristic industrial high-security 4K PTZ surveillance camera with a large spherical optical lens, rugged matte black titanium casing, cyan LED status telemetry ring, mounted against a dark concrete security testing vault wall, high contrast studio rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnx9dxBf_mYwats_vYJDWJJYP6_OH10dsRQVbPSWZ1-pL1CEu0dkHTbZuV7JSIgwU77FmoJqAWgI1QOeGXOD1qs8C0UVIqdoxTS17v7yuH0ItcotCxs832uOR86MepG8UHhRskuONkrTynlKkj_n67gMTwzuz-t3mpPfibGsA60I7_YPcM8OjsD8_e63-6A2V9qDLmHpViPlwhe_72lfFeYGCdPaw-COYYRZty5nMERMTshk1TUdBWbQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<!-- HUD Stamps -->
+<div class="absolute top-2.5 left-2.5 flex items-center gap-1.5 bg-surface-container-lowest/85 backdrop-blur-md px-2 py-1 rounded text-primary font-label-mono-sm text-label-mono-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span>OPTICS: 32X ACTIVE</span>
+</div>
+<div class="absolute top-2.5 right-2.5 bg-tertiary-container/80 text-on-tertiary-container font-label-mono-sm text-label-mono-sm px-2 py-0.5 rounded font-bold uppercase tracking-wider">
+                  In Stock • Dispatch Ready
+                </div>
+<div class="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span class="bg-surface-container-high/90 px-2 py-0.5 rounded">H.265+ 60FPS</span>
+<span class="bg-surface-container-high/90 px-2 py-0.5 rounded text-tertiary font-bold">NDAA VERIFIED</span>
+</div>
+</div>
+<!-- Title, SKU & Price -->
+<div class="flex items-start justify-between gap-4">
+<div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline uppercase tracking-wider block">SERIES X // PERIMETER PTZ</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                    Aegis Sentinel-X 4K PTZ AI Camera
+                  </h3>
+</div>
+<div class="text-right shrink-0">
+<span class="font-headline-sm text-headline-sm text-primary font-black">$849.00</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline block">MSRP / USD</span>
+</div>
+</div>
+<!-- Technical Specification Pill Chips -->
+<div class="flex flex-wrap gap-1.5 my-4">
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-on-surface">4K (3840×2160) @ 60fps</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-secondary">32x Optical Zoom</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-on-surface">200m Smart Matrix IR</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-primary">Starlight+ 0.0005 Lux</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-tertiary">Autotracking 3.0</span>
+</div>
+<!-- Mini Spec Metric Sparkline -->
+<div class="p-2.5 bg-surface-container-high rounded mb-4 flex items-center justify-between text-xs font-label-mono-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">radar</span>
+<span class="text-on-surface">AI Classification Rate</span>
+</div>
+<span class="text-tertiary font-bold">99.8% Vehicle/Human</span>
+</div>
+</div>
+<!-- Card Bottom Actions & Compare Checkbox -->
+<div class="space-y-3 pt-3">
+<div class="flex items-center justify-between">
+<label class="flex items-center gap-2 cursor-pointer font-label-mono-sm text-label-mono-sm text-outline hover:text-on-surface select-none">
+<input checked="" class="accent-primary rounded-sm" type="checkbox"/>
+<span>Pin for Side-by-Side</span>
+</label>
+<a class="text-outline hover:text-primary font-label-mono-sm text-label-mono-sm flex items-center gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined text-xs">picture_as_pdf</span> PDF Specs
+                </a>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-center gap-1.5 bg-surface-container hover:bg-surface-container-highest text-primary font-label-mono-sm text-label-mono-sm uppercase py-2.5 px-3 rounded transition-all">
+<span class="material-symbols-outlined text-base">view_in_ar</span>
+<span>View 3D Model</span>
+</button>
+<button class="add-quote-btn flex items-center justify-center gap-1.5 bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-label-mono-sm text-label-mono-sm font-bold uppercase py-2.5 px-3 rounded shadow-md transition-all">
+<span class="material-symbols-outlined text-base">add_circle</span>
+<span>Add to Quote</span>
+</button>
+</div>
+</div>
+</article>
+<!-- PRODUCT 2: Dome-V4 Vandal 8MP -->
+<article class="bg-surface-container-low rounded-xl p-5 shadow-xl hover:shadow-2xl flex flex-col justify-between group transition-all duration-200">
+<div>
+<!-- Visual Mockup & Telemetry Stamp -->
+<div class="relative w-full h-52 bg-surface-container-lowest rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Heavy-duty vandal-resistant security dome camera with reinforced dark smoked acrylic housing, cast aluminum bracket, illuminated cyan focus reticle, high-end commercial building entrance at twilight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaOXbuNwQGmlJZoaTFodAkytx7Jk6sp0eSgaTiVhHCacBM_rjyQ53rra_3f7OR3eIQepVSZz3x-4gnM5iwp6cuW8I_VG-PJirQv1EgF-t8PqCK8b_w2NCQwFMlOLM-0bsZ7Yk2uj2Kae3Kn0GdurZhsFQUFfS3jsvWZyv-mC8gx-7cbXuSuiznwPEbYG2m26uNLE8r_KXEEpwpuIdAQ_RxFV7G0NUDLk7ITvKHWzUHRXjct_m7LW0KAw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="absolute top-2.5 left-2.5 flex items-center gap-1.5 bg-surface-container-lowest/85 backdrop-blur-md px-2 py-1 rounded text-secondary font-label-mono-sm text-label-mono-sm">
+<span class="material-symbols-outlined text-xs text-secondary">security</span>
+<span>IK10 IMPACT RESISTANT</span>
+</div>
+<div class="absolute top-2.5 right-2.5 bg-surface-container-high/90 text-on-surface font-label-mono-sm text-label-mono-sm px-2 py-0.5 rounded font-bold uppercase tracking-wider">
+                  Commercial Supply
+                </div>
+<div class="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span class="bg-surface-container-high/90 px-2 py-0.5 rounded">IP67 Submersion</span>
+<span class="bg-surface-container-high/90 px-2 py-0.5 rounded text-primary font-bold">120dB WDR</span>
+</div>
+</div>
+<!-- Title, SKU & Price -->
+<div class="flex items-start justify-between gap-4">
+<div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline uppercase tracking-wider block">SERIES D // ARMORED FIXTURE</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                    Aegis Dome-V4 Vandal-Resistant 8MP
+                  </h3>
+</div>
+<div class="text-right shrink-0">
+<span class="font-headline-sm text-headline-sm text-primary font-black">$429.00</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline block">MSRP / USD</span>
+</div>
+</div>
+<!-- Technical Specification Pill Chips -->
+<div class="flex flex-wrap gap-1.5 my-4">
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-on-surface">8MP (3840×2160) Ultra HD</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-secondary">IK10 Vandal Hardened</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-on-surface">Dual Studio Mic Array</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-primary">120dB True WDR</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-tertiary">Edge Perimeter Neural Net</span>
+</div>
+<div class="p-2.5 bg-surface-container-high rounded mb-4 flex items-center justify-between text-xs font-label-mono-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base">mic</span>
+<span class="text-on-surface">Acoustic Gunshot &amp; Aggression Alert</span>
+</div>
+<span class="text-primary font-bold">Instant Trigger</span>
+</div>
+</div>
+<!-- Card Bottom Actions & Compare Checkbox -->
+<div class="space-y-3 pt-3">
+<div class="flex items-center justify-between">
+<label class="flex items-center gap-2 cursor-pointer font-label-mono-sm text-label-mono-sm text-outline hover:text-on-surface select-none">
+<input checked="" class="accent-primary rounded-sm" type="checkbox"/>
+<span>Pin for Side-by-Side</span>
+</label>
+<a class="text-outline hover:text-primary font-label-mono-sm text-label-mono-sm flex items-center gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined text-xs">picture_as_pdf</span> PDF Specs
+                </a>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-center gap-1.5 bg-surface-container hover:bg-surface-container-highest text-primary font-label-mono-sm text-label-mono-sm uppercase py-2.5 px-3 rounded transition-all">
+<span class="material-symbols-outlined text-base">view_in_ar</span>
+<span>View 3D Model</span>
+</button>
+<button class="add-quote-btn flex items-center justify-center gap-1.5 bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-label-mono-sm text-label-mono-sm font-bold uppercase py-2.5 px-3 rounded shadow-md transition-all">
+<span class="material-symbols-outlined text-base">add_circle</span>
+<span>Add to Quote</span>
+</button>
+</div>
+</div>
+</article>
+<!-- PRODUCT 3: ThermalSight Dual-Spectrum -->
+<article class="bg-surface-container-low rounded-xl p-5 shadow-xl hover:shadow-2xl flex flex-col justify-between group transition-all duration-200">
+<div>
+<!-- Visual Mockup & Telemetry Stamp -->
+<div class="relative w-full h-52 bg-surface-container-lowest rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Tactical dual-lens thermal bullet surveillance camera with germanium front element and 4K optical glass lens, ruggedized military spec matte black chassis, glowing status indicators, perimeter fence security test environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB82wTkOea5xLVk8YM1Uhy3ns5soJ3Pg1SA70TxKFX1IFKVoJGDz4jqzmi-TrS-Da-JMaza3qaHcUSVvxnNf4dM7M9ciP3mJ0BSq0el99IvGnGr7y9rSeUqXks1MsKhZJpj53mkYFLWliliKu1p0a14ubFasXvrf28hNYqyORe0XZkS_GwK55x59PAYVSQzvzP8Jh12YjO0jReuovqp5xdbxj6Sjty7oEuMg9qfoSFDCsKBdX5NytBKrQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="absolute top-2.5 left-2.5 flex items-center gap-1.5 bg-surface-container-lowest/85 backdrop-blur-md px-2 py-1 rounded text-error font-label-mono-sm text-label-mono-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+<span>RADIOMETRIC CORE: CALIBRATED</span>
+</div>
+<div class="absolute top-2.5 right-2.5 bg-tertiary-container/80 text-on-tertiary-container font-label-mono-sm text-label-mono-sm px-2 py-0.5 rounded font-bold uppercase tracking-wider">
+                  In Stock • Dispatch Ready
+                </div>
+<div class="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span class="bg-surface-container-high/90 px-2 py-0.5 rounded">VOx 640×512</span>
+<span class="bg-surface-container-high/90 px-2 py-0.5 rounded text-error font-bold">-20°C TO 150°C</span>
+</div>
+</div>
+<!-- Title, SKU & Price -->
+<div class="flex items-start justify-between gap-4">
+<div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline uppercase tracking-wider block">SERIES T // INFRARED CALIBRATION</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                    Aegis ThermalSight Dual-Spectrum Bullet
+                  </h3>
+</div>
+<div class="text-right shrink-0">
+<span class="font-headline-sm text-headline-sm text-primary font-black">$1,250.00</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline block">MSRP / USD</span>
+</div>
+</div>
+<!-- Technical Specification Pill Chips -->
+<div class="flex flex-wrap gap-1.5 my-4">
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-on-surface">Uncooled VOx Microbolometer</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-primary">4K Optical Secondary Sensor</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-error">Automated Flame Detection</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-secondary">NETD &lt; 35mK @ 25°C</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-tertiary">PoE+ IEEE 802.3at</span>
+</div>
+<div class="p-2.5 bg-surface-container-high rounded mb-4 flex items-center justify-between text-xs font-label-mono-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-base">local_fire_department</span>
+<span class="text-on-surface">Critical Thermal Flare Alarm</span>
+</div>
+<span class="text-error font-bold">±2°C Precision</span>
+</div>
+</div>
+<!-- Card Bottom Actions & Compare Checkbox -->
+<div class="space-y-3 pt-3">
+<div class="flex items-center justify-between">
+<label class="flex items-center gap-2 cursor-pointer font-label-mono-sm text-label-mono-sm text-outline hover:text-on-surface select-none">
+<input class="accent-primary rounded-sm" type="checkbox"/>
+<span>Pin for Side-by-Side</span>
+</label>
+<a class="text-outline hover:text-primary font-label-mono-sm text-label-mono-sm flex items-center gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined text-xs">picture_as_pdf</span> PDF Specs
+                </a>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-center gap-1.5 bg-surface-container hover:bg-surface-container-highest text-primary font-label-mono-sm text-label-mono-sm uppercase py-2.5 px-3 rounded transition-all">
+<span class="material-symbols-outlined text-base">view_in_ar</span>
+<span>View 3D Model</span>
+</button>
+<button class="add-quote-btn flex items-center justify-center gap-1.5 bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-label-mono-sm text-label-mono-sm font-bold uppercase py-2.5 px-3 rounded shadow-md transition-all">
+<span class="material-symbols-outlined text-base">add_circle</span>
+<span>Add to Quote</span>
+</button>
+</div>
+</div>
+</article>
+<!-- PRODUCT 4: CoreVault 64-Channel NVR -->
+<article class="bg-surface-container-low rounded-xl p-5 shadow-xl hover:shadow-2xl flex flex-col justify-between group transition-all duration-200">
+<div>
+<!-- Visual Mockup & Telemetry Stamp -->
+<div class="relative w-full h-52 bg-surface-container-lowest rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="2U enterprise rackmount NVR server appliance with hot-swappable hard drive bays, dual 10GbE fiber ports, illuminated cyan activity matrix lights, server rack data center setting with soft blue ambient glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTvDiNTmeJIV6zvKA6Li9GRdSiCYPGSiHl7M2Bl0aKyhceBUDMEpJ4bcpMMJAemmlSpik-R2kH1PE2OSTDkWtpIwduWnTNTe6qOdGio1URKey4zfDNaNi9pXCWi1lFywqAWVSyEAX9GY9GHvg3ew1de1TKvEx_tn4IVRzaHIZigUbB8r8e30NJkZmigoECwto0SiWac04gqMI7IBqaBeJyOvrJ9rBVan-r9p5nDo8rtTSF9j_-s3-gYg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="absolute top-2.5 left-2.5 flex items-center gap-1.5 bg-surface-container-lowest/85 backdrop-blur-md px-2 py-1 rounded text-primary font-label-mono-sm text-label-mono-sm">
+<span class="material-symbols-outlined text-xs text-primary">dns</span>
+<span>64-CH CONCURRENT 4K</span>
+</div>
+<div class="absolute top-2.5 right-2.5 bg-tertiary-container/80 text-on-tertiary-container font-label-mono-sm text-label-mono-sm px-2 py-0.5 rounded font-bold uppercase tracking-wider">
+                  In Stock • Dispatch Ready
+                </div>
+<div class="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span class="bg-surface-container-high/90 px-2 py-0.5 rounded">RAID 0/1/5/6/10</span>
+<span class="bg-surface-container-high/90 px-2 py-0.5 rounded text-secondary font-bold">DUAL 10GbE SFP+</span>
+</div>
+</div>
+<!-- Title, SKU & Price -->
+<div class="flex items-start justify-between gap-4">
+<div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline uppercase tracking-wider block">SERIES V // TELEMETRIC CORE APPLIANCE</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                    Aegis CoreVault 64-Channel NVR Appliance
+                  </h3>
+</div>
+<div class="text-right shrink-0">
+<span class="font-headline-sm text-headline-sm text-primary font-black">$2,199.00</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline block">MSRP / USD</span>
+</div>
+</div>
+<!-- Technical Specification Pill Chips -->
+<div class="flex flex-wrap gap-1.5 my-4">
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-on-surface">8x Hot-Swap SATA (Up to 128TB)</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-secondary">Hardware RAID Controller</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-primary">Dual Redundant Platinum PSU</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-on-surface">512 Mbps Incoming Bandwidth</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-tertiary">PostgreSQL Telemetry Log</span>
+</div>
+<div class="p-2.5 bg-surface-container-high rounded mb-4 flex items-center justify-between text-xs font-label-mono-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-base">verified_user</span>
+<span class="text-on-surface">Drive MTBF Failure Tolerance</span>
+</div>
+<span class="text-tertiary font-bold">Zero-Downtime Rebuild</span>
+</div>
+</div>
+<!-- Card Bottom Actions & Compare Checkbox -->
+<div class="space-y-3 pt-3">
+<div class="flex items-center justify-between">
+<label class="flex items-center gap-2 cursor-pointer font-label-mono-sm text-label-mono-sm text-outline hover:text-on-surface select-none">
+<input class="accent-primary rounded-sm" type="checkbox"/>
+<span>Pin for Side-by-Side</span>
+</label>
+<a class="text-outline hover:text-primary font-label-mono-sm text-label-mono-sm flex items-center gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined text-xs">picture_as_pdf</span> PDF Specs
+                </a>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-center gap-1.5 bg-surface-container hover:bg-surface-container-highest text-primary font-label-mono-sm text-label-mono-sm uppercase py-2.5 px-3 rounded transition-all">
+<span class="material-symbols-outlined text-base">view_in_ar</span>
+<span>View 3D Model</span>
+</button>
+<button class="add-quote-btn flex items-center justify-center gap-1.5 bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-label-mono-sm text-label-mono-sm font-bold uppercase py-2.5 px-3 rounded shadow-md transition-all">
+<span class="material-symbols-outlined text-base">add_circle</span>
+<span>Add to Quote</span>
+</button>
+</div>
+</div>
+</article>
+<!-- PRODUCT 5: Panorama 360 Multi-Sensor -->
+<article class="bg-surface-container-low rounded-xl p-5 shadow-xl hover:shadow-2xl flex flex-col justify-between group transition-all duration-200">
+<div>
+<!-- Visual Mockup & Telemetry Stamp -->
+<div class="relative w-full h-52 bg-surface-container-lowest rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Futuristic low-profile multi-sensor panoramic 360-degree surveillance dome with four visible circular lenses set in a quad ring, clean aerospace-grade dark slate finish with faint cyan optical laser guides, installed on commercial airport terminal ceiling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcFw18PaL66PeMsnsuhjIlfpnYkh8hPZz6iK3hrLSkv4mFHx1vF0TOLMjDJ8vdUoWZxK1sFYjkWk3Q6GJdEBG80IAV92pmv2AklAAn_nbolAC0xGr5HZwXib8Y4lws-RoAVJNg-2SJXgUrI8XOL6Ck2VLN3TQ1irE8lCJqKFYUS6WZSuqrHBmAJHaZhhb7JG7UXJ6H_eJSJPcIqHr42jk79X-Iylq7PLowNq-dHFCTbgSuNQpVBOwCWQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="absolute top-2.5 left-2.5 flex items-center gap-1.5 bg-surface-container-lowest/85 backdrop-blur-md px-2 py-1 rounded text-primary font-label-mono-sm text-label-mono-sm">
+<span class="material-symbols-outlined text-xs text-primary">panorama_photosphere</span>
+<span>360° ZERO-BLIND-SPOT</span>
+</div>
+<div class="absolute top-2.5 right-2.5 bg-tertiary-container/80 text-on-tertiary-container font-label-mono-sm text-label-mono-sm px-2 py-0.5 rounded font-bold uppercase tracking-wider">
+                  In Stock • Dispatch Ready
+                </div>
+<div class="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span class="bg-surface-container-high/90 px-2 py-0.5 rounded">4x 4MP Quad Lenses</span>
+<span class="bg-surface-container-high/90 px-2 py-0.5 rounded text-tertiary font-bold">16MP STITCHED</span>
+</div>
+</div>
+<!-- Title, SKU & Price -->
+<div class="flex items-start justify-between gap-4">
+<div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline uppercase tracking-wider block">SERIES P // HEMISPHERIC COVERAGE</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                    Aegis Panorama 360° 16MP Multi-Sensor
+                  </h3>
+</div>
+<div class="text-right shrink-0">
+<span class="font-headline-sm text-headline-sm text-primary font-black">$980.00</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline block">MSRP / USD</span>
+</div>
+</div>
+<!-- Technical Specification Pill Chips -->
+<div class="flex flex-wrap gap-1.5 my-4">
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-on-surface">4x Individually Repositionable 4MP Lenses</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-secondary">Zero Blind-Spots Algorithm</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-on-surface">H.265+ Smart Stream Compression</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-primary">IP66 / IK10 Weather &amp; Shock</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-tertiary">Single IP Address Node</span>
+</div>
+<div class="p-2.5 bg-surface-container-high rounded mb-4 flex items-center justify-between text-xs font-label-mono-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">cable</span>
+<span class="text-on-surface">License Cost Savings</span>
+</div>
+<span class="text-primary font-bold">4 Sensors / 1 VMS Channel</span>
+</div>
+</div>
+<!-- Card Bottom Actions & Compare Checkbox -->
+<div class="space-y-3 pt-3">
+<div class="flex items-center justify-between">
+<label class="flex items-center gap-2 cursor-pointer font-label-mono-sm text-label-mono-sm text-outline hover:text-on-surface select-none">
+<input class="accent-primary rounded-sm" type="checkbox"/>
+<span>Pin for Side-by-Side</span>
+</label>
+<a class="text-outline hover:text-primary font-label-mono-sm text-label-mono-sm flex items-center gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined text-xs">picture_as_pdf</span> PDF Specs
+                </a>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-center gap-1.5 bg-surface-container hover:bg-surface-container-highest text-primary font-label-mono-sm text-label-mono-sm uppercase py-2.5 px-3 rounded transition-all">
+<span class="material-symbols-outlined text-base">view_in_ar</span>
+<span>View 3D Model</span>
+</button>
+<button class="add-quote-btn flex items-center justify-center gap-1.5 bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-label-mono-sm text-label-mono-sm font-bold uppercase py-2.5 px-3 rounded shadow-md transition-all">
+<span class="material-symbols-outlined text-base">add_circle</span>
+<span>Add to Quote</span>
+</button>
+</div>
+</div>
+</article>
+<!-- PRODUCT 6: AI Edge Gatekeeper LPR -->
+<article class="bg-surface-container-low rounded-xl p-5 shadow-xl hover:shadow-2xl flex flex-col justify-between group transition-all duration-200">
+<div>
+<!-- Visual Mockup & Telemetry Stamp -->
+<div class="relative w-full h-52 bg-surface-container-lowest rounded-lg overflow-hidden mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Ruggedized license plate recognition LPR camera unit with dual high-speed optical shutter, glare polarizer lens filter, mounted on corporate security gate control barrier with digital HUD optical vector overlays, nighttime road conditions." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlw2NSJKDKfDlENZDrGN9R793DJ5nywtCetlObgRQL1j-OT6609sNh2bwqmIm2CIBXJZKaJA3qAk4XDiF4-ihYgcf8oer3ABJrZcIXblfA4iE7SgeNpPTmJ2zlqSMmG85L4DY0RqpREUgvM79Qza6HwUHPbsL_SN6bqWPN8s0ladvjUkcGmpOAvGRE_r-I_i2M8h9zDeMi2wUMN0KEjRMyBUzWLzMzEHE_Ayqp7iaemPX4HX-U8joaGQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="absolute top-2.5 left-2.5 flex items-center gap-1.5 bg-surface-container-lowest/85 backdrop-blur-md px-2 py-1 rounded text-tertiary font-label-mono-sm text-label-mono-sm">
+<span class="material-symbols-outlined text-xs text-tertiary">pin</span>
+<span>LPR NEURAL INFERENCE ONBOARD</span>
+</div>
+<div class="absolute top-2.5 right-2.5 bg-surface-container-high/90 text-on-surface font-label-mono-sm text-label-mono-sm px-2 py-0.5 rounded font-bold uppercase tracking-wider">
+                  Commercial Supply
+                </div>
+<div class="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span class="bg-surface-container-high/90 px-2 py-0.5 rounded">99.4% Accuracy</span>
+<span class="bg-surface-container-high/90 px-2 py-0.5 rounded text-tertiary font-bold">120 MPH SPEED GATE</span>
+</div>
+</div>
+<!-- Title, SKU & Price -->
+<div class="flex items-start justify-between gap-4">
+<div>
+<span class="font-label-mono-sm text-label-mono-sm text-outline uppercase tracking-wider block">SERIES G // ACCESS TELEMETRY</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                    Aegis AI Edge Gatekeeper LPR System
+                  </h3>
+</div>
+<div class="text-right shrink-0">
+<span class="font-headline-sm text-headline-sm text-primary font-black">$1,450.00</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline block">MSRP / USD</span>
+</div>
+</div>
+<!-- Technical Specification Pill Chips -->
+<div class="flex flex-wrap gap-1.5 my-4">
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-on-surface">Up to 99.4% Multi-Region Plate Accuracy</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-secondary">Vehicle Make / Model Classification</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-on-surface">Dual Dry Contact Relay Triggers</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-primary">Onboard Whitelist / Blacklist (100k)</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-label-mono-sm text-label-mono-sm text-tertiary">Zero-Latency Gate Pulse</span>
+</div>
+<div class="p-2.5 bg-surface-container-high rounded mb-4 flex items-center justify-between text-xs font-label-mono-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">speed</span>
+<span class="text-on-surface">Fast-Capture Shutter Engine</span>
+</div>
+<span class="text-tertiary font-bold">1/100,000s Shutter</span>
+</div>
+</div>
+<!-- Card Bottom Actions & Compare Checkbox -->
+<div class="space-y-3 pt-3">
+<div class="flex items-center justify-between">
+<label class="flex items-center gap-2 cursor-pointer font-label-mono-sm text-label-mono-sm text-outline hover:text-on-surface select-none">
+<input class="accent-primary rounded-sm" type="checkbox"/>
+<span>Pin for Side-by-Side</span>
+</label>
+<a class="text-outline hover:text-primary font-label-mono-sm text-label-mono-sm flex items-center gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined text-xs">picture_as_pdf</span> PDF Specs
+                </a>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-center gap-1.5 bg-surface-container hover:bg-surface-container-highest text-primary font-label-mono-sm text-label-mono-sm uppercase py-2.5 px-3 rounded transition-all">
+<span class="material-symbols-outlined text-base">view_in_ar</span>
+<span>View 3D Model</span>
+</button>
+<button class="add-quote-btn flex items-center justify-center gap-1.5 bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-label-mono-sm text-label-mono-sm font-bold uppercase py-2.5 px-3 rounded shadow-md transition-all">
+<span class="material-symbols-outlined text-base">add_circle</span>
+<span>Add to Quote</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Technical Telemetry Banner: Enterprise Architectural Stacking -->
+<section class="bg-gradient-to-r from-surface-container-low via-surface-container to-surface-container-low rounded-xl p-6 shadow-xl relative overflow-hidden">
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="space-y-2 max-w-xl">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">terminal</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary uppercase font-bold tracking-widest">
+                  Custom Engineering &amp; Staging Depots
+                </span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+                Pre-Configured IP Schemes &amp; Burn-In Testing
+              </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Every AegisVision enterprise order passes through our 72-hour thermal chamber stress test, pre-flashed with hardened cryptographic certificates, customized static VLAN IPs, and automated ONVIF Profile T configuration.
+              </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+<a class="px-5 py-2.5 rounded bg-surface-container-highest hover:bg-surface-bright text-on-surface font-label-mono-sm text-label-mono-sm uppercase tracking-wider transition-colors" href="#">
+                Download NDAA Matrix
+              </a>
+<a class="px-5 py-2.5 rounded bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-label-mono-sm text-label-mono-sm uppercase font-bold tracking-wider shadow-md transition-colors" href="#">
+                Deploy Staged Build
+              </a>
+</div>
+</div>
+</section>
+</main>
+</div>
+</div>
+<!-- Interactive 3D Model Modal Preview (Hidden by default, triggered on click) -->
+<div class="fixed inset-0 z-50 bg-background/80 backdrop-blur-md hidden items-center justify-center p-4" id="modal3D">
+<div class="bg-surface-container-low rounded-xl max-w-3xl w-full p-6 shadow-2xl flex flex-col space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">view_in_ar</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Hardware 3D CAD Telemetry Viewer</span>
+</div>
+<button class="text-outline hover:text-on-surface p-1 rounded hover:bg-surface-container" id="closeModal">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Mock 3D Canvas Canvas HUD -->
+<div class="relative w-full h-80 bg-surface-container-lowest rounded-lg flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(#4cd7f6_1px,transparent_1px)] [background-size:16px_16px] opacity-15"></div>
+<!-- Rotating Holographic Placeholder UI -->
+<div class="relative flex flex-col items-center justify-center text-center p-6 space-y-3">
+<div class="w-24 h-24 rounded-full bg-surface-container-high/60 flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-5xl text-primary animate-pulse">videocam</span>
+</div>
+<span class="font-label-mono-md text-label-mono-md text-on-surface font-bold">Aegis Sentinel-X [3D Point Cloud Node]</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">ROTATION: AZIMUTH 142.4° // ELEVATION +32° // MESH: 42,000 VERTS</span>
+</div>
+<div class="absolute bottom-3 left-3 bg-surface-container/90 px-2 py-1 rounded text-[11px] font-label-mono-sm text-tertiary">
+          WEBGL ENGINE: 60 FPS
+        </div>
+<div class="absolute bottom-3 right-3 flex gap-2">
+<button class="bg-surface-container-high text-xs px-2 py-1 rounded font-label-mono-sm text-outline hover:text-on-surface">Exploded Assembly</button>
+<button class="bg-surface-container-high text-xs px-2 py-1 rounded font-label-mono-sm text-outline hover:text-on-surface">FOV Angle Cone</button>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-mono-sm text-label-mono-sm text-outline">CAD Export formats: STEP, Revit BIM, DWG, GLTF</span>
+<button class="bg-primary-container text-on-primary-container font-label-mono-sm text-label-mono-sm uppercase px-4 py-2 rounded font-bold hover:bg-primary" id="downloadCadBtn">
+          Export BIM Model
+        </button>
+</div>
+</div>
+</div>
+<!-- Client-Side Vanilla JS for High-Density Interaction -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Live Quote Counter Increment Logic
+      let quoteCount = 3;
+      const quoteCounterEl = document.getElementById('quoteCounter');
+      const addQuoteButtons = document.querySelectorAll('.add-quote-btn');
+
+      addQuoteButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          quoteCount++;
+          quoteCounterEl.textContent = `${quoteCount} Selected`;
+          
+          // Visual feedback
+          const originalHTML = btn.innerHTML;
+          btn.classList.remove('bg-primary-container', 'text-on-primary-container');
+          btn.classList.add('bg-tertiary', 'text-on-tertiary');
+          btn.innerHTML = `<span class="material-symbols-outlined text-base">check</span> Added!`;
+
+          setTimeout(() => {
+            btn.classList.remove('bg-tertiary', 'text-on-tertiary');
+            btn.classList.add('bg-primary-container', 'text-on-primary-container');
+            btn.innerHTML = originalHTML;
+          }, 1400);
+        });
+      });
+
+      // 2. Autocomplete Search Toggling
+      const searchInput = document.getElementById('catalogSearch');
+      const dropdown = document.getElementById('autocompleteDropdown');
+      const clearBtn = document.getElementById('clearSearch');
+
+      searchInput.addEventListener('focus', () => {
+        dropdown.classList.remove('hidden');
+      });
+
+      searchInput.addEventListener('input', (e) => {
+        if (e.target.value.length > 0) {
+          clearBtn.classList.remove('hidden');
+        } else {
+          clearBtn.classList.add('hidden');
+        }
+      });
+
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        clearBtn.classList.add('hidden');
+        dropdown.classList.add('hidden');
+        searchInput.focus();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target) && !dropdown.contains(e.target)) {
+          dropdown.classList.add('hidden');
+        }
+      });
+
+      // 3. Filter Chip Switcher
+      const chips = document.querySelectorAll('#chipRibbon button');
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          chips.forEach(c => {
+            c.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-bold', 'shadow-sm');
+            c.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+          });
+          chip.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+          chip.classList.add('bg-primary-container', 'text-on-primary-container', 'font-bold', 'shadow-sm');
+        });
+      });
+
+      // 4. Modal 3D Preview Toggling
+      const view3DButtons = document.querySelectorAll('button:has(.material-symbols-outlined:contains("view_in_ar")), button');
+      const modal3D = document.getElementById('modal3D');
+      const closeModal = document.getElementById('closeModal');
+
+      document.querySelectorAll('article button').forEach(button => {
+        if (button.textContent.includes('View 3D Model')) {
+          button.addEventListener('click', () => {
+            modal3D.classList.remove('hidden');
+            modal3D.classList.add('flex');
+          });
+        }
+      });
+
+      closeModal.addEventListener('click', () => {
+        modal3D.classList.add('hidden');
+        modal3D.classList.remove('flex');
+      });
+
+      modal3D.addEventListener('click', (e) => {
+        if (e.target === modal3D) {
+          modal3D.classList.add('hidden');
+          modal3D.classList.remove('flex');
+        }
+      });
+
+      // 5. Compare Checkbox dynamic counter
+      const compareCheckboxes = document.querySelectorAll('article input[type="checkbox"]');
+      const compareBadge = document.getElementById('compareBadge');
+      
+      compareCheckboxes.forEach(cb => {
+        cb.addEventListener('change', () => {
+          const checkedCount = document.querySelectorAll('article input[type="checkbox"]:checked').length;
+          compareBadge.textContent = checkedCount;
+        });
+      });
+    });
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest mt-space-xl"><div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12"><div class="lg:col-span-2 space-y-4"><div class="flex items-center gap-3"><img alt="AegisVision CCTV Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XWnhzJ4E_o9oOcNW1TyZmlw2IuH_MGsXe2TFUIHNZ_sOGLlyeRh3zk3L4aqYmvTgsaklsy8Li9aqD1AiYYBi3oyyt2uER9RNET-KA1-Bje2qyx2ebP3BdJYEXY163OUTvfVn5OujZSaoPgD7BnttOa68KTP8el1C-9MqL3dqppmxupVYF0-iWCJTt9eO5_1NeRLyk0nqfxIP_yfqt62U_GUdKeUpWG8jTANk-CqgwzYAxUF8MZZu6FI2g"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-wider uppercase font-bold">AEGIS<span class="text-primary">VISION</span></span></div><p class="text-on-surface-variant font-body-sm text-body-sm max-w-sm">High-assurance enterprise perimeter telemetry, zero-latency situational awareness, and AI-accelerated surveillance systems engineered for critical infrastructure and commercial facilities.</p><div class="space-y-2 pt-2"><span class="font-label-mono-sm text-label-mono-sm text-outline uppercase tracking-wider block">Operational Architecture</span><div class="flex flex-wrap gap-2"><span class="bg-surface-container px-2.5 py-1 rounded font-label-mono-sm text-label-mono-sm text-secondary">NestJS API Core</span><span class="bg-surface-container px-2.5 py-1 rounded font-label-mono-sm text-label-mono-sm text-secondary">PostgreSQL Audit Trails</span><span class="bg-surface-container px-2.5 py-1 rounded font-label-mono-sm text-label-mono-sm text-secondary">WebGL 3D Telemetry</span></div></div></div><div class="space-y-3"><span class="font-label-mono-md text-label-mono-md text-primary uppercase tracking-wider block">Certified Compliance</span><ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors flex items-center gap-1.5" href="#"><span class="material-symbols-outlined text-tertiary text-sm">verified</span>NDAA Section 889 Compliant</a></li><li><a class="hover:text-on-surface transition-colors flex items-center gap-1.5" href="#"><span class="material-symbols-outlined text-tertiary text-sm">verified</span>UL Listed 294 / 2808</a></li><li><a class="hover:text-on-surface transition-colors flex items-center gap-1.5" href="#"><span class="material-symbols-outlined text-tertiary text-sm">verified</span>ISO/IEC 27001 InfoSec</a></li><li><a class="hover:text-on-surface transition-colors flex items-center gap-1.5" href="#"><span class="material-symbols-outlined text-tertiary text-sm">verified</span>ONVIF Profile S, G &amp; T</a></li></ul></div><div class="space-y-3"><span class="font-label-mono-md text-label-mono-md text-primary uppercase tracking-wider block">Regional Service Depots</span><ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant"><li><span class="text-on-surface font-semibold">North America:</span> NY, TX, CA Hubs</li><li><span class="text-on-surface font-semibold">EMEA:</span> London, Frankfurt, Dubai</li><li><span class="text-on-surface font-semibold">APAC:</span> Singapore, Tokyo Rapid-Dispatch</li><li><span class="text-on-surface font-semibold">SLA:</span> 4-Hour On-Site Critical Response</li></ul></div><div class="space-y-3"><span class="font-label-mono-md text-label-mono-md text-primary uppercase tracking-wider block">Commercial Security Intel</span><p class="font-body-sm text-body-sm text-on-surface-variant">Receive direct alerts on firmware zero-days, NDAA advisories, and technical whitepapers.</p><form class="space-y-2"><div class="flex"><input class="bg-surface-container-low text-on-surface placeholder:text-outline font-label-mono-sm text-label-mono-sm px-3 py-2 rounded-l focus:outline-none focus:ring-1 focus:ring-primary w-full" placeholder="engineer@enterprise.com" type="email"/><button class="bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary px-3 rounded-r font-label-mono-sm transition-colors" type="button"><span class="material-symbols-outlined text-base mt-1">send</span></button></div><span class="text-[11px] text-outline font-label-mono-sm block">Strict zero-marketing telemetric brief.</span></form></div></div><div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-label-mono-sm text-label-mono-sm text-outline"><div class="flex items-center gap-6"><span>© 2025 AEGISVISION SECURITY INFRASTRUCTURE INC.</span><a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a><a class="hover:text-on-surface transition-colors" href="#">Security Whitepapers</a><a class="hover:text-on-surface transition-colors" href="#">System Status</a></div><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-tertiary"></span><span class="text-tertiary">ALL SYSTEMS OPERATIONAL</span></div></div></div></footer></body></html>

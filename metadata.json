@@ -1,0 +1,6 @@
+{
+  "name": "AegisVision - Enterprise Perimeter Telemetry & CCTV",
+  "description": "Tactical optical surveillance, 3D viewport telemetry, hardware catalog, turnkey infrastructure engineering, system BOM estimator, and admin dispatch console.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
