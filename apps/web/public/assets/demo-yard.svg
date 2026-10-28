@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="320" y1="0" x2="320" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#244b60"/>
+      <stop offset=".65" stop-color="#72808a"/>
+      <stop offset="1" stop-color="#232d35"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" rx="20" fill="url(#sky)"/>
+  <circle cx="512" cy="91" r="34" fill="#cceeff" fill-opacity=".42"/>
+  <path d="M0 249 140 169l112 74 145-110 243 121v146H0V249Z" fill="#26343d"/>
+  <path d="M0 281h640v119H0z" fill="#111922"/>
+  <path d="M0 274h640" stroke="#d1e4ed" stroke-opacity=".35" stroke-width="3"/>
+  <path d="M24 205v121m52-153v153m52-153v153m52-116v116m52-116v116m52-145v145m52-145v145m52-134v134m52-134v134m52-134v134m52-119v119m52-147v147" stroke="#bccbd0" stroke-opacity=".5" stroke-width="2"/>
+  <path d="M12 228h616M12 263h616" stroke="#d1dce0" stroke-opacity=".45" stroke-width="2"/>
+  <path d="M231 293h161l23 32H211l20-32Z" fill="#17242d" stroke="#91a2aa" stroke-width="3"/>
+  <path d="M254 275h98l22 18H230l24-18Z" fill="#86959a"/>
+  <circle cx="252" cy="329" r="14" fill="#091017" stroke="#a9b5b9" stroke-width="4"/>
+  <circle cx="365" cy="329" r="14" fill="#091017" stroke="#a9b5b9" stroke-width="4"/>
+  <rect x="295" y="302" width="31" height="9" rx="4" fill="#4cd7f6"/>
+  <text x="24" y="34" fill="#e4f7ff" font-family="monospace" font-size="12" letter-spacing="2">CAM-01 // PERIMETER NORTH</text>
+</svg>

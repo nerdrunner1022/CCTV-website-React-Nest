@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#283746"/>
+      <stop offset="1" stop-color="#111720"/>
+    </linearGradient>
+    <linearGradient id="shell" x1="213" y1="140" x2="430" y2="269" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d2dde1"/>
+      <stop offset=".48" stop-color="#71838b"/>
+      <stop offset="1" stop-color="#2a3942"/>
+    </linearGradient>
+    <radialGradient id="lens" cx="0" cy="0" r="1" gradientTransform="matrix(85 0 0 62 320 243)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#72e4fc"/>
+      <stop offset=".28" stop-color="#164458"/>
+      <stop offset=".78" stop-color="#091018"/>
+      <stop offset="1" stop-color="#405762"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="400" rx="20" fill="url(#bg)"/>
+  <path d="M0 321h640v79H0z" fill="#0b1017"/>
+  <path d="M250 104h140v32H250z" fill="#738791"/>
+  <path d="M233 128h174c24 0 44 20 44 44v28H189v-28c0-24 20-44 44-44Z" fill="url(#shell)" stroke="#d2dde1" stroke-opacity=".55" stroke-width="3"/>
+  <path d="M190 188h260c-8 84-59 132-130 132s-122-48-130-132Z" fill="url(#lens)" stroke="#9caeb6" stroke-width="5"/>
+  <path d="M245 207c18-14 40-22 75-22s57 8 75 22" stroke="#4cd7f6" stroke-opacity=".75" stroke-width="3"/>
+  <circle cx="320" cy="244" r="18" fill="#86ecff" fill-opacity=".74"/>
+  <circle cx="320" cy="244" r="7" fill="#f3feff"/>
+  <path d="M211 175h219" stroke="#f0b37c" stroke-opacity=".7" stroke-width="4" stroke-dasharray="2 13"/>
+  <text x="32" y="357" fill="#4cd7f6" font-family="monospace" font-size="13" letter-spacing="3">DOME // IK10 VANDAL RESISTANT</text>
+</svg>

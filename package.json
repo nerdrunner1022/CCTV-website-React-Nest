@@ -1,36 +1,35 @@
 {
-  "name": "react-example",
-  "private": true,
+  "name": "cctv-platform",
   "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build",
-    "preview": "vite preview",
-    "clean": "rm -rf dist server.js",
-    "lint": "tsc --noEmit"
+  "private": true,
+  "description": "CCTV shop website — lead engine, catalog, and customer portal.",
+  "packageManager": "pnpm@12.11.2",
+  "engines": {
+    "node": ">=20"
   },
-  "dependencies": {
-    "@google/genai": "^2.4.0",
-    "@tailwindcss/vite": "^4.3.3",
-    "@vitejs/plugin-react": "^6.1.1",
-    "lucide-react": "^0.546.0",
-    "react": "^19.0.1",
-    "react-dom": "^19.0.1",
-    "vite": "^8.3.0",
-    "express": "^4.21.2",
-    "dotenv": "^17.2.3",
-    "motion": "^12.23.24"
+  "scripts": {
+    "build": "pnpm -r run build",
+    "dev": "node scripts/dev.mjs",
+    "dev:apps": "pnpm -r --parallel run dev",
+    "db:up": "node scripts/local-db.mjs up",
+    "db:down": "node scripts/local-db.mjs down",
+    "db:reset": "node scripts/local-db.mjs reset",
+    "db:status": "node scripts/local-db.mjs status",
+    "lint": "pnpm -r run lint",
+    "typecheck": "pnpm -r run typecheck",
+    "test": "pnpm -r run test",
+    "format": "prettier --write \"**/*.{ts,tsx,js,mjs,json,md}\"",
+    "clean": "pnpm -r run clean && rm -rf node_modules"
   },
   "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@types/react": "^19.3.0",
-    "@types/react-dom": "^19.3.0",
-    "autoprefixer": "^10.4.21",
-    "esbuild": "^0.25.0",
-    "tailwindcss": "^4.3.3",
-    "tsx": "^4.21.0",
-    "typescript": "^7.0.2",
-    "@types/express": "^4.17.21"
+    "@eslint/js": "^9.14.0",
+    "@neon/config": "^1.8.6",
+    "@neon/env": "^1.5.3",
+    "embedded-postgres": "18.4.0-beta.17",
+    "eslint": "^9.14.0",
+    "prettier": "^3.3.3",
+    "turbo": "^2.3.0",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.13.0"
   }
 }

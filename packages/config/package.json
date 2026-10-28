@@ -1,0 +1,13 @@
+{
+  "name": "@cctv/config",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "files": ["tsconfig", "eslint", "tailwind"],
+  "scripts": {
+    "lint": "echo \"@cctv/config has no lint target\"",
+    "typecheck": "echo \"@cctv/config has no typecheck target\"",
+    "build": "echo \"@cctv/config has no build target\"",
+    "clean": "rm -rf .turbo"
+  }
+}

@@ -1,0 +1,53 @@
+/*
+ * Shared design tokens (Tailwind CSS v4, CSS-first config).
+ * Import this from an app's entry stylesheet AFTER `@import "tailwindcss";`.
+ *
+ * Theme — "Midnight":
+ *   dark navy surfaces, warm off-white foreground, warm-red (ember) accent.
+ *   Typography: Inter for UI/headings, Lato for body copy.
+ *
+ * Utility names are generated from these tokens, e.g. `--color-surface`
+ * produces `bg-surface` / `text-surface` / `border-surface`.
+ */
+@theme {
+  /* ---- Brand / accent — warm red ("ember") ----
+   * Low steps (50–300) are dark tints for backgrounds/borders on a dark UI;
+   * 400+ are the vivid accent used for buttons, links and rings. */
+  --color-brand-50: #2a1411;
+  --color-brand-100: #3c1b16;
+  --color-brand-200: #5d291e;
+  --color-brand-300: #8a3a28;
+  --color-brand-400: #bc4531;
+  --color-brand-500: #d64a33;
+  --color-brand-600: #e4563c;
+  --color-brand-700: #ee7358;
+  --color-brand-800: #f49a85;
+  --color-brand-900: #f7bcad;
+  --color-brand-950: #fbe4de;
+
+  /* ---- Success / WhatsApp green ---- */
+  --color-accent-400: #4ade80;
+  --color-accent-500: #22c55e;
+  --color-accent-600: #16a34a;
+  --color-accent-700: #15803d;
+
+  /* ---- Surfaces ---- */
+  --color-navy: #0a0f24; /* page background */
+  --color-surface: #121a38; /* cards, panels, table stripes */
+  --color-surface-2: #0f1631; /* recessed / alternating sections */
+  --color-line: #1f2b4d; /* default borders */
+  --color-line-strong: #2c3a63; /* emphasised borders / dividers */
+
+  /* ---- Foreground ---- */
+  --color-fg: #f5f1e8; /* primary text (warm off-white) */
+  --color-fg-strong: #fbf8f1; /* near-white, for emphasis */
+  --color-fg-soft: #d8d1c0; /* strong secondary text */
+  --color-muted: #c4bca9; /* body / secondary text */
+  --color-subtle: #9c9483; /* captions, meta, placeholders */
+
+  /* ---- Typography ---- */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Lato", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+}

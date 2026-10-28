@@ -1,0 +1,37 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# builds
+dist/
+build/
+.turbo/
+*.tsbuildinfo
+
+# env
+.env
+.env.*
+!.env.example
+
+# logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# test / coverage
+coverage/
+
+# editor / os
+.DS_Store
+.idea/
+.vscode/*.local
+
+# prisma
+apps/api/prisma/generated/
+
+# bruno secrets
+bruno/environments/*.local.bru
+.neon
+
+# local dev database (embedded postgres data dir)
+.local/

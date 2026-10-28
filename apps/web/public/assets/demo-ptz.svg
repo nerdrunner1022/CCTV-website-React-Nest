@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#173448"/>
+      <stop offset="1" stop-color="#10151e"/>
+    </linearGradient>
+    <linearGradient id="body" x1="255" y1="94" x2="405" y2="316" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d1dde2"/>
+      <stop offset=".45" stop-color="#657d89"/>
+      <stop offset="1" stop-color="#263640"/>
+    </linearGradient>
+    <radialGradient id="glass" cx="0" cy="0" r="1" gradientTransform="matrix(64 0 0 64 345 227)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#82ecff"/>
+      <stop offset=".24" stop-color="#1b5367"/>
+      <stop offset=".75" stop-color="#0b1118"/>
+      <stop offset="1" stop-color="#7c929c"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="400" rx="20" fill="url(#bg)"/>
+  <path d="M0 324h640v76H0z" fill="#0a1017"/>
+  <path d="M275 88h90v36h-90z" fill="#9babb3"/>
+  <path d="M291 117h58v32h-58z" fill="#536976"/>
+  <path d="M234 172c0-42 34-76 76-76h70c42 0 76 34 76 76v25H234v-25Z" fill="url(#body)" stroke="#d9e3e7" stroke-opacity=".65" stroke-width="4"/>
+  <path d="M224 179h250v42c0 65-53 118-118 118h-14c-65 0-118-53-118-118v-42Z" fill="url(#body)" stroke="#d9e3e7" stroke-opacity=".55" stroke-width="4"/>
+  <path d="M256 191h187c-2 22-11 38-25 50H281c-14-12-23-28-25-50Z" fill="#1c2a33"/>
+  <circle cx="350" cy="246" r="63" fill="#081018" stroke="#9eafb7" stroke-width="7"/>
+  <circle cx="350" cy="246" r="49" fill="url(#glass)" stroke="#4cd7f6" stroke-width="3"/>
+  <circle cx="350" cy="246" r="11" fill="#c6f7ff" fill-opacity=".8"/>
+  <path d="M265 189h4m18 0h4m114 0h4m18 0h4" stroke="#e4a365" stroke-width="5" stroke-linecap="round"/>
+  <path d="M305 331h89" stroke="#4cd7f6" stroke-opacity=".38" stroke-width="2"/>
+  <text x="32" y="357" fill="#4cd7f6" font-family="monospace" font-size="13" letter-spacing="3">PTZ // 32X OPTICAL ZOOM</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#162c39"/>
+      <stop offset="1" stop-color="#0e121a"/>
+    </linearGradient>
+    <linearGradient id="rack" x1="213" y1="52" x2="431" y2="354" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#445764"/>
+      <stop offset="1" stop-color="#17212a"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" rx="20" fill="url(#bg)"/>
+  <path d="M0 336h640v64H0z" fill="#090e15"/>
+  <path d="M197 42h246v304H197z" fill="url(#rack)" stroke="#7f929c" stroke-width="4"/>
+  <path d="M214 60h212v54H214zm0 69h212v54H214zm0 69h212v54H214zm0 69h212v54H214z" fill="#111922" stroke="#71838d" stroke-width="3"/>
+  <path d="M230 81h132v13H230zm0 69h132v13H230zm0 69h132v13H230zm0 69h132v13H230z" fill="#344752"/>
+  <circle cx="390" cy="87" r="5" fill="#4edea3"/>
+  <circle cx="390" cy="156" r="5" fill="#4cd7f6"/>
+  <circle cx="390" cy="225" r="5" fill="#4edea3"/>
+  <circle cx="390" cy="294" r="5" fill="#4cd7f6"/>
+  <path d="M247 108v-15m35 15V93m35 15V93m35 15V93m-105 84v-15m35 15v-15m35 15v-15m35 15v-15m-105 84v-15m35 15v-15m35 15v-15m35 15v-15m-105 84v-15m35 15v-15m35 15v-15m35 15v-15" stroke="#738791" stroke-width="2"/>
+  <path d="M137 338h366" stroke="#4cd7f6" stroke-opacity=".4" stroke-width="2"/>
+  <text x="32" y="372" fill="#4cd7f6" font-family="monospace" font-size="13" letter-spacing="3">COREVAULT // LOCAL RECORDING</text>
+</svg>

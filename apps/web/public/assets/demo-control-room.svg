@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#18364b"/>
+      <stop offset="1" stop-color="#10141e"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" rx="20" fill="url(#bg)"/>
+  <path d="M0 304h640v96H0z" fill="#0b1017"/>
+  <path d="M68 55h504v203H68z" fill="#111923" stroke="#607883" stroke-width="5"/>
+  <path d="M85 72h148v75H85zm163 0h148v75H248zm163 0h144v75H411zM85 160h148v80H85zm163 0h148v80H248zm163 0h144v80H411z" fill="#244151" stroke="#4cd7f6" stroke-opacity=".55" stroke-width="3"/>
+  <path d="m93 136 44-42 29 21 55-32m-125 133 38-36 29 18 42-39m59 23 37-41 34 27 53-52m31 53 38-39 37 22 39-41" stroke="#76deee" stroke-opacity=".65" stroke-width="3"/>
+  <circle cx="181" cy="112" r="8" fill="#4edea3"/>
+  <circle cx="329" cy="195" r="8" fill="#ffb4ab"/>
+  <path d="M181 257v47m150-47v47m-230 0h460" stroke="#9aaeb8" stroke-width="5"/>
+  <path d="M228 333h184l22 27H206l22-27Z" fill="#293741" stroke="#70838c" stroke-width="3"/>
+  <text x="24" y="382" fill="#4cd7f6" font-family="monospace" font-size="13" letter-spacing="3">SECURITY OPERATIONS // LIVE DEMO</text>
+</svg>
