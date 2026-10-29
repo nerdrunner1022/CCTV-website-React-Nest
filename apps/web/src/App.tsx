@@ -181,7 +181,7 @@ export default function App() {
         />
       )}
 
-      <main className={`flex-1 w-full ${activePage === 'admin-dashboard' ? '' : 'pt-28'}`}>
+      <main className={`flex-1 w-full ${activePage === 'admin-dashboard' ? '' : 'pt-20 sm:pt-28'}`}>
         <div
           key={pageTransitionKey}
           className="app-page-enter"
@@ -245,21 +245,6 @@ export default function App() {
       </main>
 
       {activePage !== 'admin-dashboard' && <Footer />}
-
-      {activePage !== 'admin-dashboard' && (
-        <div className="fixed bottom-5 right-5 z-40">
-          <button
-            type="button"
-            disabled
-            aria-label="WhatsApp contact is unavailable until the business number is configured"
-            title="Business WhatsApp number pending"
-            className="flex cursor-not-allowed items-center gap-2 rounded-full border border-[#3d494c] bg-[#181c24] px-4 py-3 text-sm font-semibold text-[#869397] shadow-lg opacity-90"
-          >
-            <span className="material-symbols-outlined text-xl">chat</span>
-            <span>WhatsApp number pending</span>
-          </button>
-        </div>
-      )}
 
       <QuoteDrawer
         isOpen={isQuoteDrawerOpen}

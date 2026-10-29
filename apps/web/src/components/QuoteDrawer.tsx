@@ -35,8 +35,8 @@ export const QuoteDrawer: React.FC<QuoteDrawerProps> = ({
         onClick={onClose}
       />
 
-      <div className="fixed inset-y-0 right-0  flex pl-10">
-        <div className="w-screen  bg-surface-container-low shadow-2xl flex flex-col justify-between border-l border-surface-container-high/60 animate-slide-left">
+      <div className="fixed inset-y-0 right-0 flex w-full justify-end sm:pl-10">
+        <div className="w-full max-w-lg bg-surface-container-low shadow-2xl flex flex-col justify-between border-l border-surface-container-high/60 animate-slide-left">
           {/* Header */}
           <div className="p-6 border-b border-surface-container-high/60 flex items-center justify-between">
             <div className="flex items-center gap-3">

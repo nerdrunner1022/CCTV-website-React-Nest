@@ -302,7 +302,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
       {/* Main Content Area */}
       <div className="lg:pl-72 flex flex-col min-h-screen w-full">
         {/* Admin Top Header */}
-        <header className="sticky top-0 h-16 bg-surface/85 backdrop-blur-xl shadow-sm z-40 flex items-center justify-between px-6 lg:px-8 border-b border-surface-container-high/40">
+        <header className="sticky top-0 min-h-16 bg-surface/85 backdrop-blur-xl shadow-sm z-40 flex items-center justify-between gap-2 px-3 sm:px-6 lg:px-8 border-b border-surface-container-high/40">
           <div className="flex items-center gap-4 flex-1 ">
             <div className="flex items-center gap-2 w-full bg-surface-container-low px-3 py-2 rounded focus-within:ring-1 focus-within:ring-primary border border-surface-container-high">
               <span className="material-symbols-outlined text-on-surface-variant text-[18px]">search</span>
@@ -316,7 +316,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
             </div>
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-2 sm:gap-6">
             <div className="hidden xl:flex items-center gap-4">
               <div className="flex items-center gap-2 px-2.5 py-1 rounded bg-surface-container-lowest border border-surface-container-high">
                 <span className="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
@@ -332,7 +332,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
               </div>
             </div>
 
-            <div className="flex items-center gap-3 pl-4">
+            <div className="flex items-center gap-2 sm:gap-3 sm:pl-4">
               <div className="text-right hidden sm:block">
                 <div className="flex items-center justify-end gap-1.5">
                   <span className="font-body-sm text-sm font-semibold text-on-surface leading-none">
@@ -360,16 +360,58 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
           </div>
         </header>
 
+        <nav
+          aria-label="Admin navigation"
+          className="lg:hidden sticky top-16 z-30 flex gap-2 overflow-x-auto border-b border-surface-container-high bg-surface-container-low px-3 py-2"
+        >
+          <button
+            onClick={() => setViewMode('overview')}
+            className={`shrink-0 rounded px-3 py-2 text-xs font-semibold ${viewMode === 'overview' ? 'bg-primary-container text-on-primary-container' : 'bg-surface-container text-on-surface-variant'}`}
+          >
+            Dashboard
+          </button>
+          <button
+            onClick={() => setViewMode('pipeline')}
+            className={`shrink-0 rounded px-3 py-2 text-xs font-semibold ${viewMode === 'pipeline' ? 'bg-primary-container text-on-primary-container' : 'bg-surface-container text-on-surface-variant'}`}
+          >
+            Leads
+          </button>
+          <button
+            onClick={() => onNavigate('hardware-catalog')}
+            className="shrink-0 rounded bg-surface-container px-3 py-2 text-xs font-semibold text-on-surface-variant"
+          >
+            Catalog
+          </button>
+          <button
+            onClick={() => onNavigate('system-configurator-and-estimator')}
+            className="shrink-0 rounded bg-surface-container px-3 py-2 text-xs font-semibold text-on-surface-variant"
+          >
+            Quotes
+          </button>
+          <button
+            onClick={() => onNavigate('installation-and-engineering-services')}
+            className="shrink-0 rounded bg-surface-container px-3 py-2 text-xs font-semibold text-on-surface-variant"
+          >
+            Services
+          </button>
+          <button
+            onClick={() => onNavigate('overview-and-3d-showcase')}
+            className="shrink-0 rounded bg-surface-container px-3 py-2 text-xs font-semibold text-on-surface-variant"
+          >
+            Public site
+          </button>
+        </nav>
+
         {/* Dashboard Body */}
-        <div className="w-full bg-surface flex-1 px-6 lg:px-8 py-6">
+        <div className="w-full bg-surface flex-1 px-3 sm:px-6 lg:px-8 py-4 sm:py-6">
           <div className="flex flex-col w-full">
             {/* Top Telemetry & Control Bar */}
             <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pb-6 border-b border-surface-container-highest/40">
               <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                <div className="flex items-center gap-2 bg-surface-container-low p-1 rounded-lg border border-surface-container-high">
+                <div className="flex w-full sm:w-fit items-center gap-1 sm:gap-2 bg-surface-container-low p-1 rounded-lg border border-surface-container-high">
                   <button
                     onClick={() => setViewMode('overview')}
-                    className={`px-3.5 py-1.5 rounded font-label-mono-md text-xs uppercase tracking-wider font-semibold transition-all flex items-center gap-2 cursor-pointer ${
+                    className={`min-w-0 flex-1 sm:flex-none px-2 sm:px-3.5 py-1.5 rounded font-label-mono-md text-[10px] sm:text-xs uppercase tracking-wider font-semibold transition-all flex items-center justify-center sm:justify-start gap-1 sm:gap-2 cursor-pointer ${
                       viewMode === 'overview'
                         ? 'bg-primary-container text-on-primary-container shadow-[0_0_12px_rgba(6,182,212,0.25)]'
                         : 'text-on-surface-variant hover:text-on-surface hover:bg-surface-container'
@@ -380,7 +422,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                   </button>
                   <button
                     onClick={() => setViewMode('pipeline')}
-                    className={`px-3.5 py-1.5 rounded font-label-mono-md text-xs uppercase tracking-wider font-semibold transition-all flex items-center gap-2 cursor-pointer ${
+                    className={`min-w-0 flex-1 sm:flex-none px-2 sm:px-3.5 py-1.5 rounded font-label-mono-md text-[10px] sm:text-xs uppercase tracking-wider font-semibold transition-all flex items-center justify-center sm:justify-start gap-1 sm:gap-2 cursor-pointer ${
                       viewMode === 'pipeline'
                         ? 'bg-primary-container text-on-primary-container shadow-[0_0_12px_rgba(6,182,212,0.25)]'
                         : 'text-on-surface-variant hover:text-on-surface hover:bg-surface-container'
@@ -394,17 +436,17 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                 <div className="hidden sm:flex items-center gap-2">
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container text-tertiary font-label-mono-sm text-xs uppercase font-semibold border border-surface-container-high">
                     <span className="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
-                    JWT: ACTIVE (8h REMAINING)
+                    DEMO SESSION
                   </span>
                   <span className="inline-flex items-center gap-1 px-2 py-1 rounded bg-surface-container font-label-mono-sm text-xs text-on-surface-variant border border-surface-container-high">
                     <span className="material-symbols-outlined text-[13px] text-primary">sync_alt</span>
-                    NESTJS 10 // WS SYNCED
+                    LOCAL SESSION
                   </span>
                 </div>
               </div>
 
               {/* Quick Action Triggers */}
-              <div className="flex items-center gap-2.5">
+              <div className="flex flex-wrap items-center gap-2.5">
                 <button
                   onClick={() => {
                     const csvContent =

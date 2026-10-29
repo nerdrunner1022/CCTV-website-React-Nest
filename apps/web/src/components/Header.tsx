@@ -49,35 +49,35 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#0f131c]/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
-      <div className="bg-[#0a0e16] px-4 lg:px-12 py-1.5 flex items-center justify-center text-[#bcc9cd] text-xs border-b border-[#262a33]/40">
+      <div className="hidden sm:flex bg-[#0a0e16] px-3 sm:px-4 lg:px-12 py-1.5 items-center justify-center text-[#bcc9cd] text-[10px] sm:text-xs text-center border-b border-[#262a33]/40">
         <span>Practical CCTV advice and installation for homes and businesses</span>
       </div>
 
       {/* Main Navigation Bar */}
-      <div className="h-20   px-4 lg:px-12 flex items-center justify-between gap-4">
+      <div className="h-20 px-3 sm:px-4 lg:px-12 flex items-center justify-between gap-2 sm:gap-4">
         {/* Brand Lockup */}
         <button
           onClick={() => handleNavClick('overview-and-3d-showcase')}
-          className="flex items-center gap-3 shrink-0 text-left focus:outline-none group"
+          className="flex items-center gap-2 sm:gap-3 min-w-0 shrink text-left focus:outline-none group"
           aria-label="AegisVision home"
         >
           <img
             alt="AegisVision security camera logo"
-            className="h-9 w-9 object-contain transition-transform group-hover:scale-105"
+            className="h-8 w-8 sm:h-9 sm:w-9 shrink-0 object-contain transition-transform group-hover:scale-105"
             src="/assets/aegisvision-mark.svg"
           />
-          <div className="flex flex-col">
-            <span className="text-[20px] text-[#dfe2ee] tracking-wider uppercase font-extrabold leading-tight">
+          <div className="flex min-w-0 flex-col">
+            <span className="text-[15px] sm:text-[20px] text-[#dfe2ee] tracking-wider uppercase font-extrabold leading-tight">
               AEGIS<span className="text-[#4cd7f6]">VISION</span>
             </span>
-            <span className="font-mono text-[9px] text-[#869397] tracking-widest uppercase">
+            <span className="hidden sm:block font-mono text-[9px] text-[#869397] tracking-widest uppercase">
               Perimeter Telemetry
             </span>
           </div>
         </button>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden xl:flex items-center gap-1 text-[13px]">
+        <nav className="hidden min-[1880px]:flex items-center gap-1 text-[13px]">
           {navLinks.map((link) => {
             const isActive = activePage === link.id;
             return (
@@ -97,7 +97,7 @@ export const Header: React.FC<HeaderProps> = ({
         </nav>
 
         {/* Right Action Stack */}
-        <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+        <div className="flex items-center gap-1 sm:gap-3 shrink-0">
           {/* Quick Hardware Search */}
           <form
             onSubmit={handleSearchSubmit}
@@ -128,10 +128,10 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             onClick={onOpenQuoteDrawer}
             aria-label="Cart and Specs Counter"
-            className="relative p-2 text-[#bcc9cd] hover:text-[#dfe2ee] transition-colors rounded hover:bg-[#1c2028]"
+            className="relative p-1 sm:p-2 text-[#bcc9cd] hover:text-[#dfe2ee] transition-colors rounded hover:bg-[#1c2028]"
             title="View Selected Quote Items"
           >
-            <span className="material-symbols-outlined text-[24px]">view_in_ar</span>
+            <span className="material-symbols-outlined text-[21px] sm:text-[24px]">view_in_ar</span>
             <span className="absolute top-1 right-1 bg-[#0566d9] text-[#e6ecff] font-mono text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
               {quoteCount}
             </span>
@@ -146,7 +146,7 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <img
                 alt="Profile"
-                className="w-8 h-8 rounded-full object-cover ring-1 ring-[#4cd7f6]/40 group-hover:ring-[#4cd7f6] transition-all"
+                className="w-7 h-7 sm:w-8 sm:h-8 rounded-full object-cover ring-1 ring-[#4cd7f6]/40 group-hover:ring-[#4cd7f6] transition-all"
                 src="/assets/demo-avatar.svg"
               />
               <span className="material-symbols-outlined text-[#869397] group-hover:text-[#dfe2ee] text-sm transition-colors hidden sm:inline">
@@ -215,10 +215,10 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-[#bcc9cd] hover:text-[#dfe2ee] xl:hidden"
+            className="p-1 sm:p-2 text-[#bcc9cd] hover:text-[#dfe2ee] min-[1880px]:hidden"
             aria-label="Toggle mobile menu"
           >
-            <span className="material-symbols-outlined text-[24px]">
+            <span className="material-symbols-outlined text-[22px] sm:text-[24px]">
               {mobileMenuOpen ? 'close' : 'menu'}
             </span>
           </button>
@@ -227,7 +227,7 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Mobile Navigation Dropdown */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-[#181c24] border-t border-[#262a33] px-4 py-3 flex flex-col gap-1 shadow-2xl">
+        <div className="min-[1880px]:hidden bg-[#181c24] border-t border-[#262a33] px-4 py-3 flex flex-col gap-1 shadow-2xl">
           {navLinks.map((link) => (
             <button
               key={link.id}
@@ -250,6 +250,16 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <span className="material-symbols-outlined text-[18px]">dashboard</span>
             Access CCTV Admin Console
+          </button>
+          <button
+            onClick={() => {
+              onOpenSurveyModal();
+              setMobileMenuOpen(false);
+            }}
+            className="mt-1 flex items-center justify-center gap-2 rounded bg-[#06b6d4] px-3 py-3 text-sm font-bold text-[#003640]"
+          >
+            <span className="material-symbols-outlined text-[18px]">calendar_month</span>
+            Request a site survey
           </button>
         </div>
       )}

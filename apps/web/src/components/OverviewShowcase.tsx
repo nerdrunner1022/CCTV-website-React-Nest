@@ -260,10 +260,10 @@ export const OverviewShowcase: React.FC<OverviewShowcaseProps> = ({
                     setFocusedFeedIndex(idx);
                     setMatrixLayout('focus');
                   }}
-                  className="relative rounded-xl overflow-hidden bg-[#0a0e16] aspect-video group shadow-lg border border-[#262a33] cursor-pointer hover:border-[#4cd7f6]/60 transition-all"
+                  className="camera-feed-card relative rounded-xl overflow-hidden bg-[#0a0e16] aspect-video group shadow-lg border border-[#262a33] cursor-pointer"
                 >
                   <img
-                    className="w-full h-full object-cover brightness-90 contrast-110 group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover brightness-90 contrast-110"
                     src={feed.image}
                     alt={feed.alt}
                   />
@@ -333,7 +333,7 @@ export const OverviewShowcase: React.FC<OverviewShowcaseProps> = ({
           )}
 
           {matrixLayout === 'fullscreen' && (
-            <div className="relative rounded-xl overflow-hidden bg-[#0a0e16] w-full h-[580px] shadow-2xl border border-[#4cd7f6]">
+            <div className="relative rounded-xl overflow-hidden bg-[#0a0e16] w-full h-[min(70dvh,580px)] min-h-[320px] shadow-2xl border border-[#4cd7f6]">
               <img
                 className="w-full h-full object-cover brightness-95"
                 src={focusedFeed.image}
@@ -382,9 +382,9 @@ export const OverviewShowcase: React.FC<OverviewShowcaseProps> = ({
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6" data-reveal="cards">
             {/* Service Card 1 */}
-            <div className="bg-[#1c2028] p-8 rounded-xl flex flex-col justify-between hover:bg-[#262a33] transition-all group shadow-md hover:shadow-xl border border-[#262a33]">
+            <div className="help-service-card bg-[#1c2028] p-8 max-sm:p-5 rounded-xl flex flex-col justify-between group shadow-md border border-[#262a33]">
               <div className="flex flex-col gap-4">
-                <div className="w-14 h-14 rounded-lg bg-[#0a0e16] flex items-center justify-center text-[#4cd7f6] group-hover:bg-[#4cd7f6] group-hover:text-[#003640] transition-colors">
+                <div className="help-service-icon w-14 h-14 rounded-lg bg-[#0a0e16] flex items-center justify-center text-[#4cd7f6] group-hover:bg-[#4cd7f6] group-hover:text-[#003640]">
                   <span className="material-symbols-outlined text-3xl">local_shipping</span>
                 </div>
                 <div className="flex items-center justify-between">
@@ -423,9 +423,9 @@ export const OverviewShowcase: React.FC<OverviewShowcaseProps> = ({
             </div>
 
             {/* Service Card 2 */}
-            <div className="bg-[#1c2028] p-8 rounded-xl flex flex-col justify-between hover:bg-[#262a33] transition-all group shadow-md hover:shadow-xl border border-[#262a33]">
+            <div className="help-service-card bg-[#1c2028] p-8 max-sm:p-5 rounded-xl flex flex-col justify-between group shadow-md border border-[#262a33]">
               <div className="flex flex-col gap-4">
-                <div className="w-14 h-14 rounded-lg bg-[#0a0e16] flex items-center justify-center text-[#adc6ff] group-hover:bg-[#adc6ff] group-hover:text-[#002e6a] transition-colors">
+                <div className="help-service-icon w-14 h-14 rounded-lg bg-[#0a0e16] flex items-center justify-center text-[#adc6ff] group-hover:bg-[#adc6ff] group-hover:text-[#002e6a]">
                   <span className="material-symbols-outlined text-3xl">engineering</span>
                 </div>
                 <div className="flex items-center justify-between">
@@ -464,9 +464,9 @@ export const OverviewShowcase: React.FC<OverviewShowcaseProps> = ({
             </div>
 
             {/* Service Card 3 */}
-            <div className="bg-[#1c2028] p-8 rounded-xl flex flex-col justify-between hover:bg-[#262a33] transition-all group shadow-md hover:shadow-xl border border-[#262a33]">
+            <div className="help-service-card bg-[#1c2028] p-8 max-sm:p-5 rounded-xl flex flex-col justify-between group shadow-md border border-[#262a33]">
               <div className="flex flex-col gap-4">
-                <div className="w-14 h-14 rounded-lg bg-[#0a0e16] flex items-center justify-center text-[#4edea3] group-hover:bg-[#4edea3] group-hover:text-[#003824] transition-colors">
+                <div className="help-service-icon w-14 h-14 rounded-lg bg-[#0a0e16] flex items-center justify-center text-[#4edea3] group-hover:bg-[#4edea3] group-hover:text-[#003824]">
                   <span className="material-symbols-outlined text-3xl">psychology</span>
                 </div>
                 <div className="flex items-center justify-between">

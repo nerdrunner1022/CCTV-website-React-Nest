@@ -157,7 +157,7 @@ export const HardwareCatalog: React.FC<HardwareCatalogProps> = ({
       )}
 
       {/* Filter & Controls Toolbar */}
-      <section className="sticky top-20 z-40 w-full bg-[#0f131c]/95 backdrop-blur-xl shadow-md py-4 px-6 lg:px-12 border-b border-[#262a33]">
+      <section className="sticky top-[6.75rem] z-40 w-full bg-[#0f131c]/95 backdrop-blur-xl shadow-md py-4 px-4 sm:px-6 lg:px-12 border-b border-[#262a33]">
         <div className="  flex flex-col gap-4">
           {/* Search, Autocomplete & Sort Level */}
           <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">

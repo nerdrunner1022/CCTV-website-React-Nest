@@ -29,9 +29,9 @@ export const CadViewerModal: React.FC<CadViewerModalProps> = ({
 
   return (
     <div className="fixed inset-0 bg-surface-container-lowest/85 backdrop-blur-md z-50 flex items-center justify-center p-4">
-      <div className="bg-surface-container-low  w-full rounded-xl overflow-hidden shadow-2xl flex flex-col border border-surface-container-high animate-scale-in">
+      <div className="bg-surface-container-low w-full max-w-6xl max-h-[calc(100dvh-2rem)] overflow-y-auto rounded-xl shadow-2xl flex flex-col border border-surface-container-high animate-scale-in">
         {/* Header */}
-        <div className="p-4 px-6 bg-surface-container border-b border-surface-container-high flex items-center justify-between">
+        <div className="p-4 sm:px-6 bg-surface-container border-b border-surface-container-high flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <span className="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></span>
             <div>
@@ -52,22 +52,22 @@ export const CadViewerModal: React.FC<CadViewerModalProps> = ({
         </div>
 
         {/* Viewport & Controls Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[460px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[320px] sm:min-h-[460px]">
           {/* Main 3D Viewport (8 cols) */}
-          <div className="lg:col-span-8 bg-surface-container-lowest relative flex items-center justify-center p-8 overflow-hidden select-none">
+          <div className="lg:col-span-8 bg-surface-container-lowest relative flex min-h-[320px] sm:min-h-[460px] items-center justify-center p-4 sm:p-8 overflow-hidden select-none">
             {/* Background CAD Grid */}
             <div className="absolute inset-0 bg-[radial-gradient(#1c2028_1px,transparent_1px)] [background-size:16px_16px] opacity-70"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-surface-container-lowest/40 pointer-events-none"></div>
 
             {/* Tactical Caliper Overlay */}
-            <div className="absolute top-4 left-4 font-label-mono-sm text-xs text-outline space-y-1 z-10">
+            <div className="absolute top-3 left-3 sm:top-4 sm:left-4 font-label-mono-sm text-[9px] sm:text-xs text-outline space-y-1 z-10">
               <div className="text-primary font-bold">FOV: {fov}</div>
               <div>ZOOM: {zoomLevel}%</div>
               <div>IP_RATING: {ipRating}</div>
               <div>IR_RANGE: {irRange}</div>
             </div>
 
-            <div className="absolute top-4 right-4 font-label-mono-sm text-xs text-tertiary z-10 flex items-center gap-1.5">
+            <div className="absolute top-3 right-3 sm:top-4 sm:right-4 font-label-mono-sm text-[9px] sm:text-xs text-tertiary z-10 flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
               RENDER: {renderMode.toUpperCase()}
             </div>
@@ -88,7 +88,7 @@ export const CadViewerModal: React.FC<CadViewerModalProps> = ({
                 transformStyle: 'preserve-3d',
               }}
             >
-              <div className="relative w-64 h-64 flex items-center justify-center">
+              <div className="relative w-48 h-48 sm:w-64 sm:h-64 flex items-center justify-center">
                 <img
                   src={imageSrc}
                   alt={item.name}
@@ -115,7 +115,7 @@ export const CadViewerModal: React.FC<CadViewerModalProps> = ({
             </div>
 
             {/* Bottom Viewport Angle Toolbar */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-surface-container/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-surface-container-high flex items-center gap-2 z-10">
+            <div className="absolute bottom-3 inset-x-3 sm:bottom-4 sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2 bg-surface-container/90 backdrop-blur-md px-2 sm:px-3 py-1.5 rounded-lg border border-surface-container-high flex flex-wrap justify-center items-center gap-1 sm:gap-2 z-10">
               {[
                 { id: 'iso', label: 'Isometric' },
                 { id: 'front', label: 'Frontal Optics' },
@@ -125,7 +125,7 @@ export const CadViewerModal: React.FC<CadViewerModalProps> = ({
                 <button
                   key={angle.id}
                   onClick={() => setActiveAngle(angle.id as any)}
-                  className={`px-2.5 py-1 rounded font-label-mono-sm text-[11px] font-semibold transition-colors cursor-pointer ${
+                  className={`px-1.5 sm:px-2.5 py-1 rounded font-label-mono-sm text-[9px] sm:text-[11px] font-semibold transition-colors cursor-pointer ${
                     activeAngle === angle.id
                       ? 'bg-primary-container text-on-primary-container'
                       : 'text-on-surface-variant hover:text-on-surface'
