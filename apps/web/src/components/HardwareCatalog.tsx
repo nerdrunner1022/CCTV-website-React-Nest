@@ -541,13 +541,13 @@ export const HardwareCatalog: React.FC<HardwareCatalogProps> = ({
                 return (
                   <article
                     key={product.id}
-                    className="bg-[#181c24] rounded-xl p-5 shadow-xl hover:shadow-2xl flex flex-col justify-between group transition-all duration-200 border border-[#262a33] hover:border-[#4cd7f6]/50"
+                    className="product-card bg-[#181c24] rounded-xl p-5 shadow-xl flex flex-col justify-between group border border-[#262a33]"
                   >
                     <div>
                       {/* Visual Mockup & Telemetry Stamp */}
                       <div className="relative w-full h-52 bg-[#0a0e16] rounded-lg overflow-hidden mb-4 border border-[#262a33]">
                         <img
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-full object-cover"
                           src={product.image}
                           alt={product.name}
                         />

@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import type { HardwareItem, LeadItem, PageView, SurveySubmission } from './types';
 import { HARDWARE_ITEMS, INITIAL_LEADS, MOCK_STAFF } from './data/mockData';
 import { AdminDashboard } from './components/AdminDashboard';
 import { AdminLogin } from './components/AdminLogin';
 import { CadViewerModal } from './components/CadViewerModal';
+import { ContactSiteSurvey } from './components/ContactSiteSurvey';
 import { Footer } from './components/Footer';
 import { HardwareCatalog } from './components/HardwareCatalog';
 import { Header } from './components/Header';
@@ -14,6 +15,7 @@ import { SiteSurveyModal } from './components/SiteSurveyModal';
 import { SystemConfigurator } from './components/SystemConfigurator';
 
 export default function App() {
+  const cursorGlowRef = useRef<HTMLDivElement>(null);
   const [activePage, setActivePage] = useState<PageView>('overview-and-3d-showcase');
   const [quoteItems, setQuoteItems] = useState<HardwareItem[]>([]);
   const [customConfigs, setCustomConfigs] = useState<unknown[]>([]);
@@ -36,6 +38,52 @@ export default function App() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [activePage]);
+
+  useEffect(() => {
+    const cursorGlow = cursorGlowRef.current;
+    if (!cursorGlow || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let targetX = -600;
+    let targetY = -600;
+    let currentX = targetX;
+    let currentY = targetY;
+    let animationFrame = 0;
+
+    const followPointer = () => {
+      currentX += (targetX - currentX) * 0.16;
+      currentY += (targetY - currentY) * 0.16;
+      cursorGlow.style.setProperty('--cursor-glow-x', `${currentX}px`);
+      cursorGlow.style.setProperty('--cursor-glow-y', `${currentY}px`);
+
+      if (Math.abs(targetX - currentX) > 0.5 || Math.abs(targetY - currentY) > 0.5) {
+        animationFrame = window.requestAnimationFrame(followPointer);
+      } else {
+        animationFrame = 0;
+      }
+    };
+
+    const handlePointerMove = (event: PointerEvent) => {
+      if (event.pointerType !== 'mouse') return;
+      targetX = event.clientX;
+      targetY = event.clientY;
+      if (!animationFrame) animationFrame = window.requestAnimationFrame(followPointer);
+    };
+
+    const handlePointerLeave = (event: PointerEvent) => {
+      if (event.relatedTarget !== null) return;
+      targetX = -600;
+      targetY = -600;
+      if (!animationFrame) animationFrame = window.requestAnimationFrame(followPointer);
+    };
+
+    window.addEventListener('pointermove', handlePointerMove, { passive: true });
+    window.addEventListener('pointerout', handlePointerLeave);
+    return () => {
+      window.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('pointerout', handlePointerLeave);
+      if (animationFrame) window.cancelAnimationFrame(animationFrame);
+    };
+  }, []);
 
   const handleAddToQuote = (item: HardwareItem) => {
     setQuoteItems((previous) => {
@@ -162,6 +210,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background text-on-surface flex flex-col font-body-md selection:bg-primary-container selection:text-on-primary-container antialiased">
+      <div aria-hidden="true" className="app-backdrop-glow" ref={cursorGlowRef} />
       {toast && (
         <div className="fixed top-20 right-6 z-50 p-3.5 px-4 rounded-lg bg-surface-container-high/95 backdrop-blur-md text-on-surface border border-primary shadow-2xl flex items-center gap-3 animate-fade-in font-label-mono-sm text-xs">
           <span className="w-2 h-2 rounded-full bg-primary animate-ping" />
@@ -218,10 +267,7 @@ export default function App() {
         )}
 
         {activePage === 'contact-and-site-survey' && (
-          <InstallationEngineering
-            onNavigate={setActivePage}
-            onBookSurvey={handleSurveySubmit}
-          />
+          <ContactSiteSurvey onOpenSurveyModal={() => handleOpenSurveyModal()} />
         )}
 
         {activePage === 'admin-dashboard' &&
