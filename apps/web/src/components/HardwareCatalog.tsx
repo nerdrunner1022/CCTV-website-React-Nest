@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { HardwareItem } from '../types';
 
 interface HardwareCatalogProps {
@@ -23,6 +23,30 @@ export const HardwareCatalog: React.FC<HardwareCatalogProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<string>('All Hardware');
   const [sortBy, setSortBy] = useState<string>('recommended');
   const [searchFocused, setSearchFocused] = useState<boolean>(false);
+  const [toolbarHidden, setToolbarHidden] = useState(false);
+  const previousScrollY = useRef(0);
+
+  useEffect(() => {
+    previousScrollY.current = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const scrollDifference = currentScrollY - previousScrollY.current;
+
+      if (currentScrollY <= 120) {
+        setToolbarHidden(false);
+      } else if (scrollDifference > 4) {
+        setToolbarHidden(true);
+      } else if (scrollDifference < -4) {
+        setToolbarHidden(false);
+      }
+
+      previousScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Filters State
   const [resFilters, setResFilters] = useState<Record<string, boolean>>({
@@ -157,7 +181,11 @@ export const HardwareCatalog: React.FC<HardwareCatalogProps> = ({
       )}
 
       {/* Filter & Controls Toolbar */}
-      <section className="sticky top-[6.75rem] z-40 w-full bg-[#0f131c]/95 backdrop-blur-xl shadow-md py-4 px-4 sm:px-6 lg:px-12 border-b border-[#262a33]">
+      <section
+        className={`sticky top-20 sm:top-[108px] z-40 w-full bg-[#0f131c]/95 backdrop-blur-xl shadow-md py-4 px-4 sm:px-6 lg:px-12 border-b border-[#262a33] transition-transform duration-300 ease-out ${
+          toolbarHidden ? '-translate-y-full' : 'translate-y-0'
+        }`}
+      >
         <div className="  flex flex-col gap-4">
           {/* Search, Autocomplete & Sort Level */}
           <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
@@ -247,13 +275,13 @@ export const HardwareCatalog: React.FC<HardwareCatalogProps> = ({
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <label htmlFor="catalogCategory" className="text-sm text-[#bcc9cd]">
               Shop by category
             </label>
             <select
               id="catalogCategory"
-              className="max-w-full rounded border border-[#3d494c]/60 bg-[#262a33] px-3 py-2 text-sm text-[#dfe2ee]"
+              className="w-full min-w-0 rounded border border-[#3d494c]/60 bg-[#262a33] px-3 py-2 text-sm text-[#dfe2ee] sm:w-auto"
               value={selectedCategory}
               onChange={(event) => setSelectedCategory(event.target.value)}
             >
